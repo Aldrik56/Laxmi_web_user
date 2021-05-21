@@ -1,0 +1,41 @@
+.navbar{
+    box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.25), 0px 0px 4px rgba(66, 66, 66, 0.2);
+    padding-left: 24px;
+    padding-right: 24px;
+    .logo{
+        width: 60px;
+        height: 52px;
+        cursor: pointer;
+    }
+    .nav-item{
+        .active{
+            color: #1E1E22 !important;
+        }
+        a{
+            font-weight: 600;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.01em;
+            color: #616161;
+            margin-left: 40px;
+            margin-right: 40px;
+            @media only screen and (max-width: $xxl) {
+                margin-left: 20px;
+                margin-right: 20px;                
+            }
+            @media only screen and (max-width: $xl) {
+                margin-left: 5px;
+                margin-right: 5px;                
+            }
+            @media only screen and (max-width: $lg) {
+                margin-left: 0;
+                margin-right: 0;     
+                margin-top: 15px;           
+            }
+        }
+    }
+     .navbar-toggler{
+         border: 0px !important;
+     }   
+}

@@ -1,6 +1,11 @@
 import {Language,AccountCircle,ShoppingBag} from '../../../elements/icon';
+import Link from 'next/link'
+
+import { useRouter } from 'next/router'
 
 const MenuIcon = () => {
+    const UseRouter =  useRouter()
+
     return (
         <div className="d-flex flex-row">
             <div className="mx-2">
@@ -13,20 +18,21 @@ const MenuIcon = () => {
                         <p>Choose your language :</p>
                     </div>
                     <div className="language-menu">
-                        <div className="language-menu-list px-5 d-flex flex-row align-items-center active py-2">
-                            <img 
-                                src="/img/icon/UK_flag.png" 
-                                alt="laxmi tailer"
-                                className="flag-icon mr-3" />
-                            <h6 className="my-0">English</h6>                                        
-                        </div>
-                        <div className="language-menu-list px-5 d-flex flex-row align-items-center py-2">
-                            <img 
-                                src="/img/icon/ID_flag.png" 
-                                alt="laxmi tailer"
-                                className="flag-icon mr-3" />
-                            <h6 className="my-0">English</h6>                                        
-                        </div>
+                        {
+                            UseRouter.locales.map((locale,index) => (
+                                <Link href={UseRouter.asPath} locale={locale}>
+                                    <div 
+                                        key={index} 
+                                        className={`language-menu-list px-5 d-flex flex-row align-items-center ${locale === UseRouter.locale ? 'active' : ''} py-2`}>
+                                        <img 
+                                            src={`/img/icon/${locale === 'en' ? 'UK' : 'ID'}_flag.png`} 
+                                            alt="laxmi tailer"
+                                            className="flag-icon mr-3" />
+                                        <h6 className="my-0">{locale === 'en' ? 'English' : 'Indonesian'}</h6>                                        
+                                    </div>    
+                                </Link>
+                            ))
+                        }
                     </div>
                 </div>
             </div>                        

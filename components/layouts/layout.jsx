@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
         <footer >
 
         </footer>
-        <script src="/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="/js/bootstrap.bundle.min.js" crossOrigin="anonymous"></script>
     </>    
 );
 

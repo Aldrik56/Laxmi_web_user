@@ -1,12 +1,17 @@
 import Link from 'next/link'
-import { withRouter } from 'next/router'
+import { withRouter, useRouter } from 'next/router'
+
+import useTranslation from 'next-translate/useTranslation';
 
 const MenuLink = ({ router }) => {
     const pathName = router.pathname
+    const UseRouter =  useRouter()
+
+    let {t} = useTranslation()
 
     const link = [
         {
-            name : 'Product Gallery',
+            name : `${t("common:Product Gallery")}`,
             path : '/products'
         },
         {

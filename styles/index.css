@@ -142,6 +142,52 @@ input[type=number]:focus,
   border: 0px !important;
 }
 
+footer {
+  color: white;
+  background-color: #1E1E22;
+}
+
+footer h5 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+  margin-bottom: 8px;
+}
+
+footer p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  margin-bottom: 0;
+}
+
+footer .input-newsletter {
+  margin-top: 12px;
+  width: 272px;
+}
+
+footer .input-newsletter label {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+footer .input-newsletter .form-control {
+  border-radius: 0;
+  height: 32px;
+  border: 0;
+}
+
+footer .input-newsletter .btn-primary {
+  height: 32px;
+  font-size: 12px;
+  border: 2px solid white;
+  border-radius: 0;
+}
+
 .dropdown-container {
   right: 0 !important;
   left: auto !important;
@@ -269,5 +315,9 @@ form button {
   .forgot-password .heading {
     font-size: 24px;
   }
+}
+
+.register {
+  padding-bottom: 10vh;
 }
 /*# sourceMappingURL=index.css.map */

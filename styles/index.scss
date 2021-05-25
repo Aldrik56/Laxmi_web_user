@@ -4,6 +4,7 @@
 
 // layout
 @import './components/layout/navbar' ;
+@import './components/layout/footer' ;
 
 // elemets
 @import './components/elements' ;
@@ -11,3 +12,4 @@
 // pages
 @import './pages/login' ;
 @import './pages/forgotpassword' ;
+@import './pages/register' ;

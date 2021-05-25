@@ -25,7 +25,7 @@ const Register = ()=> {
     return (
         <div className="container-fluid px-5">
             <BreadCrumb path={pathBreadCumb} />
-            <section className="forgot-password d-flex justify-content-center">
+            <section className="register d-flex justify-content-center">
                 <div className="col-12 col-md-6 col-lg-5 col-xxl-4">
                     <div className="text-center">
                         <h2 className="heading">{t("Create a New Account")}</h2>

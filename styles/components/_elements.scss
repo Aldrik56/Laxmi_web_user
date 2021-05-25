@@ -43,3 +43,48 @@
         display: flex;
     }
 }
+
+// breadcrumb
+.breadcrumb{
+    p{
+        cursor: pointer;
+        font-size: 14px;
+        font-style: normal;
+        line-height: 16px;
+        letter-spacing: 0.0125em;
+        text-transform: uppercase;
+        .active{
+            color: #424242 !important;
+            font-weight: bold;
+        }
+        .link{
+            cursor: pointer;
+            text-decoration: none !important;
+            color: #757575;
+        }
+    }
+}
+
+form{
+    .form-control{
+        border: 1px solid $color-primary !important;
+        border-radius: 4px;
+        height: 45px;
+    }
+    .form-group{
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    button{
+        margin-top: 24px;
+    }
+}
+
+.icon-toggle{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+}

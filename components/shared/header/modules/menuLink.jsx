@@ -7,27 +7,27 @@ const MenuLink = ({ router }) => {
     const pathName = router.pathname
     const UseRouter =  useRouter()
 
-    let {t} = useTranslation()
+    const {t} = useTranslation("navbar")
 
     const link = [
         {
-            name : `${t("common:Product Gallery")}`,
+            name : `${t("Product Gallery")}`,
             path : '/products'
         },
         {
-            name : 'About Us',
+            name : `${t("About Us")}`,
             path : '/aboutus'
         },
         {
-            name : 'Contact Us',
+            name : `${t("Contact Us")}`,
             path : '/contactus'
         },
         {
-            name : 'FAQ',
+            name : `${t("FAQ")}`,
             path : '/faq'
         },
         {
-            name : 'Terms & Conditions',
+            name : `${t("Terms & Conditions")}`,
             path : '/term'
         },
     ]

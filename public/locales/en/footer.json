@@ -1,3 +1,6 @@
 {
-  "description": "This is a non-page component that requires its own namespace"
+  "Phone": "Phone",
+  "NEWSLETTER": "NEWSLETTER",
+  "Subscribe for receiving the lastest update": "Subscribe for receiving the lastest update",
+  "Subcribe" : "Subcribe"
 }

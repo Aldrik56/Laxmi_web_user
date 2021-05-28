@@ -19,19 +19,18 @@ import Footer from '../components/shared/footer/footerDefault';
 function MyApp({ router, Component, pageProps }) {
   const pathName = router.pathname
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
         <Layout>
-          <Header />
-          <Component {...pageProps} />
-          {
-            !pathName.includes('login') ? 
-            <Footer /> : null
-          }
+          <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+              <Header />
+              <Component {...pageProps} />
+              {
+                !pathName.includes('login') ? 
+                <Footer /> : null
+              }
+            </PersistGate>      
+          </Provider>
         </Layout>            
-      </PersistGate>      
-    </Provider>
-
   ) 
 }
 

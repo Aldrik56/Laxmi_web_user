@@ -35,7 +35,7 @@ const Register = ()=> {
                         <div className="col-9">
                             <FormRegister />
                             <hr />
-                            <p className="text-center link">{t("have an account")} ? <Link href="/login"><a>{t("Title")}</a></Link></p>                            
+                            <p className="text-center link">{t("have an account")} ? <strong><Link href="/login"><a>{t("Title")}</a></Link></strong></p>                            
                         </div>
                     </div>
                 </div>

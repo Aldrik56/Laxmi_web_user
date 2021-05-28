@@ -19,6 +19,11 @@
         font-weight: normal;
         font-size: 14px;
     }
+    .dropdown-item{
+        &:active{
+            background-color : $color-primary !important
+        }
+    }
 }
 .dropdown-language{
     .language-menu{
@@ -30,6 +35,7 @@
             cursor: pointer;
         }
     }
+
 }
 .dropdown-account{
     a{
@@ -65,15 +71,25 @@
     }
 }
 
+// form
 form{
     .form-control{
         border: 1px solid $color-primary !important;
         border-radius: 4px;
         height: 45px;
     }
+    .form-control-danger{
+        border: 1px solid $color-danger !important;
+        border-radius: 4px;
+        height: 45px;
+    }
     .form-group{
         margin-top: 12px;
         margin-bottom: 12px;
+        span{
+            font-size: 12px;
+            line-height: 18px;        
+        }
     }
     button{
         margin-top: 24px;
@@ -87,4 +103,43 @@ form{
     padding-right: 10px;
     padding-top: 10px;
     cursor: pointer;
+}
+
+// swal
+.swal-modal{
+    color: $color-primary;
+    .swal-icon--success__line{
+        background-color: $color-primary;
+    }
+    .swal-icon--success__ring{
+        border: 4px solid $color-primary;
+    }
+    .swal-title{
+        color: $color-primary;
+        font-style: normal;
+        font-size: 24px;
+    }
+    .swal-text{
+        color: $color-primary;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.0015em;
+    }
+    .swal-icon--warning__body, .swal-icon--warning__dot{
+        background-color : $color-primary
+    }
+    .swal-icon--warning{
+        border-color: $color-primary !important
+    }
+    .swal-footer{
+        text-align: center;
+        .swal-button{
+            background-color: $color-primary ;
+        }
+        .swal-button--cancel{
+            background-color: #FFFFFF;
+            border: 1px solid $color-primary;
+        }
+    }
 }

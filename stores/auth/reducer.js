@@ -9,7 +9,7 @@ import {
 const initialState = {
     isLogin: false,
     isLoading : false,
-    dataUser: null,
+    data: null,
     error: '',
 }
 
@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
             return {
                 isLoading : false,
                 isLogin : true,
-                dataUser: action.payload,
+                data: action.payload,
                 error: '',
             }
         case LOGIN_FAILURE :
@@ -37,14 +37,12 @@ const reducer = (state = initialState, action) => {
             return {
                 isLogin: false,
                 isLoading : false,
-                dataUser: null,
+                data: null,
                 error: ''
             }    
         case ENTER_PAGE :
             return {
-                isLogin: false,
-                isLoading : false,
-                dataUser: null,
+                ...state,
                 error: ''
             }                    
         default : return state              

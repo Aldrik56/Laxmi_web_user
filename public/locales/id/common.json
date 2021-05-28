@@ -1,3 +1,12 @@
 {
-    "Home" : "Beranda"
+    "Home":"Beranda",
+    "Email" : "Email",
+    "Enter Email" : "Masukan Email",
+    "Password" : "Kata Sandi",
+    "Login" : "Masuk",
+    "Forgot Password" : "Lupa Kata Sandi",
+    "Create Account" : "Buat Akun",
+    "Access your account" : "Akses akun kamu",
+    "cannot be empty" : "tidak boleh kosong",
+    "wrong format" : "format salah"
 }

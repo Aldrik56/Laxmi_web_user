@@ -37,5 +37,29 @@
     }
      .navbar-toggler{
          border: 0px !important;
-     }   
+     } 
+     .dropdown-menu{
+         .dropdown-item{
+             cursor: pointer;
+         }
+     }  
+     .dropdown-account{
+         margin-top: 30px !important;
+        form{
+            button{
+                margin-top: 8px;
+            }
+        }
+        .link{
+            margin-top: 8px;
+            cursor: pointer;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .alert-danger{
+            font-size: 12px;
+            text-align: center;
+        }
+     }
 }

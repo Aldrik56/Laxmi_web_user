@@ -34,6 +34,10 @@ hr {
   font-weight: bold;
 }
 
+.text-danger {
+  color: #B81C23 !important;
+}
+
 .btn-light {
   font-weight: bold;
   background-color: #FFFFFF;
@@ -59,6 +63,14 @@ hr {
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
+  color: #1E1E22;
+}
+
+.value {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
   color: #1E1E22;
 }
 
@@ -142,6 +154,31 @@ input[type=number]:focus,
   border: 0px !important;
 }
 
+.navbar .dropdown-menu .dropdown-item {
+  cursor: pointer;
+}
+
+.navbar .dropdown-account {
+  margin-top: 30px !important;
+}
+
+.navbar .dropdown-account form button {
+  margin-top: 8px;
+}
+
+.navbar .dropdown-account .link {
+  margin-top: 8px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar .dropdown-account .alert-danger {
+  font-size: 12px;
+  text-align: center;
+}
+
 footer {
   color: white;
   background-color: #1E1E22;
@@ -214,6 +251,10 @@ footer .input-newsletter .btn-primary {
   font-size: 14px;
 }
 
+.dropdown-container .dropdown-item:active {
+  background-color: #1E1E22 !important;
+}
+
 .dropdown-language .language-menu .active {
   background-color: #F5F5F5;
   cursor: auto !important;
@@ -264,9 +305,20 @@ form .form-control {
   height: 45px;
 }
 
+form .form-control-danger {
+  border: 1px solid #B81C23 !important;
+  border-radius: 4px;
+  height: 45px;
+}
+
 form .form-group {
   margin-top: 12px;
   margin-bottom: 12px;
+}
+
+form .form-group span {
+  font-size: 12px;
+  line-height: 18px;
 }
 
 form button {
@@ -280,6 +332,53 @@ form button {
   padding-right: 10px;
   padding-top: 10px;
   cursor: pointer;
+}
+
+.swal-modal {
+  color: #1E1E22;
+}
+
+.swal-modal .swal-icon--success__line {
+  background-color: #1E1E22;
+}
+
+.swal-modal .swal-icon--success__ring {
+  border: 4px solid #1E1E22;
+}
+
+.swal-modal .swal-title {
+  color: #1E1E22;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.swal-modal .swal-text {
+  color: #1E1E22;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.0015em;
+}
+
+.swal-modal .swal-icon--warning__body, .swal-modal .swal-icon--warning__dot {
+  background-color: #1E1E22;
+}
+
+.swal-modal .swal-icon--warning {
+  border-color: #1E1E22 !important;
+}
+
+.swal-modal .swal-footer {
+  text-align: center;
+}
+
+.swal-modal .swal-footer .swal-button {
+  background-color: #1E1E22;
+}
+
+.swal-modal .swal-footer .swal-button--cancel {
+  background-color: #FFFFFF;
+  border: 1px solid #1E1E22;
 }
 
 @media only screen and (max-width: 576px) {
@@ -300,6 +399,10 @@ form button {
 
 .forgot-password .link a {
   font-weight: bold;
+}
+
+.forgot-password .btn-primary {
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 992px) {

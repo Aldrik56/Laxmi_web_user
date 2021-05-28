@@ -27,6 +27,9 @@ hr{
     border-radius: 8px;
     font-weight: bold;
 }
+.text-danger {
+    color: $color-danger !important;
+}
 .btn-light{
     font-weight: bold;
     background-color: #FFFFFF;
@@ -49,6 +52,13 @@ hr{
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
+    color: $color-primary;
+}
+.value{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
     color: $color-primary;
 }
 a{

@@ -7,6 +7,9 @@ import BreadCrumb from '../../../components/elements/breadcrumb'
 // partials
 import FormRegister from '../../../components/partials/register/formRegister'
 
+// layout
+import withAuth from '../../../components/layouts/withAuth';
+
 
 const Register = ()=> {
     const {t} = useTranslation("login")
@@ -44,4 +47,4 @@ const Register = ()=> {
     )
 }
 
-export default Register
+export default withAuth(Register,'auth')

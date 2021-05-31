@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 // module
 import MenuLink from './modules/menuLink'
@@ -11,10 +12,11 @@ const HeaderDefault = () => {
                 <div className="container-fluid d-flex">
                     <div className="order-0">
                         <Link href='/'>
-                            <img 
+                            <Image 
                                 src="/img/logo.png" 
                                 alt="laxmi tailer"
-                                className="logo" />                        
+                                width={60}
+                                height={52} />                        
                         </Link>
                     </div>
                     <div className=" order-lg-2">

@@ -7,6 +7,7 @@ module.exports = {
         "/login/forgotpassword" :["login"],
         "/login/register" :["login"],
         "/login/forgotpassword/[id]" :["login"],
+        "/" :["home"]
 
     },
     "loadLocaleFrom": (lang, ns) =>

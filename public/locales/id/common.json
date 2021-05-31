@@ -8,5 +8,8 @@
     "Create Account" : "Buat Akun",
     "Access your account" : "Akses akun kamu",
     "cannot be empty" : "tidak boleh kosong",
-    "wrong format" : "format salah"
+    "wrong format" : "format salah",
+    "Stock" : "Stok",
+    "There are no products yet" : "Belum ada produk tersedia",
+    "There are no testimoni yet" : "Belum ada testimoni"
 }

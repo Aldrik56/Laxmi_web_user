@@ -49,6 +49,7 @@ export const loginFailure = error => {
     }
 }
 export const logout = () => {
+    Cookies.remove('laxmi-auth');
     return {
         type: LOGOUT
     }
@@ -65,12 +66,12 @@ export const registerAction = form => {
       .then(response => {
         return response.data    
     })
-      .catch(error => {
-        return {
-          status : false,
-          message : error.message
-        }
-      })
+    .catch(error => {
+      return {
+        status : false,
+        message : error.message
+      }
+    })
 }
 
 export const forgotAction1 = form => {

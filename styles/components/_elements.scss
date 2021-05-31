@@ -52,6 +52,7 @@
 
 // breadcrumb
 .breadcrumb{
+    margin-top: 30px;
     p{
         cursor: pointer;
         font-size: 14px;
@@ -141,5 +142,82 @@ form{
             background-color: #FFFFFF;
             border: 1px solid $color-primary;
         }
+    }
+}
+
+// modal
+#modalPromotion{
+    top : 10% !important ;
+    // img{
+    //     max-width: 650px;
+    //     max-height: 550px;
+    // }
+    .icon-close{
+        position: absolute;
+        cursor: pointer;
+        right: 0;
+    }
+}
+
+// banner
+.banner{
+    height: 450px ;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    @media only screen and (max-width: $sm) {
+        height: 350px ;
+        margin: 0;
+        padding: 0;
+    }
+    .container-fluid {
+        margin-left: 150px;
+        @media only screen and (max-width: $md) {
+            margin-left: 0;          
+        }
+    }
+    .text{
+        width: 476px;
+        @media only screen and (max-width: $sm) {
+            width: auto;
+        }
+    }
+    .title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 60px;
+        line-height: 70px;
+        @media only screen and (max-width: $sm) {
+            font-size: 35px;
+            line-height: 40px;
+        }
+    }
+    .desc-banner{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 56px;
+        @media only screen and (max-width: $sm) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+    .btn-light{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        border-radius: 50px !important;
+        height: 43px;
+    }
+}
+
+// heading
+.head{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    @media only screen and (max-width: $sm) {
+        font-size: 34px;
     }
 }

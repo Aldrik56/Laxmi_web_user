@@ -8,5 +8,8 @@
     "Create Account" : "Create Account",
     "Access your account" : "Access your account",
     "cannot be empty" : "cannot be empty",
-    "wrong format" : "wrong format"
+    "wrong format" : "wrong format",
+    "Stock" : "Stock",
+    "There are no products yet" : "There are no products yet",
+    "There are no testimoni yet" : "There are no testimoni yet"
 }

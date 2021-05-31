@@ -7,6 +7,9 @@ import BreadCrumb from '../../../components/elements/breadcrumb'
 // partials
 import FormChangePassword from '../../../components/partials/forgotPassword/formChangePassword'
 
+// layout
+import withAuth from '../../../components/layouts/withAuth';
+
 
 const ForgotPassword = ()=> {
     const {t} = useTranslation("login")
@@ -42,4 +45,4 @@ const ForgotPassword = ()=> {
     )
 }
 
-export default ForgotPassword
+export default withAuth(ForgotPassword,'auth')

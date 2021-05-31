@@ -10,6 +10,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^9.0.2",
+    "js-cookie": "^2.2.1",
+    "js-number-formatter": "^1.0.1",
     "next": "10.2.0",
     "next-translate": "^1.0.7",
     "react": "17.0.2",

@@ -1,12 +1,14 @@
-import {Language,AccountCircle,ShoppingBag} from '../../../elements/icon';
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation';
 
 import React, { useState,useEffect } from 'react';
 
+import Cookies from 'js-cookie';
 
 // redux
+import {Language,AccountCircle,ShoppingBag} from '../../../elements/icon';
 import { connect } from 'react-redux'
 import {logout,loginAction,enterPage} from '../../../../stores';
 
@@ -18,21 +20,22 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
     const [isShowAccount, setIsShowAccount] = useState(false);
     const [form,setForm] = useState({})
     const [error,setError] = useState({})
+    const UseRouter =  useRouter()
+    let {t} = useTranslation("navbar")
 
     useEffect(() => {
         enterPage()
         setError({})
+        Cookies.set('next-i18next', UseRouter.locale);
     },[isShowAccount]);    
 
-    const UseRouter =  useRouter()
-    let {t} = useTranslation("navbar")
 
     // handle
     const handleSubmit = e => {
         e.preventDefault()
         if(form.email){
             if(form.password){
-                loginAction(form)
+                loginAction(form,UseRouter)
                 setError({})
             }else{
                 setError({
@@ -53,7 +56,9 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
             [id] : value
         })
     }
-
+    const handleChangeLanguage = locale=> {
+        Cookies.set('next-i18next',locale);
+    }
 
     return (
         <div className="d-flex flex-row">
@@ -72,11 +77,14 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
                                 <Link href={UseRouter.asPath} locale={locale} key={index}>
                                     <div 
                                         key={index} 
+                                        onClick={() => handleChangeLanguage(locale)}
                                         className={`language-menu-list px-5 d-flex flex-row align-items-center ${locale === UseRouter.locale ? 'active' : ''} py-2`}>
-                                        <img 
+                                        <Image 
+                                            height={26}
+                                            width={34}
                                             src={`/img/icon/${locale === 'en' ? 'UK' : 'ID'}_flag.png`} 
-                                            alt="laxmi tailer"
-                                            className="flag-icon mr-3" />
+                                            alt="laxmi tailer" 
+                                            />
                                         <h6 className="my-0 ml-3">{locale === 'en' ? `${t("English")}` : `${t("Indonesian")}`}</h6>                                        
                                     </div>    
                                 </Link>
@@ -159,7 +167,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         logout : () => dispatch(logout()),
-        loginAction: form => dispatch(loginAction(form)),
+        loginAction: (form,router) => dispatch(loginAction(form,router)),
         enterPage : () => dispatch(enterPage())
     }
 }

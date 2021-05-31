@@ -35,8 +35,55 @@ export const RemovedRedEye = ({width,height,color}) => {
     let heightValue = height ? height : 25 
     let colorValue = color ? color : '#131920' 
     return (
-        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${width} ${height}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
             <path d="M12.9005 5.1875C7.85873 5.1875 3.55305 8.2975 1.80859 12.6875C3.55305 17.0775 7.85873 20.1875 12.9005 20.1875C17.9423 20.1875 22.248 17.0775 23.9924 12.6875C22.248 8.2975 17.9423 5.1875 12.9005 5.1875ZM12.9005 17.6875C10.1175 17.6875 7.85873 15.4475 7.85873 12.6875C7.85873 9.9275 10.1175 7.6875 12.9005 7.6875C15.6836 7.6875 17.9423 9.9275 17.9423 12.6875C17.9423 15.4475 15.6836 17.6875 12.9005 17.6875ZM12.9005 9.6875C11.2266 9.6875 9.87545 11.0275 9.87545 12.6875C9.87545 14.3475 11.2266 15.6875 12.9005 15.6875C14.5744 15.6875 15.9256 14.3475 15.9256 12.6875C15.9256 11.0275 14.5744 9.6875 12.9005 9.6875Z" />
         </svg>
     )    
 }
+
+export const Close = ({width,height,color}) => {
+    let widthValue = width ? width : 42 
+    let heightValue = height ? height : 42 
+    let colorValue = color ? color : '#F5F5F5' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M33.25 11.2175L30.7825 8.75L21 18.5325L11.2175 8.75L8.75 11.2175L18.5325 21L8.75 30.7825L11.2175 33.25L21 23.4675L30.7825 33.25L33.25 30.7825L23.4675 21L33.25 11.2175Z" />
+        </svg>
+    )    
+}
+
+export const Stock = ({width,height,color}) => {
+    let widthValue = width ? width : 42 
+    let heightValue = height ? height : 42 
+    let colorValue = color ? color : '#323232' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 9V0H6V9H0V19.5H24V9H18ZM10.5 18H1.5V10.5H4.5V12H7.5V10.5H10.5V18ZM7.5 9V1.5H10.5V3H13.5V1.5H16.5V9H7.5ZM22.5 18H13.5V10.5H16.5V12H19.5V10.5H22.5V18Z" fill={colorValue}/>
+            <path d="M0 24H4.5V22.5H19.5V24H24V21H0V24Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const ChevronLeft = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5388 7.41L14.117 6L8.06689 12L14.117 18L15.5388 16.59L10.9205 12L15.5388 7.41Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+
+export const ChevronRight = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.0836 6L8.6618 7.41L13.2801 12L8.6618 16.59L10.0836 18L16.1337 12L10.0836 6Z" fill={colorValue} />
+        </svg>
+    )    
+}
+

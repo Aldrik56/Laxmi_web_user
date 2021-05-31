@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation';
 
 const FooterDefault = () => {
@@ -59,10 +60,14 @@ const FooterDefault = () => {
                         <p>Email: sales@laxmitailors.com</p>
                     </div>
                     <div className="col-12 col-lg-3 mt-4">
-                        <img 
-                            className="mb-3"
-                            src="/img/footer.png" 
-                            alt="laxmi taylor" />
+                        <div className="mb-3">
+                            <Image
+                                src="/img/footer.png"
+                                alt="Laxmi"
+                                width={119}
+                                height={70}
+                                />
+                        </div>
                         <h5>PACIFIC PLACE</h5>
                         <p>Pondok Indah Mall 2, 2nd Floor Unit 241A Jakarta Selatan Indonesia</p>
                         <p>{t("Phone")} : +6221 75920426</p>

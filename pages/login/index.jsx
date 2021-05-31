@@ -6,6 +6,9 @@ import BreadCrumb from '../../components/elements/breadcrumb'
 // partials
 import FormLogin from '../../components/partials/login/formLogin'
 
+// layout
+import withAuth from '../../components/layouts/withAuth';
+
 const Login = () => {
     const {t} = useTranslation("login")
 
@@ -30,4 +33,4 @@ const Login = () => {
     )
 }
 
-export default Login ;
+export default withAuth(Login,'auth') ;

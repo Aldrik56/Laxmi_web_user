@@ -58,6 +58,7 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
     }
     const handleChangeLanguage = locale=> {
         Cookies.set('next-i18next',locale);
+        setTimeout(function(){ window.location.reload() }, 500);
     }
 
     return (

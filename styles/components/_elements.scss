@@ -79,6 +79,9 @@ form{
         border-radius: 4px;
         height: 45px;
     }
+    .text-area{
+        height: 133px;
+    }
     .form-control-danger{
         border: 1px solid $color-danger !important;
         border-radius: 4px;
@@ -109,9 +112,6 @@ form{
 // swal
 .swal-modal{
     color: $color-primary;
-    .swal-icon--success__line{
-        background-color: $color-primary;
-    }
     .swal-icon--success__ring{
         border: 4px solid $color-primary;
     }
@@ -127,10 +127,13 @@ form{
         text-align: center;
         letter-spacing: 0.0015em;
     }
-    .swal-icon--warning__body, .swal-icon--warning__dot{
-        background-color : $color-primary
+    .swal-icon--warning__body
+    , .swal-icon--warning__dot
+    ,.swal-icon--error__line
+    , .swal-icon--success__line{
+        background-color : $color-primary !important
     }
-    .swal-icon--warning{
+    .swal-icon--warning,.swal-icon--error{
         border-color: $color-primary !important
     }
     .swal-footer{
@@ -220,4 +223,63 @@ form{
     @media only screen and (max-width: $sm) {
         font-size: 34px;
     }
+}
+
+// pagination
+.pagination{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    li{
+        // width: 24px;
+        // height: 24px;
+        margin: 4px;
+        text-align: center;
+        border-radius: 3px;
+        padding: 2px 7px 2px 7px;
+        border: 1px solid #E0E0E0;
+        a{
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;            
+            color : $color-primary ;
+            box-sizing: border-box;
+            border-radius: 4px;           
+             &:focus{
+                outline: 0px !important;
+            }
+        }
+    }
+    .active{
+        border: 1px solid #1E1E22;
+    }
+}
+
+// loading
+.loader{
+    margin: auto;
+    border: 13px solid #f3f3f3; /* Light grey */
+    border-top: 13px solid $color-primary; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sub-heading{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
 }

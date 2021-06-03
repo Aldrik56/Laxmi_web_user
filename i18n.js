@@ -7,8 +7,9 @@ module.exports = {
         "/login/forgotpassword" :["login"],
         "/login/register" :["login"],
         "/login/forgotpassword/[id]" :["login"],
-        "/" :["home"]
-
+        "/" :["home"],
+        "/aboutus" :["aboutus"],
+        "/contactus" :["contactus"]
     },
     "loadLocaleFrom": (lang, ns) =>
     import(`./public/locales/${lang}/${ns}.json`).then((m) => m.default)

@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import Image from 'next/image'
+import Link from 'next/link'
 
 // helper
 import Axios from '../../../helpers/axiosConfig'
@@ -10,24 +11,22 @@ import {ChevronLeft,ChevronRight} from '../../elements/icon';
 
 const Testimonies = ({t}) => {
     const [data,setData] = useState(null)
+    const [error,setError] = useState(null)
+
     useEffect(() => {
         Axios.get(`/home/testimonies`)
         .then(response => {
-            const {data,status} = response.data
+            const {data,status,message} = response.data
             if(status){
                 setData(data)
             }else{
-                setData([])
+                setError(message)
             }
         })
         .catch(error => {
-            setData([])
-            return {
-                status : false,
-                message : error.message
-            }
+            setError(error.message)
         })      
-    },[data]);    
+    },[]);    
     
     return(
         <div className="testimonies pt-5">
@@ -56,7 +55,22 @@ const Testimonies = ({t}) => {
                                 {
                                     data.map((data,index) => (
                                         <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                                            <div className="rectangle"></div>
+                                            <div className="quotes-mark-left">
+                                                <Image
+                                                    src="/img/icon/quotes-mark-left.svg"
+                                                    alt="Laxmi"
+                                                    width={87}
+                                                    height={87}
+                                                    />
+                                            </div>
+                                            <div className="quotes-mark-right">
+                                                <Image
+                                                    src="/img/icon/quotes-mark-right.svg"
+                                                    alt="Laxmi"
+                                                    width={87}
+                                                    height={87}
+                                                    />
+                                            </div>
                                             <div className="row rectangle">
                                                 <div className="col-12 col-lg-8 order-1 order-lg-0">
                                                     <p className="review">{data.description}</p>
@@ -70,7 +84,6 @@ const Testimonies = ({t}) => {
                                                         objectFit="cover"
                                                         src={data.image}
                                                         alt="laxmi"
-                                                        res
                                                         className="rounded-circle" />
                                                 </div>
                                                 </div>
@@ -88,14 +101,16 @@ const Testimonies = ({t}) => {
                         </button>
                     </div>
                     <div className="d-flex justify-content-center mt-5">
-                        <button 
-                            type="button" 
-                            className="btn btn-primary btn-lg py-3">{t('SEE ALL REVIEWS')}</button>
+                        <Link href='/testimonies'>
+                            <a className="btn btn-primary btn-lg py-3">{t('SEE ALL REVIEWS')}</a>
+                        </Link>
                     </div>                    
                     </> : 
                     <p className="text-center">{t('common:There are no testimoni yet')}</p>                    
                     :
-                    <p className="text-center">Loading</p>                    
+                    error ?
+                    <p className="text-center">{error}</p> : 
+                    <div className="loader"></div>
                 }              
         </div>
     )

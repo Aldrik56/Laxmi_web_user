@@ -49,7 +49,6 @@ export const loginFailure = error => {
     }
 }
 export const logout = () => {
-    Cookies.remove('laxmi-auth');
     return {
         type: LOGOUT
     }

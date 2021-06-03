@@ -87,3 +87,113 @@ export const ChevronRight = ({width,height,color}) => {
     )    
 }
 
+export const Favorite = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#323232' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const FavoriteBorder = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#323232' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.5 3C14.76 3 13.09 3.81 12 5.09C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.42 2 8.5C2 12.28 5.4 15.36 10.55 20.04L12 21.35L13.45 20.03C18.6 15.36 22 12.28 22 8.5C22 5.42 19.58 3 16.5 3ZM12.1 18.55L12 18.65L11.9 18.55C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5C9.04 5 10.54 5.99 11.07 7.36H12.94C13.46 5.99 14.96 5 16.5 5C18.5 5 20 6.5 20 8.5C20 11.39 16.86 14.24 12.1 18.55Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const ArrowRight = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#131920' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1095 11.5932C22.1055 11.5822 22.1055 11.5712 22.1005 11.5602C22.1005 11.5582 22.1005 11.5572 22.0995 11.5552C22.0395 11.4132 21.9515 11.2932 21.8495 11.1852C21.8385 11.1732 21.8345 11.1582 21.8235 11.1462L14.1755 3.56822C13.9265 3.32222 13.6005 3.19922 13.2745 3.19922C12.9485 3.19922 12.6235 3.32222 12.3745 3.56822C11.8765 4.06122 11.8765 4.85922 12.3745 5.35222L17.8485 10.7772H3.08355C2.37955 10.7772 1.81055 11.3412 1.81055 12.0392C1.81055 12.7352 2.37955 13.3002 3.08355 13.3002H17.8475L12.3735 18.7522C11.8755 19.2442 11.8755 20.0432 12.3735 20.5352C12.8705 21.0282 13.6775 21.0282 14.1755 20.5352L21.8235 12.9312C21.9335 12.8222 22.0125 12.6932 22.0745 12.5572C22.0945 12.5152 22.1055 12.4742 22.1195 12.4322C22.1535 12.3302 22.1745 12.2282 22.1815 12.1202C22.1845 12.0762 22.1905 12.0352 22.1885 11.9912C22.1835 11.8552 22.1595 11.7232 22.1095 11.5932Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const ArrowLeft = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#131920' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7509 10.804H5.98691L11.4609 5.35197C11.9589 4.85997 11.9589 4.06097 11.4609 3.56897C10.9639 3.07597 10.1569 3.07597 9.65891 3.56897L2.01091 11.173C1.90091 11.282 1.82191 11.411 1.75991 11.547C1.73991 11.589 1.72891 11.63 1.71491 11.672C1.68091 11.774 1.65991 11.876 1.65291 11.984C1.64991 12.028 1.64391 12.069 1.64591 12.113C1.65091 12.248 1.67391 12.381 1.72391 12.51C1.72791 12.521 1.72791 12.532 1.73291 12.543C1.73291 12.545 1.73291 12.546 1.73391 12.548C1.79391 12.69 1.88191 12.81 1.98391 12.918C1.99491 12.93 1.99891 12.945 2.00991 12.957L9.65791 20.535C9.90691 20.781 10.2329 20.904 10.5589 20.904C10.8849 20.904 11.2099 20.781 11.4589 20.535C11.9569 20.042 11.9569 19.244 11.4589 18.751L5.98491 13.326H20.7489C21.4529 13.326 22.0219 12.762 22.0219 12.064C22.0239 11.369 21.4549 10.804 20.7509 10.804Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const StarRate = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.5506 10L12.1003 2L9.64998 10H2.01672L8.24836 14.41L5.87872 22L12.1003 17.31L18.3319 22L15.9623 14.41L22.1838 10H14.5506Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const StarRateHalf = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.2727 10.1464L14.381 10.5H14.7508H20.814L15.8733 14.0021L15.5769 14.2122L15.6852 14.559L17.5921 20.6667L12.6011 16.9105L12.3002 16.684L11.9995 16.9107L7.01959 20.6647L8.92583 14.559L9.03419 14.2119L8.73738 14.0019L3.789 10.5H9.85016H10.2199L10.3282 10.1464L12.3005 3.7073L14.2727 10.1464Z" stroke={colorValue}/>
+            <path d="M9 14L4.5 10.5H10L12.5 3.5V17L7 21L9 14Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const StarRateEmpty = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.2727 10.1464L14.381 10.5H14.7508H20.814L15.8733 14.0021L15.5769 14.2122L15.6852 14.559L17.5921 20.6667L12.6012 16.9105L12.3002 16.684L11.9995 16.9107L7.0196 20.6647L8.92584 14.559L9.03421 14.2119L8.73739 14.0019L3.78901 10.5H9.85018H10.22L10.3283 10.1464L12.3005 3.7073L14.2727 10.1464Z" stroke={colorValue}/>
+        </svg>
+    )    
+}
+
+export const Phone = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.67532 10.79C8.12735 13.62 10.4667 15.93 13.3204 17.38L15.5388 15.18C15.811 14.91 16.2144 14.82 16.5673 14.94C17.6967 15.31 18.9168 15.51 20.1671 15.51C20.7217 15.51 21.1755 15.96 21.1755 16.51V20C21.1755 20.55 20.7217 21 20.1671 21C10.6987 21 3.02507 13.39 3.02507 4C3.02507 3.45 3.47883 3 4.03343 3H7.56267C8.11727 3 8.57103 3.45 8.57103 4C8.57103 5.25 8.7727 6.45 9.14579 7.57C9.25671 7.92 9.17604 8.31 8.8937 8.59L6.67532 10.79Z" fill={colorValue} />
+        </svg>
+    )    
+}
+
+export const Email = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.1671 4H4.03343C2.92423 4 2.0268 4.9 2.0268 6L2.01671 18C2.01671 19.1 2.92423 20 4.03343 20H20.1671C21.2763 20 22.1838 19.1 22.1838 18V6C22.1838 4.9 21.2763 4 20.1671 4ZM20.1671 8L12.1003 13L4.03343 8V6L12.1003 11L20.1671 6V8Z" fill={colorValue} />
+        </svg>
+    )    
+}
+
+export const LocationOn = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1003 2C8.19794 2 5.04178 5.13 5.04178 9C5.04178 14.25 12.1003 22 12.1003 22C12.1003 22 19.1588 14.25 19.1588 9C19.1588 5.13 16.0026 2 12.1003 2ZM12.1003 11.5C10.7087 11.5 9.57939 10.38 9.57939 9C9.57939 7.62 10.7087 6.5 12.1003 6.5C13.4918 6.5 14.6212 7.62 14.6212 9C14.6212 10.38 13.4918 11.5 12.1003 11.5Z" fill={colorValue} />
+        </svg>
+    )    
+}

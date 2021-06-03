@@ -28,7 +28,7 @@ const MenuLink = ({ router }) => {
         },
         {
             name : `${t("Terms & Conditions")}`,
-            path : '/term'
+            path : '/termcondition'
         },
     ]
     return (

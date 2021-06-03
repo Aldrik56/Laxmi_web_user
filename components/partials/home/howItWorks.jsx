@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 // elements
 import Heading from '../../elements/heading'
@@ -40,9 +41,9 @@ const HowItWorks = ({t}) => {
                 </div>
             </div>
             <div className="d-flex justify-content-center">
-                <button 
-                    type="button" 
-                    className="btn btn-primary btn-lg py-3">{t('LEARN MORE')}</button>
+                <Link href='/howitworks'>
+                    <a className="btn btn-primary btn-lg py-3">{t('LEARN MORE')}</a>
+                </Link>
             </div>
         </div>
     )

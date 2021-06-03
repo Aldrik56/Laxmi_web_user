@@ -1,8 +1,54 @@
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation';
+import React, { useState,useEffect } from 'react';
+
+// helper
+import Axios from '../../../helpers/axiosConfig'
+
+import swal from 'sweetalert';
 
 const FooterDefault = () => {
+    const [form,setForm] = useState({})    
+    const [loading,setLoading] = useState(false)    
+
     const {t} = useTranslation("footer")
+    
+    const handleSubmit = e => {
+        setLoading(true)
+        e.preventDefault()
+        Axios
+        .post('/web_info/subscribe',form)
+        .then(response => {
+            const {status,message} = response.data;
+            if(status) {
+                setLoading(false)
+                swal(
+                    `${t("Thank You")}`, 
+                    `${t("Your subscription has been confirmed")}. ${t("You've been added to our list and will hear from us soon")}.`, "success")
+
+            }else{
+                setLoading(false)
+                swal(
+                    `${t("common:Failed")}`, 
+                    `${message}`, "error")
+            }
+        })
+        .catch(error => {
+            setLoading(false)
+            swal(
+                `${t("common:Failed")}`, 
+                `${error.message}`, "error")            
+        })
+    }    
+    
+    const handleChange = e => {
+        const {value,id} = e.target
+
+        setForm({
+            ...form,
+            [id] : value
+        })
+    }
 
     return(
         <footer>
@@ -33,17 +79,22 @@ const FooterDefault = () => {
                         <h5>{t("NEWSLETTER")}</h5>
                         <p>{t("Subscribe for receiving the lastest update")}</p>
                         <div className="input-newsletter">
-                            <label htmlFor="email">Email</label>
-                            <div className="d-flex flex-row">
-                                <input 
-                                    type="email" 
-                                    className="form-control" 
-                                    id="email" 
-                                    placeholder="me@example.com" />
-                                <button 
-                                    type="submit" 
-                                    className="btn btn-primary">{t("Subcribe")}</button>                                                   
-                            </div>
+                            <form onSubmit={handleSubmit}>
+                                <label htmlFor="email">Email</label>
+                                <div className="d-flex flex-row">
+                                    <input 
+                                        onChange={handleChange}                                    
+                                        type="email" 
+                                        className="form-control" 
+                                        id="email" 
+                                        placeholder="me@example.com"
+                                        required />
+                                    <button 
+                                        disabled={loading}
+                                        type="submit" 
+                                        className="btn btn-primary">{loading ? 'Loading' :  t("Subcribe")}</button>                                                   
+                                </div>                                
+                            </form>
                         </div>
                     </div>
                     <div className="col-12 col-lg-3 mt-4">

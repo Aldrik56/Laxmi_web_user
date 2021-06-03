@@ -9,25 +9,22 @@ import Product from '../../elements/product/productHome'
 
 const SomeProduct = ({t}) => {
     const [data,setData] = useState(null)
+    const [error,setError] = useState(null)
 
     useEffect(() => {
         Axios.get(`/home/products`)
         .then(response => {
-            const {data,status} = response.data
+            const {data,status,message} = response.data
             if(status){
                 setData(data)
             }else{
-                setData([])
+                setError(message)
             }
         })
         .catch(error => {
-            setData([])
-            return {
-                status : false,
-                message : error.message
-            }
+            setError(error.message)
         })      
-    },[data]);
+    },[]);
 
     return(
         <div className="someProduct pt-5">
@@ -51,7 +48,9 @@ const SomeProduct = ({t}) => {
                         </>
                         :
                         <p className="text-center">{t("common:There are no products yet")}</p> :
-                        <p className="text-center">Loading</p>
+                        error ?
+                        <p className="text-center">{error}</p> : 
+                        <div className="loader"></div>
                     }
                 </div>
             </div>

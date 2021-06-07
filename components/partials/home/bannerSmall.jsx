@@ -1,8 +1,15 @@
+import Image from 'next/image'
+
 const BannerSmall = ({t}) => {
     return(
         <div className="row mx-0">
-          <div className="col-12 col-lg-6 banner-sm banner1">
-            <div className="container my-4 text-white d-flex justify-content-end align-items-center h-100">
+          <div className="col-12 col-lg-6 banner-sm d-flex justify-content-end align-items-center">
+            <Image
+                layout="fill"
+                objectFit="cover"
+                src='/img/promotion/banner1.png'
+                alt="laxmi" />                
+            <div className="content my-4 text-white">
               <div>
               <h1 className="title text-end text-white">{t("NEW COLLECTION")}</h1>
               <p className="desc text-end text-white">{t("CHECK IT NOW !")}</p>
@@ -14,8 +21,13 @@ const BannerSmall = ({t}) => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-lg-6 banner-sm banner2">
-            <div className="container my-4 text-white d-flex justify-content-center align-items-center h-100">
+          <div className="col-12 col-lg-6 banner-sm d-flex justify-content-center align-items-center">
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src='/img/promotion/banner2.png'
+              alt="laxmi" />   
+            <div className=" content my-4 text-white ">
               <div>
               <h1 className="title text-center text-white ">{t("NEW COLLECTION")}</h1>
               <p className="desc text-center text-white">{t("CHECK IT NOW !")}</p>

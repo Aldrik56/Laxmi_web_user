@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import Link from 'next/link'
 
 // helper
 import Axios from '../../../helpers/axiosConfig'
@@ -41,9 +42,9 @@ const SomeProduct = ({t}) => {
                             ))       
                         }
                         <div className="d-flex justify-content-center mt-5">
-                            <button 
-                                type="button" 
-                                className="btn btn-primary btn-lg py-3">{t('SEE ALL PRODUCT')}</button>
+                            <Link href='/products'>
+                                <a className="btn btn-primary btn-lg py-3">{t('SEE ALL PRODUCT')}</a>
+                            </Link>
                         </div>                         
                         </>
                         :

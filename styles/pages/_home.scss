@@ -8,41 +8,50 @@
         letter-spacing: 0.04em;
     }
     .banner-sm{
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-size: cover; 
+        // background-position: center; 
+        // background-repeat: no-repeat; 
+        // background-size: cover; 
+        background-color: #343839;
+        position: relative;
         height: 320px;
-        backdrop-filter: blur(1px);
-        .title{
-            font-style: normal;
-            font-weight: bold;
-            font-size: 48px;
-            line-height: 56px;     
-            @media only screen and (max-width: $sm) {
-                font-size: 28px;
-                line-height: 30px;    
-            }       
-        }
-        .desc{
-            font-style: normal;
-            font-weight: normal;
-            font-size: 34px;
-            line-height: 40px;
-            @media only screen and (max-width: $sm) {
-                font-size: 22px;
-                line-height: 30px;    
-            }  
+        .content{
+            position: absolute;
+            z-index: 99;
+            // padding-right: 50px;
+            @media only screen and (max-width: $md) {
+                padding-right: 0px !important; 
+            } 
+            .title{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 48px;
+                line-height: 56px;     
+                @media only screen and (max-width: $sm) {
+                    font-size: 28px;
+                    line-height: 30px;    
+                }       
+            }
+            .desc{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 34px;
+                line-height: 40px;
+                @media only screen and (max-width: $sm) {
+                    font-size: 22px;
+                    line-height: 30px;    
+                }  
+            }
         }
         @media only screen and (max-width: $sm) {
             height: 220px;
         }
     }
-    .banner1{
-        background-image: url('/img/promotion/banner1.png');
-    }
-    .banner2{
-        background-image: url('/img/promotion/banner2.png');
-    }
+    // .banner1{
+    //     background-image: url('/img/promotion/banner1.png');
+    // }
+    // .banner2{
+    //     background-image: url('/img/promotion/banner2.png');
+    // }
     .howItWorks{
         .sub-title{
             font-style: normal;

@@ -46,7 +46,7 @@ const Testimonies = ({t}) => {
                                         data-bs-slide-to={index} 
                                         className={index === 0 ? 'active' : ''}
                                         aria-current="true" 
-                                        aria-label="Slide 1"></button>
+                                        aria-label={`Slide ${index}`}></button>
                                 ))
                             }
                         </div>
@@ -79,12 +79,15 @@ const Testimonies = ({t}) => {
                                                 </div>
                                                 <div className="col-12 col-lg-4 order-0 order-lg-1 container-img">
                                                 <div className="customer-img">
-                                                    <Image
-                                                        layout="fill"
-                                                        objectFit="cover"
-                                                        src={data.image}
-                                                        alt="laxmi"
-                                                        className="rounded-circle" />
+                                                    {
+                                                        data.image &&
+                                                        <Image
+                                                            layout="fill"
+                                                            objectFit="cover"
+                                                            src={data.image}
+                                                            alt="laxmi"
+                                                            className="rounded-circle" />
+                                                    }
                                                 </div>
                                                 </div>
                                             </div>

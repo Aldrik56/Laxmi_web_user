@@ -12,8 +12,8 @@ const BreadCrumb = ({path}) => {
                 </Link> 
             {
                 path.map((data,index) => (
-                    <span key={index}>
-                        <span className="mx-3" key={index}>/</span>
+                    <span className="link-container" key={index}>
+                        <span className="mx-3 link-splitter" key={index}>/</span>
                         <Link href={data.path} > 
                             <a className={`link ${path.length-1 === index ? 'active' : ''}`}>
                                 {data.name}

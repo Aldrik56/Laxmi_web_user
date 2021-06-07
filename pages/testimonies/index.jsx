@@ -11,7 +11,7 @@ const Testimonies = () => {
     const {t} = useTranslation("common")
 
     const pathBreadCumb = [{
-        'path' : '/login',
+        'path' : '/testimonies',
         'name' : `${t('Customer Reviews')}`
     }]
 

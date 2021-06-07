@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import Image from 'next/image'
+import Link from 'next/link'
 
 // elements
 import {Stock,Favorite,FavoriteBorder} from '../icon'
@@ -22,14 +23,14 @@ const Product = ({t,data}) => {
                             </div>: null
                         }                        
 
-                        <div className="cart-container" onClick={() => setIsCart(!isCart)}>
+                        {/* <div className="cart-container" onClick={() => setIsCart(!isCart)}>
                             {
                                 isCart ?
                                 <Favorite />
                                  :
                                 <FavoriteBorder />
                             }
-                        </div>
+                        </div> */}
                         <Image
                             width={332}
                             height={430} 
@@ -39,7 +40,9 @@ const Product = ({t,data}) => {
                             <span><Stock /></span> <h1> {t("common:Stock")} : {data.stocks}</h1>
                         </div>                              
                     </div>
-                    <p className="title">{data.title}</p>
+                    <Link href={`/products/${data.category}/${data._id}`}>
+                        <p className="title">{data.title}</p>
+                    </Link>
                     <p className="desc">{data.currency} {NumberFormat(data.price)}</p>                     
                 </div>
             </div>

@@ -55,7 +55,7 @@ export const Close = ({width,height,color}) => {
 export const Stock = ({width,height,color}) => {
     let widthValue = width ? width : 42 
     let heightValue = height ? height : 42 
-    let colorValue = color ? color : '#323232' 
+    let colorValue = color ? color : '#FFFFFF' 
     return (
         <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
             <path d="M18 9V0H6V9H0V19.5H24V9H18ZM10.5 18H1.5V10.5H4.5V12H7.5V10.5H10.5V18ZM7.5 9V1.5H10.5V3H13.5V1.5H16.5V9H7.5ZM22.5 18H13.5V10.5H16.5V12H19.5V10.5H22.5V18Z" fill={colorValue}/>
@@ -194,6 +194,51 @@ export const LocationOn = ({width,height,color}) => {
     return (
         <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
             <path d="M12.1003 2C8.19794 2 5.04178 5.13 5.04178 9C5.04178 14.25 12.1003 22 12.1003 22C12.1003 22 19.1588 14.25 19.1588 9C19.1588 5.13 16.0026 2 12.1003 2ZM12.1003 11.5C10.7087 11.5 9.57939 10.38 9.57939 9C9.57939 7.62 10.7087 6.5 12.1003 6.5C13.4918 6.5 14.6212 7.62 14.6212 9C14.6212 10.38 13.4918 11.5 12.1003 11.5Z" fill={colorValue} />
+        </svg>
+    )    
+}
+
+export const ZoomIn = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#424242' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.6298 14H14.8332L14.5509 13.73C15.5391 12.59 16.134 11.11 16.134 9.5C16.134 5.91 13.1997 3 9.57971 3C5.95971 3 3.02539 5.91 3.02539 9.5C3.02539 13.09 5.95971 16 9.57971 16C11.2032 16 12.6955 15.41 13.8451 14.43L14.1173 14.71V15.5L19.1591 20.49L20.6615 19L15.6298 14ZM9.57971 14C7.0689 14 5.0421 11.99 5.0421 9.5C5.0421 7.01 7.0689 5 9.57971 5C12.0905 5 14.1173 7.01 14.1173 9.5C14.1173 11.99 12.0905 14 9.57971 14Z" fill={colorValue} />
+            <path d="M12.1004 10H10.0837V12H9.07531V10H7.05859V9H9.07531V7H10.0837V9H12.1004V10Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const Share = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#424242' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.1507 16.08C17.3844 16.08 16.6987 16.38 16.1744 16.85L8.98478 12.7C9.0352 12.47 9.07553 12.24 9.07553 12C9.07553 11.76 9.0352 11.53 8.98478 11.3L16.0937 7.19C16.6382 7.69 17.3541 8 18.1507 8C19.8246 8 21.1758 6.66 21.1758 5C21.1758 3.34 19.8246 2 18.1507 2C16.4769 2 15.1257 3.34 15.1257 5C15.1257 5.24 15.166 5.47 15.2164 5.7L8.10751 9.81C7.56299 9.31 6.84706 9 6.05046 9C4.37659 9 3.02539 10.34 3.02539 12C3.02539 13.66 4.37659 15 6.05046 15C6.84706 15 7.56299 14.69 8.10751 14.19L15.287 18.35C15.2366 18.56 15.2063 18.78 15.2063 19C15.2063 20.61 16.5273 21.92 18.1507 21.92C19.7742 21.92 21.0951 20.61 21.0951 19C21.0951 17.39 19.7742 16.08 18.1507 16.08Z" fill={colorValue} />
+        </svg>
+    )    
+}
+
+export const AddShoppingCart = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#FFFFFF' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 9H13V6H16V4H13V1H11V4H8V6H11V9ZM7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18ZM7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L21.16 4.96L19.42 4H19.41L18.31 6L15.55 11H8.53L8.4 10.73L6.16 6L5.21 4L4.27 2H1V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.29 15 7.17 14.89 7.17 14.75Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const Edit = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#1E1E22' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 17.2486V20.9986H6.75L17.81 9.93859L14.06 6.18859L3 17.2486ZM20.71 7.03859C21.1 6.64859 21.1 6.01859 20.71 5.62859L18.37 3.28859C17.98 2.89859 17.35 2.89859 16.96 3.28859L15.13 5.11859L18.88 8.86859L20.71 7.03859Z" fill={colorValue}/>
         </svg>
     )    
 }

@@ -13,12 +13,15 @@ const TestimoniItem = ({data,index}) => {
                    <div className="content row">
                        <div className="col-5 col-lg-4 d-flex justify-content-center align-items-center">
                             <div className="container-img">
-                            <Image
-                                layout="fill"
-                                src={data.image}
-                                objectFit="cover"
-                                className="rounded-circle"
-                                alt="laxmi" />                                
+                            {
+                                data.image && 
+                                <Image
+                                    layout="fill"
+                                    src={data.image}
+                                    objectFit="cover"
+                                    className="rounded-circle"
+                                    alt="laxmi" />                                
+                            }
                             </div>
                        </div>
                        <div className="col-7 col-lg-8 d-flex justify-content-center ">
@@ -60,12 +63,15 @@ const TestimoniItem = ({data,index}) => {
                         <div className="content row">
                             <div className="col-5 col-lg-4 d-flex justify-content-center align-items-center">
                                     <div className="container-img">
-                                    <Image
-                                        layout="fill"
-                                        src={data.image}
-                                        objectFit="cover"
-                                        className="rounded-circle"
-                                        alt="laxmi" />                                
+                                    {
+                                        data.image && 
+                                        <Image
+                                            layout="fill"
+                                            src={data.image}
+                                            objectFit="cover"
+                                            className="rounded-circle"
+                                            alt="laxmi" />                                                                        
+                                    }
                                     </div>
                             </div>
                             <div className="col-7 col-lg-8 d-flex justify-content-center ">

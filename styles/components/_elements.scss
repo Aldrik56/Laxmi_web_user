@@ -165,9 +165,11 @@ form{
 // banner
 .banner{
     height: 450px ;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+    // background-position: center; 
+    // background-repeat: no-repeat; 
+    // background-size: cover; 
+    background-color: #343839;
+    position: relative;
     @media only screen and (max-width: $sm) {
         height: 350px ;
         margin: 0;
@@ -177,6 +179,13 @@ form{
         margin-left: 150px;
         @media only screen and (max-width: $md) {
             margin-left: 0;          
+        }
+    }
+    .content{
+        position: absolute;
+        margin-left: 100px;
+        @media only screen and (max-width: $sm) {
+            margin-left: 0px;
         }
     }
     .text{
@@ -282,4 +291,14 @@ form{
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
+}
+
+// select
+.select-filter{
+    border: 0px solid #EEEEEE;
+    border-bottom: 2px solid #EEEEEE;
+    width: 150px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
 }

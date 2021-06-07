@@ -11,7 +11,7 @@ const Faq = () => {
     const {t} = useTranslation("contactus")
 
     const pathBreadCumb = [{
-        'path' : '/login',
+        'path' : '/contactus',
         'name' : `${t("navbar:Contact Us")}`
     }]
 

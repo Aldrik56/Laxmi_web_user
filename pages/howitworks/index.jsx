@@ -11,7 +11,7 @@ const HowItWorks = () => {
     const {t} = useTranslation("common")
 
     const pathBreadCumb = [{
-        'path' : '/login',
+        'path' : '/howitworks',
         'name' : `${t("How It Works")}`
     }]
 

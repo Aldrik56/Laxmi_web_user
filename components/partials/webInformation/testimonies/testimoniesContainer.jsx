@@ -31,6 +31,7 @@ const TestimoniesContainer = ({t,fetcAction,fetchResult}) => {
     const handleFilter = e => {
         setParams({
             ...params,
+            page : 1,
             filter : e.target.value
         })
     }
@@ -45,7 +46,7 @@ const TestimoniesContainer = ({t,fetcAction,fetchResult}) => {
                         <select 
                             value={params.filter}
                             onChange={handleFilter}
-                            className="form-select" 
+                            className="form-select select-filter" 
                             aria-label="rating">
                             <option value="">{t('All')} {t('Stars')} </option>                                
                             <option value="1">1 {t('Stars')} </option>

@@ -9,13 +9,14 @@ import {
 import axios from '../../helpers/axiosConfig'
 
 export const fetcAction = (url,params) => {
-    const {page,search,limit,filter} = params
+    const {page,search,limit,filter,category} = params
 
-    const urlParams = `page=${page}&per_page=${limit}${search ? `&search=${search}` : ''}${filter ? `&filter=${filter}` : ''}`
+    const urlParams = `page=${page}&per_page=${limit}`
+    const urlParamsFilter = `${search ? `&search=${search}` : ''}${filter ? `&filter=${filter}` : ''}${category ? `&category=${category}` : ''}`
     return (dispatch) => {
       dispatch(fetchActionRequest())
       axios
-        .get(`${url}?${urlParams}`)
+        .get(`${url}?${urlParams}${urlParamsFilter}`)
         .then(response => {
           const {status,message,data} = response.data
           if(status) {

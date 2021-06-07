@@ -10,7 +10,7 @@ const HeaderDefault = () => {
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div className="container-fluid d-flex">
-                    <div className="order-0">
+                    <div className="order-0 logo">
                         <Link href='/'>
                             <Image 
                                 src="/img/logo.png" 

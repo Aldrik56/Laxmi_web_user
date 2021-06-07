@@ -11,7 +11,7 @@ const Faq = () => {
     const {t} = useTranslation("common")
 
     const pathBreadCumb = [{
-        'path' : '/login',
+        'path' : '/termcondition',
         'name' : `${t("navbar:Terms & Conditions")}`
     }]
 

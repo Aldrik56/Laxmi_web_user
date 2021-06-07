@@ -28,17 +28,16 @@ const Banner = ({t}) => {
         {
             data.image ?
             <div 
-                style={{
-                    backgroundImage : `url(${data.image})`
-                }}
+                // style={{
+                //     backgroundImage : `url(${data.image})`
+                // }}
                 className="col-12 banner d-flex align-items-center ">
-                       {/* <Image
-                            width={332}
-                            height={430} 
-                            objectFit="fill"
-                            src={data.image} 
-                            alt="laxmi" />                     */}
-                <div className="container-fluid">
+                <Image
+                    layout="fill"
+                    objectFit="cover"
+                    src={data.image} 
+                    alt="laxmi" />                    
+                <div className="content">
                     <div className="text text-center text-white">
                         <p className="title">{data.text && data.text.title}</p>
                         <p className="desc-banner">{data.text && data.text.desc}</p>

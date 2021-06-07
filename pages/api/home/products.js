@@ -7,6 +7,8 @@ export default function handler(req, res) {
                 "_id": "1",
                 "image": "https://via.placeholder.com/332x430",
                 "title": "Suit - Navy | K0012",
+                "category" : "suits",
+                "sub_category" : "dasdasd",    
                 "stocks": 123,
                 "currency": "IDR",
                 "price": 1000000,
@@ -17,6 +19,8 @@ export default function handler(req, res) {
                 "_id": "2",
                 "image": "https://via.placeholder.com/332x430",
                 "title": "Suit - Pattern | K0022",
+                "category" : "suits",
+                "sub_category" : "dasdasd",    
                 "stocks": 123,
                 "currency": "IDR",
                 "price": 300000,
@@ -26,6 +30,8 @@ export default function handler(req, res) {
             {
                 "_id": "3",
                 "image": "https://via.placeholder.com/332x430",
+                "category" : "suits",
+                "sub_category" : "dasdasd",    
                 "stocks": 123,
                 "title": "Suit - Navy 2 | K0032",
                 "currency": "IDR",
@@ -36,6 +42,8 @@ export default function handler(req, res) {
             {
                 "_id": "4",
                 "image": "https://via.placeholder.com/332x430",
+                "category" : "suits",
+                "sub_category" : "dasdasd",    
                 "title": "Suit - Navy | K0012",
                 "stocks": 123,
                 "currency": "IDR",
@@ -46,6 +54,8 @@ export default function handler(req, res) {
             {
                 "_id": "5",
                 "image": "https://via.placeholder.com/332x430",
+                "category" : "suits",
+                "sub_category" : "dasdasd",    
                 "title": "Suit - Pattern | K0022",
                 "stocks": 123,
                 "currency": "IDR",
@@ -56,6 +66,8 @@ export default function handler(req, res) {
             {
                 "_id": "6",
                 "image": "https://via.placeholder.com/332x430",
+                "category" : "suits",
+                "sub_category" : "dasdasd",    
                 "stocks": 123,
                 "title": "Suit - Navy 2 | K0032",
                 "currency": "IDR",

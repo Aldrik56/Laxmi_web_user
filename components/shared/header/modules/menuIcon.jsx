@@ -75,20 +75,22 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
                     <div className="language-menu">
                         {
                             UseRouter.locales.map((locale,index) => (
-                                <Link href={UseRouter.asPath} locale={locale} key={index}>
-                                    <div 
-                                        key={index} 
-                                        onClick={() => handleChangeLanguage(locale)}
-                                        className={`language-menu-list px-5 d-flex flex-row align-items-center ${locale === UseRouter.locale ? 'active' : ''} py-2`}>
-                                        <Image 
-                                            height={26}
-                                            width={34}
-                                            src={`/img/icon/${locale === 'en' ? 'UK' : 'ID'}_flag.png`} 
-                                            alt="laxmi tailer" 
-                                            />
-                                        <h6 className="my-0 ml-3">{locale === 'en' ? `${t("English")}` : `${t("Indonesian")}`}</h6>                                        
-                                    </div>    
-                                </Link>
+                                <div key={index}>
+                                    <Link href={UseRouter.asPath} locale={locale} key={index}>
+                                        <div 
+                                            key={index} 
+                                            onClick={() => handleChangeLanguage(locale)}
+                                            className={`language-menu-list px-5 d-flex flex-row align-items-center ${locale === UseRouter.locale ? 'active' : ''} py-2`}>
+                                            <Image 
+                                                height={26}
+                                                width={34}
+                                                src={`/img/icon/${locale === 'en' ? 'UK' : 'ID'}_flag.png`} 
+                                                alt="laxmi tailer" 
+                                                />
+                                            <h6 className="my-0 ml-3">{locale === 'en' ? `${t("English")}` : `${t("Indonesian")}`}</h6>                                        
+                                        </div>    
+                                    </Link>
+                                </div>
                             ))
                         }
                     </div>

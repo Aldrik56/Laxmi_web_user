@@ -92,12 +92,12 @@ const FormRegister = () => {
     }    
     return (
         <form onSubmit={handleSubmit}>
-            {
+            {/* {
                 error.alert ? 
                 <div className="alert alert-danger" role="alert">
                     {error.alert}
                 </div> : null     
-            }           
+            }            */}
             <Input 
                 id="email"
                 type="text"

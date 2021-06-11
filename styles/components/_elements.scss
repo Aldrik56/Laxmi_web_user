@@ -82,6 +82,10 @@ form{
     .text-area{
         height: 133px;
     }
+    .form-select{
+        border: 1px solid $color-primary !important;
+
+    }
     .form-control-danger{
         border: 1px solid $color-danger !important;
         border-radius: 4px;
@@ -97,6 +101,19 @@ form{
     }
     button{
         margin-top: 24px;
+    }
+    .unit{
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-right: 10px;
+        padding-top: 13px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px !important;
+        line-height: 16px;
+        letter-spacing: 0.0015em;
+        color: #757575;        
     }
 }
 
@@ -301,4 +318,11 @@ form{
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+}
+
+.card{
+    background: #FFFFFF;
+    box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+    border: 0px;
+    padding: 32px ;
 }

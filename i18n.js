@@ -13,6 +13,8 @@ module.exports = {
         "/products" : ["product"],
         "/products/[category]" : ["product"],
         "/products/[category]/[id]" : ["product"],
+        "/products/cart" : ["cart"],
+        "/products/cart/order" : ["cart"],
     },
     "loadLocaleFrom": (lang, ns) =>
     import(`./public/locales/${lang}/${ns}.json`).then((m) => m.default)

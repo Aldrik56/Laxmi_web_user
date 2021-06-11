@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const ProductCategory = ({t}) => {
+// elements
+import ProductCategory from '../../elements/product/productCategory';
+
+const ProductCategoryList = ({t}) => {
     const CategoryList = [
         {
             title : t('suits'),
@@ -40,21 +43,7 @@ const ProductCategory = ({t}) => {
             <div className="row">
                 {
                     CategoryList.map((data,index) => (
-                        <Link href={`/products/${data.category}`}>
-                            <div 
-                                key={index}
-                                className="col-12 col-md-6 col-lg-4 d-flex justify-content-center mt-5">
-                                <div className="img-container d-flex justify-content-center align-items-center">
-                                    <div className="filter"></div>
-                                    <Image
-                                        layout="fill"
-                                        objectFit="cover"
-                                        src={data.image} 
-                                        alt="laxmi" />    
-                                <h1 className="title">{data.title}</h1>                                                            
-                                </div>
-                            </div> 
-                        </Link>                             
+                        <ProductCategory data={data} key={index} />                           
                     ))
                 }
             </div>
@@ -62,4 +51,4 @@ const ProductCategory = ({t}) => {
     )
 }
 
-export default ProductCategory ;
+export default ProductCategoryList ;

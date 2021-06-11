@@ -18,14 +18,14 @@ const Products = () => {
 
     return (
         <div className="product-category">
-            <div className="container-fluid px-5">
+            <div className="container-fluid">
                 <BreadCrumb path={pathBreadCumb} />
                 <Heading title={t("Our Products")} />
                 <p className="sub-heading text-center fw-bold">
                     {t('What we produce')}
                 </p>
             </div>
-            <section className="d-flex justify-content-center container-fluid px-5">
+            <section className="row px-0 mx-0">
                 <ProductCategory t={t} />
             </section>
         </div>

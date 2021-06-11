@@ -31,11 +31,14 @@ const Product = ({t,data}) => {
                                 <FavoriteBorder />
                             }
                         </div> */}
-                        <Image
-                            width={314}
-                            height={314} 
-                            src={data.image} 
-                            alt="laxmi" />
+                        {
+                            data && 
+                            <Image
+                                width={314}
+                                height={314} 
+                                src={data.image} 
+                                alt="laxmi" />
+                        }
                         <div className="stock d-flex align-items-center justify-content-center">
                             <span><Stock /></span> <h1> {t("common:Stock")} : {data.stocks}</h1>
                         </div>                              

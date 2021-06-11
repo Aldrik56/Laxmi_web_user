@@ -40,9 +40,7 @@ const FaqContainer = ({t,fetcAction,fetchResult}) => {
     }
     return (
         <>
-            {
-                fetchResult.data ?
-                fetchResult.data.data.length ?
+
                 <div className="d-flex flex-column w-100 " >
                     <div className="d-flex justify-content-center">
                         <div className="col-12 col-lg-6">
@@ -54,6 +52,10 @@ const FaqContainer = ({t,fetcAction,fetchResult}) => {
                             />  
                         </div>   
                     </div>
+                    {
+                        fetchResult.data ?
+                        fetchResult.data.data.length ?  
+                        <>                  
                     <div className="accordion" id="accordionExample">
                         {
                             fetchResult.data.data.map((data,index) => (
@@ -71,13 +73,14 @@ const FaqContainer = ({t,fetcAction,fetchResult}) => {
                             pageCount={fetchResult.data.total_page}
                             handlePaginate={handlePaginate} /> : null                   
                     }
+                    </>
+                    :
+                    <p className="text-center">{t('There are no data yet')}</p> :
+                    fetchResult.error ?
+                    <p className="text-center">{fetchResult.error}</p> :
+                    <div className="loader"></div>
+                }                    
                 </div>
-                :
-                <p className="text-center">{t('There are no data yet')}</p> :
-                fetchResult.error ?
-                <p className="text-center">{fetchResult.error}</p> :
-                <div className="loader"></div>
-            }
         </>
     )
 }

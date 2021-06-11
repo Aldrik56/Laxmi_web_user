@@ -30,6 +30,13 @@ const withAuth = (WrappedComponent,type) => {
         }
     
         return <WrappedComponent {...props} />;    
+    }else{
+        if (!auth.isLogin) {
+            Router.replace("/login");
+            return null;
+        }
+    
+        return <WrappedComponent {...props} />;    
     }
 
   };

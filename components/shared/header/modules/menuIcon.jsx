@@ -29,6 +29,11 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
         Cookies.set('next-i18next', UseRouter.locale);
     },[isShowAccount]);    
 
+    useEffect(() => {
+        setError({
+            email : authData.error
+        })
+    },[authData.error]);  
 
     // handle
     const handleSubmit = e => {
@@ -36,7 +41,7 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
         if(form.email){
             if(form.password){
                 loginAction(form,UseRouter)
-                setError({})
+                // setError({})
             }else{
                 setError({
                     password : `${t("common:Password")} ${t("common:cannot be empty")}`
@@ -112,17 +117,20 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
                             <li><a className="dropdown-item" href="#">{t("Notification")}</a></li>
                             <li><a className="dropdown-item" href="#">{t("My Orders")}</a></li>
                             <li><a className="dropdown-item" href="#">{t("My Addresses")}</a></li>
-                            <li><a className="dropdown-item" onClick={() => logout()}>{t("Log Out")}</a></li>                        
+                            <li><a className="dropdown-item" onClick={() => {
+                                logout()
+                                setTimeout(function(){ window.location.reload() }, 500)
+                            }}>{t("Log Out")}</a></li>                        
                         </> : 
                         <>
                             <h5 className="text-center">{t("common:Access your account")}</h5>                          
                             <form className="px-5 pt-3" onSubmit={handleSubmit}>
-                                {
+                                {/* {
                                     authData.error ? 
                                     <div className="alert alert-danger" role="alert">
                                     {authData.error}
                                     </div> : null     
-                                }
+                                } */}
                                 <Input 
                                     id="email"
                                     type="text"
@@ -155,9 +163,11 @@ const MenuIcon = ({authData,loginAction,logout,enterPage}) => {
                 </ul>
             </div>                        
             <div className="mx-2" onClick={() => setIsShowAccount(false)}>
-                <a type="button">
-                    <ShoppingBag />
-                </a>
+                <Link href='/products/cart'>
+                    <a>
+                        <ShoppingBag />
+                    </a>
+                </Link>
             </div>                        
         </div>
     )

@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-import Link from 'next/link'
 
 // elements
 import {Phone,Email,LocationOn} from '../../../elements/icon'

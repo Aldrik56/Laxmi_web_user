@@ -21,7 +21,13 @@ const formLogin = ({authData,loginAction,enterPage}) => {
     useEffect(() => {
         enterPage()
         setError({})
-    },[]);    
+    },[]);   
+    
+    useEffect(() => {
+        setError({
+            email : authData.error
+        })
+    },[authData.error]);  
     
     // handle
     const handleSubmit = e => {
@@ -29,7 +35,6 @@ const formLogin = ({authData,loginAction,enterPage}) => {
         if(form.email){
             if(form.password){
                 loginAction(form,router)
-                setError({})
             }else{
                 setError({
                     password : `${t("common:Password")} ${t("common:cannot be empty")}`
@@ -53,12 +58,12 @@ const formLogin = ({authData,loginAction,enterPage}) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            {
+            {/* {
                 authData.error ? 
                 <div className="alert alert-danger" role="alert">
                     {authData.error}
                 </div> : null     
-            }            
+            }             */}
             <Input 
                 id="email"
                 type="text"
@@ -75,13 +80,13 @@ const formLogin = ({authData,loginAction,enterPage}) => {
             /> 
             <div className="form-check d-flex flex-row row justify-content-between">
                 <div className="col-12 col-sm-6">
-                    <input 
+                    {/* <input 
                         type="checkbox" 
                         className="form-check-input" 
                         id="remember" />
                     <label 
                         className="form-check-label" 
-                        htmlFor="remember">{t("Remember Me")}</label>
+                        htmlFor="remember">{t("Remember Me")}</label> */}
                 </div>
                 <div className="col-12 col-sm-6 d-flex justify-content-end">
                     <Link href='/login/forgotpassword'>

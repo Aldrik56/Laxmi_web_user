@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {AddShoppingCart,Edit} from '../../../elements/icon';
 
 // helpers
@@ -57,15 +58,16 @@ const ProductDetailDescription = ({t,data}) => {
                     <p className="value">{data.currency} {NumberFormat(data.price)}</p>
                 </div>
                 <div className="d-flex align-items-end button-container">
-                    <button 
-                        disabled={data.stocks < 1}
-                        type="button" 
-                        className="btn btn-primary btn-lg"><AddShoppingCart /> {t("ADD TO CHART")}</button>
-                    <button 
-                        disabled={data.stocks < 1}
-                        type="button" 
-                        className="btn btn-light btn-lg"><Edit /> {t("CUSTOMIZE")}</button>
-
+                    <Link href={'/products/cart'} > 
+                        <a 
+                            disabled={data.stocks < 1}
+                            className="btn btn-primary btn-lg"><AddShoppingCart /> {t("ADD TO CHART")}</a>
+                    </Link>
+                    <Link href={'/products/cart'} >
+                        <a 
+                            disabled={data.stocks < 1}
+                            className="btn btn-light btn-lg"><Edit /> {t("CUSTOMIZE")}</a>
+                    </Link>
                 </div>
             </div>         
         </>

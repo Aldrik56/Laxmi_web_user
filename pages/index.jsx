@@ -14,9 +14,9 @@ export default function Home() {
   const {t} = useTranslation("home")
 
   return (
-    <div className="home" >{console.log(document.cookie)}
+    <div className="home" >
         <Banner t={t}/>
-        <BannerSmall t={t} />
+        {/* <BannerSmall t={t} /> */}
         <HowItWorks t={t} />
         <SomeProduct t={t} />
         <Testimonies t={t} />

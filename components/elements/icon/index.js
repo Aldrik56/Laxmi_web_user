@@ -15,7 +15,18 @@ export const AccountCircle = ({width,height,color}) => {
     let colorValue = color ? color : '#131920' 
     return (
         <svg width={widthValue} height={heightValue} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.2984 0C4.73228 0 0.214844 4.48 0.214844 10C0.214844 15.52 4.73228 20 10.2984 20C15.8645 20 20.382 15.52 20.382 10C20.382 4.48 15.8645 0 10.2984 0ZM10.2984 3C11.9723 3 13.3235 4.34 13.3235 6C13.3235 7.66 11.9723 9 10.2984 9C8.62454 9 7.27334 7.66 7.27334 6C7.27334 4.34 8.62454 3 10.2984 3ZM10.2984 17.2C7.77752 17.2 5.54905 15.92 4.24827 13.98C4.27852 11.99 8.2817 10.9 10.2984 10.9C12.305 10.9 16.3183 11.99 16.3486 13.98C15.0478 15.92 12.8193 17.2 10.2984 17.2Z" fill={color}/>
+            <path d="M10.2984 0C4.73228 0 0.214844 4.48 0.214844 10C0.214844 15.52 4.73228 20 10.2984 20C15.8645 20 20.382 15.52 20.382 10C20.382 4.48 15.8645 0 10.2984 0ZM10.2984 3C11.9723 3 13.3235 4.34 13.3235 6C13.3235 7.66 11.9723 9 10.2984 9C8.62454 9 7.27334 7.66 7.27334 6C7.27334 4.34 8.62454 3 10.2984 3ZM10.2984 17.2C7.77752 17.2 5.54905 15.92 4.24827 13.98C4.27852 11.99 8.2817 10.9 10.2984 10.9C12.305 10.9 16.3183 11.99 16.3486 13.98C15.0478 15.92 12.8193 17.2 10.2984 17.2Z" fill={colorValue}/>
+        </svg>
+    )    
+}
+
+export const AccountCircle2 = ({width,height,color}) => {
+    let widthValue = width ? width : 48 
+    let heightValue = height ? height : 48 
+    let colorValue = color ? color : '#131920' 
+    return (
+        <svg width={widthValue} height={heightValue}  viewBox={`0 0 ${widthValue} ${heightValue}`} fill={colorValue} xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 4C12.96 4 4 12.96 4 24C4 35.04 12.96 44 24 44C35.04 44 44 35.04 44 24C44 12.96 35.04 4 24 4ZM24 10C27.32 10 30 12.68 30 16C30 19.32 27.32 22 24 22C20.68 22 18 19.32 18 16C18 12.68 20.68 10 24 10ZM24 38.4C19 38.4 14.58 35.84 12 31.96C12.06 27.98 20 25.8 24 25.8C27.98 25.8 35.94 27.98 36 31.96C33.42 35.84 29 38.4 24 38.4Z" fill={colorValue} />
         </svg>
     )    
 }
@@ -332,6 +343,17 @@ export const CheckCircleOutline = ({width,height,color}) => {
     return (
         <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
             <path d="M58.065 26.53L35 49.595L22.435 37.065L17.5 42L35 59.5L63 31.5L58.065 26.53ZM42 7C22.68 7 7 22.68 7 42C7 61.32 22.68 77 42 77C61.32 77 77 61.32 77 42C77 22.68 61.32 7 42 7ZM42 70C26.53 70 14 57.47 14 42C14 26.53 26.53 14 42 14C57.47 14 70 26.53 70 42C70 57.47 57.47 70 42 70Z" fill={colorValue}/>      
+        </svg>
+    )    
+}
+
+export const ArrowBackIos = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#757575' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.67 3.87156L9.9 2.10156L0 12.0016L9.9 21.9016L11.67 20.1316L3.54 12.0016L11.67 3.87156Z" fill={colorValue} />
         </svg>
     )    
 }

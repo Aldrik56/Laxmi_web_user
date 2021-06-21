@@ -13,18 +13,18 @@ const ModalAddress = ({t}) => {
                 <form action="">
                     <div className="modal-content">
                         <div className="modal-body px-0">
-                            <Heading title={'Add New Address'} />
-                            <p className="text-center desc">To make an order, please add a shipping address</p>
+                            <Heading title={t('common:Add New Address')} />
+                            <p className="text-center desc">{t("common:To make an order, please add a shipping address")}</p>
                             <div className="mt-4 d-flex flex-row text-center">
                                 <div
                                     onClick={() => setTab(1)} 
                                     className={`col-6 tab ${tab === 1 ? 'active' : ''}`}>
-                                Overseas
+                                {t("common:Overseas")}
                                 </div>
                                 <div 
                                     onClick={() => setTab(2)} 
                                     className={`col-6 tab ${tab === 2 ? 'active' : ''}`}>
-                                Domestic
+                                {t("common:Domestic")}
                                 </div>    
                             </div>
                         </div>
@@ -39,11 +39,11 @@ const ModalAddress = ({t}) => {
                             <button 
                                 type="button" 
                                 className="btn btn-light" 
-                                data-bs-dismiss="modal">Close</button>
+                                data-bs-dismiss="modal">{t("common:Close")}</button>
                             <button 
                                 type="button" 
                                 className="btn btn-primary">
-                                    Add
+                                    {t("common:Add")}
                             </button>
                         </div>
                     </div>

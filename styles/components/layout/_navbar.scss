@@ -40,6 +40,10 @@
          .dropdown-item{
              cursor: pointer;
          }
+         .active{
+             background-color: $color-grey;
+             color: $color-primary;
+         }
      }  
      .dropdown-account{
          margin-top: 30px !important;

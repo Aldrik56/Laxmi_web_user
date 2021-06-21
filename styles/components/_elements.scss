@@ -326,3 +326,99 @@ form{
     border: 0px;
     padding: 32px ;
 }
+
+.text-blue{
+    color: $color-blue;
+}
+.text-pointer{
+    cursor: pointer;
+}
+
+.notif{
+    width: 36px;
+    height: 24px;
+    background:$color-danger;
+    border-radius: 12px;
+    text-align: center;
+    color: $color-white;
+}
+
+.table-responsive{
+    .table{
+        margin-bottom: 0px;
+        tr{
+            border-bottom: 4px solid #EEEEEE;
+        }
+        td, th{
+            padding: 32px;
+            .img-container{
+                width: 125px;
+                height: 125px;
+                border: 1px solid #F5F5F5;
+                box-sizing: border-box;
+                border-radius: 4px;
+            }
+            .title{
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: 0.0015em;                            
+            }
+            p{
+                &:nth-child(2){
+                    margin-top: 16px;
+                }
+            }
+        }      
+        .total-price{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.0015em;                            
+        }
+            
+    }
+}
+
+#modalAddress{
+        .head{
+            margin-top: 32px !important;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 28px;                            
+        }
+        .desc{
+            margin-top: 0px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.0015em;                    
+        }
+        .tab{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.0125em;
+            text-transform: uppercase;   
+            border-bottom: 5px solid #EEEEEE;
+            padding: 16px;
+            cursor: pointer;                 
+        }
+        .text-area{
+            height: 63px;                    
+        }
+        .active{
+            box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+            border-radius: 1px; 
+            border-bottom: 0px;  
+            cursor :auto                 
+        }
+        .modal-footer{
+            border-top: 0px;
+        }
+}

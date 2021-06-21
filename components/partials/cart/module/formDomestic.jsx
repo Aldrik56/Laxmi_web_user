@@ -22,7 +22,7 @@ const Domestic = ({t}) => {
                     id="email"
                     type="email"
                     error={error.email}
-                    label={t("Email")}
+                    label={t("common:Email")}
                     onChange={handleChange}
                 />      
                 <div className="row">
@@ -31,7 +31,7 @@ const Domestic = ({t}) => {
                             id="name"
                             type="text"
                             error={error.name}
-                            label={t("Name")}
+                            label={t("common:Name")}
                             onChange={handleChange}
                         />                                         
                     </div>
@@ -40,7 +40,7 @@ const Domestic = ({t}) => {
                             id="telephone"
                             type="text"
                             error={error.telephone}
-                            label={t("Telephone")}
+                            label={t("common:Telephone")}
                             onChange={handleChange}
                         />                                         
                     </div>                                    
@@ -50,7 +50,7 @@ const Domestic = ({t}) => {
                     type="text"
                     value={form.address}
                     error={error.address}
-                    label={t("Address")}
+                    label={t("common:Address")}
                     onChange={handleChange}
                 />
                 <div className="row">
@@ -68,10 +68,10 @@ const Domestic = ({t}) => {
 
                             ]}
                             id="province"
-                            placeholder="Select Province"
+                            placeholder={t("common:Select Province")}
                             value={form.province}
                             error={error.province}
-                            label={t("Province")}
+                            label={t("common:Province")}
                             onChange={handleChange}
                         />                                      
                     </div>
@@ -89,10 +89,10 @@ const Domestic = ({t}) => {
 
                             ]}
                             id="city"
-                            placeholder="Select City"
+                            placeholder={t("common:Select City")}
                             value={form.city}
                             error={error.city}
-                            label={t("City")}
+                            label={t("common:City")}
                             onChange={handleChange}
                         />                                      
                     </div>                                    
@@ -112,10 +112,10 @@ const Domestic = ({t}) => {
 
                             ]}
                             id="district"
-                            placeholder="Select District"
+                            placeholder={t("common:Select District")}
                             value={form.district}
                             error={error.district}
-                            label={t("District")}
+                            label={t("common:District")}
                             onChange={handleChange}
                         />                                      
                     </div>
@@ -133,10 +133,10 @@ const Domestic = ({t}) => {
 
                             ]}
                             id="zip"
-                            placeholder="Select Zip Code"
+                            placeholder={t("common:Select Zip Code")}
                             value={form.zip}
                             error={error.zip}
-                            label={t("Address")}
+                            label={t("common:Zip")}
                             onChange={handleChange}
                         />                                      
                     </div>                                    
@@ -146,7 +146,7 @@ const Domestic = ({t}) => {
                     type="text"
                     value={form.detail}
                     error={error.detail}
-                    label={t("Detail")}
+                    label={t("common:Detail")}
                     onChange={handleChange}
                 />                            
             </div>

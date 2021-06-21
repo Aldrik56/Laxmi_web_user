@@ -201,6 +201,11 @@ input[type=number]:focus,
   cursor: pointer;
 }
 
+.navbar .dropdown-menu .active {
+  background-color: #EEEEEE;
+  color: #1E1E22;
+}
+
 .navbar .dropdown-account {
   margin-top: 30px !important;
 }
@@ -268,6 +273,57 @@ footer .input-newsletter .btn-primary {
   border: 2px solid white;
   border-radius: 0;
   margin-top: 0px;
+}
+
+.sidebar .name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.0015em;
+}
+
+.sidebar .desc {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.0025em;
+  cursor: pointer;
+}
+
+.sidebar .menu-container .menu {
+  border-bottom: 1px solid #EEEEEE;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+}
+
+.sidebar .menu-container .menu:hover {
+  background-color: #EEEEEE;
+}
+
+.sidebar .menu-container .active {
+  background-color: #EEEEEE;
+}
+
+.sidebar .menu-container .active:hover {
+  background-color: #EEEEEE;
+}
+
+.sidebar .menu-container .active a:hover {
+  background-color: #EEEEEE;
 }
 
 .dropdown-container {
@@ -648,6 +704,109 @@ form .unit {
           box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
   border: 0px;
   padding: 32px;
+}
+
+.text-blue {
+  color: #5593E1;
+}
+
+.text-pointer {
+  cursor: pointer;
+}
+
+.notif {
+  width: 36px;
+  height: 24px;
+  background: #B81C23;
+  border-radius: 12px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.table-responsive .table {
+  margin-bottom: 0px;
+}
+
+.table-responsive .table tr {
+  border-bottom: 4px solid #EEEEEE;
+}
+
+.table-responsive .table td, .table-responsive .table th {
+  padding: 32px;
+}
+
+.table-responsive .table td .img-container, .table-responsive .table th .img-container {
+  width: 125px;
+  height: 125px;
+  border: 1px solid #F5F5F5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.table-responsive .table td .title, .table-responsive .table th .title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.0015em;
+}
+
+.table-responsive .table td p:nth-child(2), .table-responsive .table th p:nth-child(2) {
+  margin-top: 16px;
+}
+
+.table-responsive .table .total-price {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+}
+
+#modalAddress .head {
+  margin-top: 32px !important;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+#modalAddress .desc {
+  margin-top: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+}
+
+#modalAddress .tab {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.0125em;
+  text-transform: uppercase;
+  border-bottom: 5px solid #EEEEEE;
+  padding: 16px;
+  cursor: pointer;
+}
+
+#modalAddress .text-area {
+  height: 63px;
+}
+
+#modalAddress .active {
+  -webkit-box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+          box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+  border-radius: 1px;
+  border-bottom: 0px;
+  cursor: auto;
+}
+
+#modalAddress .modal-footer {
+  border-top: 0px;
 }
 
 .product-default .container-img,
@@ -2492,47 +2651,6 @@ form .unit {
   cursor: pointer;
 }
 
-.cart-proccess section .checkout .card .table-responsive .table {
-  margin-bottom: 0px;
-}
-
-.cart-proccess section .checkout .card .table-responsive .table tr {
-  border-bottom: 4px solid #EEEEEE;
-}
-
-.cart-proccess section .checkout .card .table-responsive .table td, .cart-proccess section .checkout .card .table-responsive .table th {
-  padding: 32px;
-}
-
-.cart-proccess section .checkout .card .table-responsive .table td .img-container, .cart-proccess section .checkout .card .table-responsive .table th .img-container {
-  width: 125px;
-  height: 125px;
-  border: 1px solid #F5F5F5;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 4px;
-}
-
-.cart-proccess section .checkout .card .table-responsive .table td .title, .cart-proccess section .checkout .card .table-responsive .table th .title {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.0015em;
-}
-
-.cart-proccess section .checkout .card .table-responsive .table td p:nth-child(2), .cart-proccess section .checkout .card .table-responsive .table th p:nth-child(2) {
-  margin-top: 16px;
-}
-
-.cart-proccess section .checkout .card .table-responsive .table .total-price {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 0.0015em;
-}
-
 .cart-proccess section .checkout .card .proceed .title {
   font-style: normal;
   font-weight: normal;
@@ -2554,51 +2672,6 @@ form .unit {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.005em;
-}
-
-.cart-proccess section .checkout .modal .head {
-  margin-top: 32px !important;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-}
-
-.cart-proccess section .checkout .modal .desc {
-  margin-top: 0px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 0.0015em;
-}
-
-.cart-proccess section .checkout .modal .tab {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.0125em;
-  text-transform: uppercase;
-  border-bottom: 5px solid #EEEEEE;
-  padding: 16px;
-  cursor: pointer;
-}
-
-.cart-proccess section .checkout .modal .text-area {
-  height: 63px;
-}
-
-.cart-proccess section .checkout .modal .active {
-  -webkit-box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
-          box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
-  border-radius: 1px;
-  border-bottom: 0px;
-  cursor: auto;
-}
-
-.cart-proccess section .checkout .modal .modal-footer {
-  border-top: 0px;
 }
 
 .cart-proccess section .payment-method .img-container {
@@ -2739,5 +2812,369 @@ form .unit {
   .border-left {
     border-right: 0px;
   }
+}
+
+.change-email .title-change-email {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.0025em;
+  margin-bottom: 0px;
+}
+
+.change-email .desc-change-email {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  margin-bottom: 24px;
+}
+
+.notification .content {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0px 10px 10px 10px;
+}
+
+.notification .content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.notification .content:hover::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey;
+}
+
+.notification .content .card {
+  cursor: pointer;
+  margin-bottom: 16px;
+  -webkit-box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+          box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+}
+
+.notification .content .card p {
+  margin-bottom: 0;
+}
+
+.notification .content .card .title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+}
+
+.notification .content .card .desc {
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+}
+
+.notification .content .card .date {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.myorder .content {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0px 10px 10px 10px;
+}
+
+.myorder .content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.myorder .content:hover::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey;
+}
+
+.myorder .content .card {
+  padding: 24px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  -webkit-box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+          box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+}
+
+.myorder .content .card p {
+  margin-bottom: 0px;
+}
+
+.myorder .content .card .img-container {
+  width: 125px;
+  height: 125px;
+  border: 1px solid #F5F5F5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 4px;
+}
+
+.myorder .content .card .title-product {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.0015em;
+}
+
+.myorder .content .card .desc-product {
+  margin-top: 16px;
+}
+
+.myorder .content .card .desc-product p {
+  margin-bottom: 0px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+}
+
+.myorder .content .card .text-additional {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+  color: #0BA05D;
+}
+
+@media only screen and (max-width: 768px) {
+  .myorder .content .card .text-additional {
+    text-align: start !important;
+  }
+}
+
+.myorder .filter-status {
+  overflow-x: scroll;
+  margin: 0px 10px 10px 10px;
+  -webkit-box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+          box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+}
+
+.myorder .filter-status::-webkit-scrollbar {
+  width: 4px;
+  height: 0px;
+}
+
+.myorder .filter-status:hover::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey;
+}
+
+.myorder .filter-status .status {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  color: #757575;
+  cursor: pointer;
+  padding: 30px 30px 30px 30px;
+}
+
+.myorder .filter-status .active {
+  color: #1E1E22;
+  border-bottom: 4px solid #1E1E22;
+}
+
+.myorder .filter-nav {
+  -webkit-box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+          box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.2), 0px 2px 2px rgba(66, 66, 66, 0.2);
+  border-radius: 8px;
+  overflow-x: scroll;
+}
+
+.myorder .filter-nav::-webkit-scrollbar {
+  width: 4px;
+  height: 0px;
+}
+
+.myorder .filter-nav:hover::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey;
+}
+
+.myorder .filter-nav p {
+  margin-bottom: 0px;
+}
+
+.myorder .filter-nav .nav {
+  border-bottom: 4px solid #EEEEEE;
+  padding: 15px 32px;
+}
+
+.myorder .filter-nav .nav .back-nav {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.0015em;
+  color: #757575;
+}
+
+.myorder .filter-nav .order-progress .text-center:nth-child(1) {
+  margin-left: 20px;
+}
+
+.myorder .filter-nav .order-progress .text-center:nth-child(2) {
+  margin-left: 8px;
+}
+
+.myorder .filter-nav .order-progress .text-center:nth-child(3) {
+  margin-right: 5px;
+}
+
+.myorder .filter-nav .order-progress .text-center:nth-child(4) {
+  margin-right: 20px;
+}
+
+.myorder .card-detail p {
+  margin-bottom: 4px;
+}
+
+.myorder .card-detail .title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+}
+
+.myorder .card-detail .name {
+  margin-top: 16px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+}
+
+.myorder .card-detail .desc {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+}
+
+.myorder .track-card .track-code {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  border-bottom: 4px solid #EEEEEE;
+}
+
+.myorder .track-card .track-title {
+  padding: 32px;
+  border-bottom: 4px solid #EEEEEE;
+}
+
+.myorder .track-card .track-title p {
+  margin-bottom: 0px;
+}
+
+.myorder .track-card .track-title p:first-child {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.0015em;
+}
+
+.myorder .track-card .track-title p:last-child {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  letter-spacing: 0.0015em;
+  color: #757575;
+}
+
+.myorder .track-card .time-info {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.myorder .track-card .desc {
+  font-size: 14px;
+}
+
+.myorder .track-card .desc p {
+  margin-bottom: 0px;
+}
+
+.myorder .track-card .desc-active {
+  color: #1E1E22;
+}
+
+.myorder .track-card .desc-unactive {
+  color: #757575;
+}
+
+.myorder .track-card .line {
+  width: 4px;
+  height: 80px;
+  z-index: 1;
+}
+
+.myorder .track-card .line-active {
+  background-color: #1E1E22;
+}
+
+.myorder .track-card .line-unactive {
+  background-color: #757575;
+}
+
+.myorder .track-card .delivery {
+  position: absolute;
+  top: 45px;
+  z-index: 2;
+}
+
+.myorder .detail-total p {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+.myorder .detail-total .title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.0015em;
+  margin-bottom: 16px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -22,7 +22,7 @@ const OverSeas = ({t}) => {
                     id="email"
                     type="email"
                     error={error.email}
-                    label={t("Email")}
+                    label={t("common:Email")}
                     onChange={handleChange}
                 />      
                 <div className="row">
@@ -31,7 +31,7 @@ const OverSeas = ({t}) => {
                             id="name"
                             type="text"
                             error={error.name}
-                            label={t("Name")}
+                            label={t("common:Name")}
                             onChange={handleChange}
                         />                                         
                     </div>
@@ -40,7 +40,7 @@ const OverSeas = ({t}) => {
                             id="telephone"
                             type="text"
                             error={error.telephone}
-                            label={t("Telephone")}
+                            label={t("common:Telephone")}
                             onChange={handleChange}
                         />                                         
                     </div>                                    
@@ -50,7 +50,7 @@ const OverSeas = ({t}) => {
                     type="text"
                     value={form.address}
                     error={error.address}
-                    label={t("Address")}
+                    label={t("common:Address")}
                     onChange={handleChange}
                 />
                 <Select 
@@ -66,10 +66,10 @@ const OverSeas = ({t}) => {
 
                     ]}
                     id="countries"
-                    placeholder="Pilih Negara"
+                    placeholder={t("common:Select Country")}
                     value={form.countries}
                     error={error.countries}
-                    label={t("Address")}
+                    label={t("common:Country")}
                     onChange={handleChange}
                 />     
                 <div className="row">
@@ -87,10 +87,10 @@ const OverSeas = ({t}) => {
 
                         ]}
                         id="city"
-                        placeholder="Select City"
+                        placeholder={t("common:Select City")}
                         value={form.city}
                         error={error.city}
-                        label={t("Address")}
+                        label={t("common:City")}
                         onChange={handleChange}
                     />                                      
                 </div>
@@ -108,10 +108,10 @@ const OverSeas = ({t}) => {
 
                             ]}
                             id="zip"
-                            placeholder="Select Zip Code"
+                            placeholder={t("common:Select Zip Code")}
                             value={form.zip}
                             error={error.zip}
-                            label={t("Address")}
+                            label={t("common:Zip")}
                             onChange={handleChange}
                         />                                      
                     </div>                                    
@@ -121,7 +121,7 @@ const OverSeas = ({t}) => {
                     type="text"
                     value={form.detail}
                     error={error.detail}
-                    label={t("Detail")}
+                    label={t("common:Detail")}
                     onChange={handleChange}
                 />                            
             </div>

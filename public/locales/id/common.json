@@ -28,5 +28,27 @@
     "Filter By" : "Saring Berdasarkan" ,
     "All" : "Semua" ,
     "Stars" : "Bintang" ,
-    "We will help you immediately" :"Kami akan segera membantu Anda"
+    "We will help you immediately" :"Kami akan segera membantu Anda",
+    "To make an order, please add a shipping address" : "Untuk membuat pesanan, harap tambahkan alamat pengiriman",
+    "Overseas" : "Luar negeri",
+    "Domestic" : "Lokal",
+    "Close" : "Tutup",
+    "Add" : "Tambah",
+    "Name" : "Nama",
+    "Telephone" : "Nomor Telfon",
+    "Address" : "Alamat",
+    "Country" : "Negara",
+    "City" : "Kota",
+    "Zip" : "Pos",
+    "Detail" : "Detail",
+    "Select Country" : "Pilih Negara",
+    "Select City" : "Pilih Kota",
+    "Select Zip Code" : "Pilih Kode Pos",
+    "Add New Address" : "Tambah Alamat Baru",
+    "Province" : "Provinsi",
+    "District" : "Kabupaten",
+    "Select Province" : "Pilih Provinsi",
+    "Select District" : "Pilih Kabupaten",
+    "Back" : "Kembali"
+
 }

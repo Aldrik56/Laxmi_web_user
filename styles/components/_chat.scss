@@ -1,0 +1,78 @@
+.chat{
+    margin-top: 160px ;
+    width: 48px;
+    height: 48px;
+    background-color: $color-danger;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(66, 66, 66, 0.2);
+    border-radius: 24px;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 1030;
+    cursor: pointer;
+}
+
+.chat-container{
+    padding: 24px;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 1031;
+    cursor: pointer;
+    margin-bottom: 70px;
+    width: 375px;
+    box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+    border-radius: 4px;    
+    background-color: $color-white;
+    .profile{
+        margin-left: 16px;
+        p{
+            &:first-child{
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: 0.0015em;                
+            }
+            &:last-child{
+                margin-top: 2px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 14px;                
+            }
+        }
+    }
+    .chat-container-scroll{
+        margin-top: 24px;
+        height: 300px;
+        overflow-y: scroll;
+        overflow-x: auto;
+        &::-webkit-scrollbar{
+            width:4px;
+        }     
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: darkgrey;
+        }
+        .row{
+            margin-top: 16px;
+            .desc{
+                color: $color-white;
+                padding: 12px;
+                border-radius: 15px;
+            }
+            .desc-user{
+                background: #757575;
+            }
+            .desc-admin{
+                background: #424242;
+            }
+    
+        }
+    }
+    .text-area-chat{
+        height: 74px;
+        resize: none;
+    }
+}

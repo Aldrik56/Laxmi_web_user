@@ -14,7 +14,7 @@ import Layout from '../components/layouts/layout';
 // Shared
 import Header from '../components/shared/header/headerDefault';
 import Footer from '../components/shared/footer/footerDefault';
-
+import Chat from '../components/shared/chat';
 
 function MyApp({ router, Component, pageProps }) {
   const pathName = router.pathname
@@ -24,6 +24,7 @@ function MyApp({ router, Component, pageProps }) {
             <PersistGate loading={null} persistor={persistor}>
               <Header />
               <Component {...pageProps} />
+              <Chat />
               {
                 !pathName.includes('login') ? 
                 <Footer /> : null

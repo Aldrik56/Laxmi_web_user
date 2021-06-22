@@ -121,6 +121,31 @@ return (
 )    
 }
 
+export const InputChat = ({
+    id,
+    placeholder,
+    label,
+    onChange,
+    onKeyUp,
+    type,
+    value,
+    error}) => {
+return (
+    <div className="form-group">
+        <textarea  
+            rows="2"     
+            onKeyUp={onKeyUp}       
+            onChange={onChange}
+            type="text"
+            className={`form-control text-area-chat mt-2 `} 
+            id={id} 
+            placeholder={label} />        
+        <div className="d-flex flex-column">
+            <span className="text-danger">{error}</span>   
+        </div>                
+    </div>    
+)    
+}
 
 export const Unit = ({
     id,

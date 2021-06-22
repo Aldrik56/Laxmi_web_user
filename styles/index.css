@@ -229,8 +229,8 @@ input[type=number]:focus,
 
 footer {
   color: white;
-  margin-top: 160px;
   background-color: #1E1E22;
+  margin-top: 48px;
 }
 
 footer h5 {
@@ -1460,6 +1460,95 @@ form .unit {
 .resp-sharing-button--whatsapp:active {
   background-color: #1DA851;
   border-color: #1DA851;
+}
+
+.chat {
+  margin-top: 160px;
+  width: 48px;
+  height: 48px;
+  background-color: #B81C23;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(66, 66, 66, 0.2);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(66, 66, 66, 0.2);
+  border-radius: 24px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 1030;
+  cursor: pointer;
+}
+
+.chat-container {
+  padding: 24px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 1031;
+  cursor: pointer;
+  margin-bottom: 70px;
+  width: 375px;
+  -webkit-box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+          box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+
+.chat-container .profile {
+  margin-left: 16px;
+}
+
+.chat-container .profile p:first-child {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.0015em;
+}
+
+.chat-container .profile p:last-child {
+  margin-top: 2px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.chat-container .chat-container-scroll {
+  margin-top: 24px;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+.chat-container .chat-container-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-container .chat-container-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey;
+}
+
+.chat-container .chat-container-scroll .row {
+  margin-top: 16px;
+}
+
+.chat-container .chat-container-scroll .row .desc {
+  color: #FFFFFF;
+  padding: 12px;
+  border-radius: 15px;
+}
+
+.chat-container .chat-container-scroll .row .desc-user {
+  background: #757575;
+}
+
+.chat-container .chat-container-scroll .row .desc-admin {
+  background: #424242;
+}
+
+.chat-container .text-area-chat {
+  height: 74px;
+  resize: none;
 }
 
 @media only screen and (max-width: 576px) {

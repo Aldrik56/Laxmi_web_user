@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Mr+Bedfort&family=Philosopher&family=Princess+Sofia&family=Rakkas&family=Revalia&display=swap');
+
 body{
     font-family: 'Roboto', sans-serif;    
     color: $color-primary;
@@ -27,6 +29,9 @@ hr{
     @media only screen and (max-width: $sm) {
         width: 130px;
     }
+}
+.text-primary{
+    color: $color-primary !important;
 }
 .bg-light{
     background-color: #FFFFFF !important; 
@@ -110,6 +115,11 @@ input[type=number]:focus,
   box-shadow: inset 0 -1px 0 #ddd !important;
   outline: none !important;
 }
+.form-check{
+    .form-check-label{
+        margin-left: 10px;
+    }    
+}
 .form-check-input{
     width: 24px;
     height: 24px;
@@ -117,7 +127,10 @@ input[type=number]:focus,
     box-sizing: border-box;
     border-radius: 4px !important;
     &:checked{
-        background-color: $color-primary;
-        border-color: $color-primary;
-    }
+        background-image: url("/img/icon/checked-checkbox.png")  !important;
+
+        background-color: $color-white;
+        box-shadow: inset 0 -1px 0 #ddd !important;
+        outline: none !important;
+      }    
 }

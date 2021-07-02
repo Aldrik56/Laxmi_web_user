@@ -1,7 +1,7 @@
 .navbar{
-    box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.25), 0px 0px 4px rgba(66, 66, 66, 0.2);
     padding-left: 24px;
     padding-right: 24px;
+    border-bottom: 1px solid $color-primary;
     .logo{
         cursor: pointer;
     }
@@ -64,4 +64,36 @@
             text-align: center;
         }
      }
+
 }
+.running-text-promotion{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.sub-navbar{
+    background-color: $color-white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(66, 66, 66, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    padding: 24px 24px 24px  145px;
+    @media only screen and (max-width: $lg) {
+        padding-left: 50px;
+    }
+    h6{
+        font-weight: 600;
+        font-size: 14px;
+    }
+    a{
+        font-weight: normal;
+        font-size: 14px;
+    }
+    .modal-navbar{
+        a{
+            text-transform: uppercase;
+        }
+    }
+ }

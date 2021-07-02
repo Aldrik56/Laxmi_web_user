@@ -140,7 +140,7 @@
             position: absolute;
             background: rgba(0, 0, 0, 0.35);
             box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
-            opacity: 0.5;
+            opacity: 0.8;
             z-index: 99;
             // @media only screen and (max-width: $md) {
             //     height: 250px;            
@@ -165,7 +165,58 @@
     }  
 }
 
+.ourProduct-item{
+    margin-right: 32px;
+    margin-bottom: 62px;
+    cursor: pointer;
+    .img-container{
+        width: 332px;
+        height: 430px;
+        position: relative;
+        &:hover{
+            .filter{
+                opacity: 0.1;
+            }
+        }
+        .filter{
+            transition: 0.3s;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+            opacity: 0.8;
+            z-index: 99;
+            // @media only screen and (max-width: $md) {
+            //     height: 250px;            
+            // }  
+            // @media only screen and (max-width: $sm) {
+            //     height: 200px;            
+            // } 
+            // @media only screen and (max-width: $m) {
+            //     width: 250px;
+            // }   
+        }  
+        .title{
+            position: absolute;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: 0.0125em;
+            text-transform: uppercase; 
+            color: #FFFFFF;               
+        }
+    }
+}
+
 .product-list{
+    .product-banner{
+        height: 221px;
+        width: 100%;
+        position: relative;
+        background-color: $color-primary;
+    }
     .sub-heading{
         text-transform: uppercase; 
     }
@@ -191,6 +242,40 @@
         @media only screen and (max-width: $md) {
             text-align: center;            
         }
+        .filter-item{
+            &:hover{
+                text-decoration: line-through;
+            }
+        }
+        .accordion-item{
+            background-color : transparent ;
+            border: 0px;
+            .accordion-button{
+                background-color : transparent ;
+                border: 0px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: 0.0015em;
+                padding-left: 0px;
+            }
+            .accordion-button:not(.collapsed){
+                color: $color-primary !important;
+                border: 0px;
+            }
+            .accordion-button:not(.collapsed)::after{
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+            }
+            .accordion-body{
+                padding-left: 0px;
+            }
+            .color-container{
+                width: 32px;
+                height: 32px;
+                border-radius: 16px;
+            }
+        }        
         .title{
             font-style: normal;
             font-weight: 600;
@@ -241,7 +326,7 @@
         }
     }
     .breadcrumb{
-        margin-top: 0px;
+        margin-top: 20px;
         padding-top: 30px;
         .link-container{
             @media only screen and (max-width: $md) {
@@ -318,7 +403,7 @@
             .accordion-button{
                 background-color : transparent ;
                 border: 0px;
-                width: 300px ;
+                width: 377px ;
                 font-style: normal;
                 font-weight: 600;
                 font-size: 20px;
@@ -374,6 +459,37 @@
             }     
         }
     }
+}
+
+.product-portal{
+   .title{
+        margin-top: 50px;
+        font-weight: normal;
+        font-size: 48px;   
+        text-transform: uppercase;    
+   } 
+   .sub-title{
+        margin-top: 32px;
+        font-weight: 600;
+        font-size: 20px;       
+   }
+   .btn-primary{
+       text-transform: uppercase;
+   }
+   .price{
+       margin-right: 60px;
+       p{
+           margin-bottom: 0px;
+           &:first-child{
+                font-weight: normal;
+                font-size: 24px;               
+           }
+           &:last-child{
+                font-weight: normal;
+                font-size: 34px;               
+           }
+       }
+   }
 }
 
 #modalProductDetail{

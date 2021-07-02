@@ -41,11 +41,11 @@ const SomeProduct = ({t}) => {
                                 <Product key={index} t={t} data={data}/>
                             ))       
                         }
-                        <div className="d-flex justify-content-center mt-5">
+                        {/* <div className="d-flex justify-content-center mt-5">
                             <Link href='/products'>
                                 <a className="btn btn-primary btn-lg py-3">{t('SEE ALL PRODUCT')}</a>
                             </Link>
-                        </div>                         
+                        </div>                          */}
                         </>
                         :
                         <p className="text-center">{t("common:There are no products yet")}</p> :

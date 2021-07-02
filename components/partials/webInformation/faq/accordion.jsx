@@ -27,7 +27,7 @@ const Accordion = ({data,index}) => {
                     </h2>
                     <div id={`collapse${index}`} className="accordion-collapse collapse" aria-labelledby={`heading${index}`} data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        {parse(data.description)}
+                        {data.description && parse(data.description)}
                     </div>
                     </div>
                 </div>       

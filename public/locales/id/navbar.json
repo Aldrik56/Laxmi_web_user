@@ -15,6 +15,15 @@
     "My Orders" : "Pesanan Saya",
     "My Addresses" : "Alamat Saya",
     "Log Out" : "Keluar",
-    "Edit Profile" : "Ubah Profil" 
-
+    "Edit Profile" : "Ubah Profil",
+    "100% MADE TO MEASURE" : "100% DIBUAT UNTUK MENGUKUR",
+    "CUSTOM-TAILORED CLOTHING" : "PAKAIAN KUSTOM-TAILOED",
+    "PERFECT FIT GUARANTEE" : "GARANSI SEMPURNA",
+    "FASTEST MADE TO MEASURE TAILORS" : "TERCEPAT DIBUAT UNTUK MENGUKUR TAILOR",
+    "suits":"jas",
+    "vests":"rompi",
+    "batiks":"batik",
+    "shirts":"kemeja",
+    "trousers":"celana panjang",
+    "custom":"custom"
 }

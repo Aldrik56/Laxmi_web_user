@@ -21,7 +21,7 @@ const HowItWorks = ({t}) => {
         <div className="howItWorks">
             <Heading title={t('How It Works')} />
             <div className="container-fluid">
-                <div className="row mt-4">
+                {/* <div className="row mt-4">
                     {
                         howItWorks.map((data,index) => (
                             <div className="col-12 col-lg-4 text-center" key={index}>
@@ -38,6 +38,13 @@ const HowItWorks = ({t}) => {
                             </div>
                         ))
                     }
+                </div> */}
+                <div className="d-flex justify-content-center my-4">
+                    <iframe 
+                        width="667" 
+                        height="426" 
+                        src="https://www.youtube.com/embed/xaLtcjKBwz4">
+                    </iframe>                                    
                 </div>
             </div>
             <div className="d-flex justify-content-center">

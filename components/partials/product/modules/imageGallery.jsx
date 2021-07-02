@@ -4,24 +4,33 @@ import Image from 'next/image'
 // elements
 import {ChevronLeft,ChevronRight,ZoomIn,Share} from '../../../elements/icon'
 
-const ImageGallery = ({t,data}) => {
+const ImageGallery = ({id,t,data}) => {
     const [preview,setPreview] = useState({
         index : 0,
-        image : data[0]
+        image : data[0].original
     })
+
+    useEffect(() => {
+        setPreview({
+            index : 0,
+            image : data[0].original    
+        })
+    },[data]);
+
+
     const handleNavigation = type => {
         if(type === "prev"){
             if(preview.index > 0){
                 setPreview({
                     index : preview.index-1,
-                    image : data[preview.index-1]
+                    image : data[preview.index-1].original
                 })
             }
         }else{
             if(preview.index < data.length-1){
                 setPreview({
                     index : preview.index+1,
-                    image : data[preview.index+1]
+                    image : data[preview.index+1].original
                 })
             } 
         }

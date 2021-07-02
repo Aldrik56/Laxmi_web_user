@@ -13,8 +13,9 @@ import Layout from '../components/layouts/layout';
 
 // Shared
 import Header from '../components/shared/header/headerDefault';
-import Footer from '../components/shared/footer/footerDefault';
+import Footer from '../components/shared/footer/footerDefault2';
 import Chat from '../components/shared/chat';
+import ChatHome from '../components/shared/chat/chatHome';
 
 function MyApp({ router, Component, pageProps }) {
   const pathName = router.pathname
@@ -22,11 +23,17 @@ function MyApp({ router, Component, pageProps }) {
         <Layout>
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-              <Header />
-              <Component {...pageProps} />
-              <Chat />
               {
-                !pathName.includes('login') ? 
+                !pathName.includes('custom') ? 
+                <Header /> : null
+              }
+              <Component {...pageProps} />
+              {
+                pathName === '/' ? 
+                <ChatHome /> : <Chat />
+              }
+              {
+                !pathName.includes('login') && !pathName.includes('custom') ? 
                 <Footer /> : null
               }
             </PersistGate>      

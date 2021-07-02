@@ -49,6 +49,13 @@
     "District" : "Kabupaten",
     "Select Province" : "Pilih Provinsi",
     "Select District" : "Pilih Kabupaten",
-    "Back" : "Kembali"
-
+    "Back" : "Kembali",
+    "DESIGN YOUR" : "DESAIN",
+    "suits":"jas",
+    "vests":"rompi",
+    "batiks":"batik",
+    "shirts":"kemeja",
+    "trousers":"celana panjang",
+    "blazer":"jas",
+    "custom":"custom"
 }

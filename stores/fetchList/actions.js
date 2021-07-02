@@ -5,18 +5,21 @@ import {
     FETCH_FAILURE,
 } from './types';
 
-// api dummy
 import axios from '../../helpers/axiosConfig'
 
 export const fetcAction = (url,params) => {
-    const {page,search,limit,filter,category} = params
+    let urlParamsFilter = ''
 
-    const urlParams = `page=${page}&per_page=${limit}`
-    const urlParamsFilter = `${search ? `&search=${search}` : ''}${filter ? `&filter=${filter}` : ''}${category ? `&category=${category}` : ''}`
+    Object.keys(params).map(function(key, index) {
+      if(params[key]){
+        urlParamsFilter += `&${[key]}=${params[key]}`
+      }
+    })
+
     return (dispatch) => {
       dispatch(fetchActionRequest())
       axios
-        .get(`${url}?${urlParams}${urlParamsFilter}`)
+        .get(`${url}?${urlParamsFilter}`)
         .then(response => {
           const {status,message,data} = response.data
           if(status) {

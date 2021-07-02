@@ -49,5 +49,14 @@
     "District" : "District",
     "Select Province" : "Select Province",
     "Select District" : "Select District",
-    "Back" : "Back"
+    "Back" : "Back",
+    "DESIGN YOUR" : "DESIGN YOUR",
+    "suits":"suits",
+    "vests":"vests",
+    "batiks":"batiks",
+    "shirts":"shirts",
+    "trousers":"trousers",
+    "blazer":"blazer",
+    "custom":"custom"
+
 }

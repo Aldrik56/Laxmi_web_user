@@ -1,9 +1,10 @@
 import useTranslation from 'next-translate/useTranslation';
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 // elements
 import BreadCrumb from '../../../components/elements/breadcrumb'
-import Heading from '../../../components/elements/heading';
+import Heading from '../../../components/elements/headingLeft';
 
 // partials
 import ProductList from '../../../components/partials/product/productList'
@@ -15,7 +16,7 @@ const ProductsList = () => {
     const { category } = router.query
 
     const pathBreadCumb = [{
-        'path' : '/products',
+        'path' : `/productportal/${category}`,
         'name' : `${t("Products")}`
     },{
         'path' : `/products/${category}`,
@@ -24,10 +25,17 @@ const ProductsList = () => {
 
     return (
         <div className="product-list">
+            <div className="product-banner">
+                <Image
+                    layout="fill"
+                    objectFit="cover"
+                    src='/img/promotion/banner2.png'
+                    alt="laxmi" />                 
+            </div>
             <div className="container-fluid px-5">
                 <BreadCrumb path={pathBreadCumb} />
                 <Heading title={t("List Of Products")} />
-                <p className="sub-heading text-center fw-bold">
+                <p className="sub-heading  fw-bold">
                     {t(category)}
                 </p>
             </div>

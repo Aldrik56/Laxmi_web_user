@@ -52,7 +52,7 @@
 
 // breadcrumb
 .breadcrumb{
-    margin-top: 30px;
+    margin-top: 50px;
     p{
         cursor: pointer;
         font-size: 14px;
@@ -182,10 +182,11 @@ form{
 // banner
 .banner{
     height: 450px ;
-    // background-position: center; 
-    // background-repeat: no-repeat; 
-    // background-size: cover; 
-    background-color: #343839;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    // background-image: url('/img/promotion/banner.jpg');
+    background-attachment: fixed;
     position: relative;
     @media only screen and (max-width: $sm) {
         height: 350px ;
@@ -421,4 +422,24 @@ form{
         .modal-footer{
             border-top: 0px;
         }
+}
+
+.stepper{
+    p{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.0125em;
+        text-transform: uppercase;
+        margin-bottom: 0px;    
+        margin-top: 2px;  
+        color: #757575;          
+    }
+    .active{
+        color: $color-primary;
+    }
+}
+.hr-stepper{
+    height: 6px !important;
 }

@@ -9,51 +9,57 @@ export default function handler(req, res) {
         "data": [
             {
                 "_id": "1",
-                "image": "https://via.placeholder.com/314",
+                "image": "/img/product_gallery/product1.png",
                 "title": "Suit - Navy | K0012",
-                "category" : "suits",
-                "sub_category" : "dasdasd",    
                 "stocks": 123,
                 "currency": "IDR",
                 "price": 1000000,
-                "is_new": false,
-                "is_cart": true
+                "is_new": false
             },
             {
                 "_id": "2",
-                "image": "https://via.placeholder.com/314",
+                "image": "/img/product_gallery/product2.png",
                 "title": "Suit - Navy | K0013",
-                "category" : "suits",
-                "sub_category" : "dasdasd",    
                 "stocks": 3,
                 "currency": "IDR",
                 "price": 1500000,
-                "is_new": false,
-                "is_cart": false
+                "is_new": false
             },
             {
                 "_id": "3",
-                "image": "https://via.placeholder.com/314",
+                "image": "/img/product_gallery/product3.png",
                 "title": "Suit - Navy | K0014",
-                "category" : "suits",
-                "sub_category" : "dasdasd",    
                 "stocks": 5,
                 "currency": "IDR",
                 "price": 3000000,
-                "is_new": true,
-                "is_cart": false
+                "is_new": true
             },
             {
                 "_id": "4",
-                "image": "https://via.placeholder.com/314",
+                "image": "/img/product_gallery/product4.png",
                 "title": "Suit - Navy | K0015",
-                "category" : "suits",
-                "sub_category" : "dasdasd",    
                 "stocks": 10,
                 "currency": "IDR",
                 "price": 500000,
-                "is_new": true,
-                "is_cart": false
+                "is_new": true
+            },
+            {
+                "_id": "5",
+                "image": "/img/product_gallery/product5.png",
+                "title": "Suit - Navy | K0014",
+                "stocks": 5,
+                "currency": "IDR",
+                "price": 2000000,
+                "is_new": true
+            },
+            {
+                "_id": "6",
+                "image": "/img/product_gallery/product6.png",
+                "title": "Suit - Navy | K0015",
+                "stocks": 10,
+                "currency": "IDR",
+                "price": 500000,
+                "is_new": true            
             }
         ]
     })

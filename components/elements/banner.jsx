@@ -28,15 +28,15 @@ const Banner = ({t}) => {
         {
             data.image ?
             <div 
-                // style={{
-                //     backgroundImage : `url(${data.image})`
-                // }}
+                style={{
+                    backgroundImage : `url(${data.image})`
+                }}
                 className="col-12 banner d-flex align-items-center ">
-                <Image
+                {/* <Image
                     layout="fill"
                     objectFit="cover"
                     src={data.image} 
-                    alt="laxmi" />                    
+                    alt="laxmi" />                     */}
                 <div className="content">
                     <div className="text text-center text-white">
                         <p className="title">{data.text && data.text.title}</p>

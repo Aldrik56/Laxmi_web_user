@@ -3,6 +3,11 @@ import React, { useState,useEffect } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router'
 
+// REDUX
+import { connect } from 'react-redux'
+import {fetcAction} from '../../../stores';
+
+
 // helper
 import Axios from '../../../helpers/axiosConfig'
 
@@ -17,16 +22,28 @@ import ImageGallery from '../../../components/partials/product/modules/imageGall
 import Product from '../../../components/elements/product/productHome';
 import Heading from '../../../components/elements/heading';
 
-const ProductsDetail = () => {
+// shared
+import Testimonies from '../../../components/partials/home/testimonies';
+
+const ProductsDetail = ({fetcAction,fetchResult}) => {
     const {t} = useTranslation("product")
     const router = useRouter()
     const { category,id } = router.query
 
     const [data,setData] = useState(null)
     const [error,setError] = useState(null)
+    const [params,setParams] = useState({
+        page : 1,
+        per_page : 3,
+        sort_by : 'hightolower'
+    })
 
     useEffect(() => {
-        Axios.get(`/products/${id}`)
+        fetcAction('/products',params)
+    },[category]);
+
+    useEffect(() => {
+        Axios.get(`/products/details/${id}`)
         .then(response => {
             const {data,status,message} = response.data
             if(status){
@@ -38,17 +55,17 @@ const ProductsDetail = () => {
         .catch(error => {
             setError(error.message)
         })      
-    },[]);
+    },[id]);
 
     const pathBreadCumb = [{
-        'path' : '/products',
+        'path' : `/productportal/${category}`,
         'name' : `${t("Products")}`
     },{
         'path' : `/products/${category}`,
         'name' : t(category)
     },{
         'path' : `/products/${category}/${id}`,
-        'name' : `${data && data.product.title}`
+        'name' : `${data && data.title}`
     }]
 
     return (
@@ -61,26 +78,39 @@ const ProductsDetail = () => {
                             <BreadCrumb path={pathBreadCumb} />
                         </div>
                         <section className="row px-5 mx-0">
-                            <ImageGallery t={t} data={data.product.images} />
+                            <ImageGallery id={id} t={t} data={data.images} />
                             <div className="col-12 col-md-7 desc">
                                 <ProductDetailDescription 
+                                    category={category}
                                     t={t} 
-                                    data={data.product} />
+                                    data={data} />
                             </div>
                         </section>
                     </div>    
                     <Heading title={t("Related Products")} />  
                     <div className="row mx-0 px-0">
                     {
-                        data.related_product.map((data,index) => (
-                            <Product 
-                                t={t}
-                                data={data}
-                                index={index}
-                                key={index}
-                            />
-                        ))
-                    }                
+                        fetchResult.data ?
+                        fetchResult.data.data.length ?
+                        <>
+                        {
+                            fetchResult.data.data.map((data,index) => (
+                                <Product 
+                                    t={t}
+                                    data={data}
+                                    index={index}
+                                    key={index}
+                                />
+                            ))
+                        }                
+                        </>                        
+                        :
+                        <p className="text-center">{t('common:There are no data yet')}</p> :        
+                        fetchResult.error ?
+                        <p className="text-center">{fetchResult.error}</p> :
+                        <div className="loader"></div>                    
+
+                    }
                     </div>
                 </>
                 :
@@ -89,8 +119,22 @@ const ProductsDetail = () => {
                 <div className="loader mt-5"></div>
 
             }  
+            <Testimonies t={t} />
         </>
     )
 }
 
-export default ProductsDetail
+const mapStateToProps = state => {
+    return {
+      fetchResult: state.fetchList    
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        fetcAction: (url,params) => dispatch(fetcAction(url,params))
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ProductsDetail)

@@ -15,5 +15,15 @@
     "My Orders" : "My Orders",
     "My Addresses" : "My Addresses",
     "Log Out" : "Log Out" ,
-    "Edit Profile" : "Edit Profile" 
+    "Edit Profile" : "Edit Profile",
+    "100% MADE TO MEASURE" : "100% MADE TO MEASURE",
+    "CUSTOM-TAILORED CLOTHING" : "CUSTOM-TAILORED CLOTHING",
+    "PERFECT FIT GUARANTEE" : "PERFECT FIT GUARANTEE",
+    "FASTEST MADE TO MEASURE TAILORS" : "FASTEST MADE TO MEASURE TAILORS",
+    "suits":"suits",
+    "vests":"vests",
+    "batiks":"batiks",
+    "shirts":"shirts",
+    "trousers":"trousers",
+    "custom":"custom"
 }

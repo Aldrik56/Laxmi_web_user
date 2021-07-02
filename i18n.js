@@ -2,12 +2,13 @@ module.exports = {
     "locales": ["en", "id"],
     "defaultLocale" : "en",
     "pages" :{
-        "*" : ["common","navbar","footer"],
+        "*" : ["common","navbar","footer","notFound"],
         "/login" :["login"],
         "/login/forgotpassword" :["login"],
         "/login/register" :["login"],
         "/login/forgotpassword/[id]" :["login"],
-        "/" :["home"],
+        "/" :["home",'product'],
+        "/productportal/[category]" :["home",'product'],
         "/aboutus" :["aboutus"],
         "/contactus" :["contactus"],
         "/products" : ["product"],
@@ -19,7 +20,8 @@ module.exports = {
         "/changeemail" : ["accountDetail"],
         "/notification" : ["accountDetail"],
         "/myorder" : ["accountDetail"],
-        "/myaddress" : ["accountDetail"]
+        "/myaddress" : ["accountDetail"],
+        "/custom/[category]" : ["custom"]
     },
     "loadLocaleFrom": (lang, ns) =>
     import(`./public/locales/${lang}/${ns}.json`).then((m) => m.default)

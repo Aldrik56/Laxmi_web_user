@@ -21,14 +21,45 @@ const ProductList = ({t,fetcAction,fetchResult}) => {
     const [params,setParams] = useState({
         page : 1,
         per_page : 9,
-        filter : 'hightolower',
-        search : '',
+        sort_by : 'hightolower',
         sub_category : '',
-        category : category
+        category : category,
+        style : '',
+        material : '',
+        color : '',
+        pattern : '',
+        season : '' ,
+        collections : ''
     })
     useEffect(() => {
-        fetcAction('/products',params)
+        let paramsValue = {
+            ...params,
+            sub_category : params.sub_category._id , 
+            style : params.style._id ,      
+            material : params.material._id ,      
+            color : params.color._id ,      
+            pattern : params.pattern._id ,      
+            season : params.season._id ,  
+            collections : params.collections._id                   
+        }
+        fetcAction('/products',paramsValue)
     },[params]);
+
+    useEffect(() => {
+        setParams({
+            page : 1,
+            per_page : 9,
+            sort_by : 'hightolower',
+            sub_category : '',
+            category : category,
+            style : '',
+            material : '',
+            color : '',
+            pattern : '',
+            season : '' ,
+            collections : ''    
+        })
+    },[category]);
 
     // handle
     const handlePaginate = e => {
@@ -41,14 +72,14 @@ const ProductList = ({t,fetcAction,fetchResult}) => {
         setParams({
             ...params,
             page : 1,
-            filter : e.target.value
+            sort_by : e.target.value
         })
     }
-    const handleSubCategory = e => {
+    const handleSubCategory = (e,name) => {
         setParams({
             ...params,
             page : 1,
-            sub_category : e,
+            [name] : e,
         })
     }
     return (
@@ -69,6 +100,7 @@ const ProductList = ({t,fetcAction,fetchResult}) => {
             <div className="row">
                 <div className="col-12 col-md-3 col-xxl-2 mt-5">
                     <SubCategory
+                        t={t}
                         handleSubCategory={handleSubCategory} 
                         params={params} />
                 </div>

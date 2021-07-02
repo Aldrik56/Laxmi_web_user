@@ -347,6 +347,17 @@ export const CheckCircleOutline = ({width,height,color}) => {
     )    
 }
 
+export const ArrowBackIos = ({width,height,color}) => {
+    let widthValue = width ? width : 24 
+    let heightValue = height ? height : 24 
+    let colorValue = color ? color : '#757575' 
+    return (
+        <svg width={widthValue} height={heightValue} viewBox={`0 0 ${widthValue} ${heightValue}`} fill='none' xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.67 3.87156L9.9 2.10156L0 12.0016L9.9 21.9016L11.67 20.1316L3.54 12.0016L11.67 3.87156Z" fill={colorValue} />
+        </svg>
+    )    
+}
+
 export const ChatBubble = ({width,height,color}) => {
     let widthValue = width ? width : 24 
     let heightValue = height ? height : 24 

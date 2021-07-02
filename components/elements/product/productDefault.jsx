@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // elements
 import {Stock,Favorite,FavoriteBorder} from '../icon'
@@ -10,7 +11,8 @@ import NumberFormat from '../../../helpers/numberFormat'
 
 const Product = ({t,data}) => {
     const [isCart,setIsCart] = useState(data.is_cart)
-
+    const router = useRouter()
+    const { category } = router.query
     return(
         <>
             <div className="product-default col-12 col-xl-6 col-xxl-4 d-flex justify-content-center">
@@ -32,7 +34,7 @@ const Product = ({t,data}) => {
                             }
                         </div> */}
                         {
-                            data && 
+                            data.image && 
                             <Image
                                 width={314}
                                 height={314} 
@@ -43,10 +45,10 @@ const Product = ({t,data}) => {
                             <span><Stock /></span> <h1> {t("common:Stock")} : {data.stocks}</h1>
                         </div>                              
                     </div>
-                    <Link href={`/products/${data.category}/${data._id}`}>
+                    <Link href={`/products/${category}/${data._id}`}>
                         <p className="title">{data.title}</p>
                     </Link>                    
-                    <p className="desc">{data.currency} {NumberFormat(data.price)}</p>                     
+                    <p className="desc">{data.currency} {data.price && NumberFormat(data.price)}</p>                     
                 </div>
             </div>
         </>

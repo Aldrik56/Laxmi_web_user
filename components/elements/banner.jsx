@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import React, { useState,useEffect } from 'react';
+import Link from 'next/link'
 
 // herlper
 import Axios from '../../helpers/axiosConfig'
@@ -41,9 +41,9 @@ const Banner = ({t}) => {
                     <div className="text text-center text-white">
                         <p className="title">{data.text && data.text.title}</p>
                         <p className="desc-banner">{data.text && data.text.desc}</p>
-                        <button 
-                            type="button" 
-                            className="btn btn-light px-5">{t("DISCOVER IT")}</button>
+                        <Link href='/products/suits'>
+                            <a className="btn btn-light px-5 pb-0">{t("DISCOVER IT")}</a>
+                        </Link>
                     </div>
                 </div>
             </div> : null

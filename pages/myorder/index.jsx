@@ -13,6 +13,9 @@ import Sidebar from '../../components/shared/sidebar/sidebarDefault';
 import MyOrderContainer from '../../components/partials/myOrder/myOrderContainer'
 import MyOrderDetail from '../../components/partials/myOrder/myOrderDetail'
 
+// layout
+import withAuth from '../../components/layouts/withAuth';
+
 const MyOrder = () => {
     const [path,setPath] = useState(1)
 
@@ -44,4 +47,4 @@ const MyOrder = () => {
     )
 }
 
-export default MyOrder ;
+export default withAuth(MyOrder) ;

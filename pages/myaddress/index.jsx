@@ -12,6 +12,9 @@ import Sidebar from '../../components/shared/sidebar/sidebarDefault';
 // partials
 import MyAddressContainer from '../../components/partials/myAddress/myAddressContainer'
 
+// layout
+import withAuth from '../../components/layouts/withAuth';
+
 const MyAddress = () => {
     const [path,setPath] = useState(1)
 
@@ -35,4 +38,4 @@ const MyAddress = () => {
     )
 }
 
-export default MyAddress ;
+export default withAuth(MyAddress) ;

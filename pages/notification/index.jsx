@@ -12,6 +12,9 @@ import Sidebar from '../../components/shared/sidebar/sidebarDefault';
 // partials
 import NotificationContainer from '../../components/partials/notification/notificationContainer'
 
+// layout
+import withAuth from '../../components/layouts/withAuth';
+
 const Notification = () => {
     const [path,setPath] = useState(1)
 
@@ -35,4 +38,4 @@ const Notification = () => {
     )
 }
 
-export default Notification ;
+export default withAuth(Notification) ;

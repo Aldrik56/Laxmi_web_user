@@ -13,8 +13,10 @@ import Checkout from '../../../../components/partials/cart/checkout'
 import Payment from '../../../../components/partials/cart/payment'
 import Finish from '../../../../components/partials/cart/finish'
 
+// layout
+import withAuth from '../../../../components/layouts/withAuth';
 
-const ProductsList = () => {
+const Order = () => {
     const {t} = useTranslation("cart")
     const router = useRouter()
 
@@ -79,4 +81,4 @@ const ProductsList = () => {
     )
 }
 
-export default ProductsList
+export default withAuth(Order)

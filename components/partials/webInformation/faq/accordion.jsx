@@ -9,7 +9,7 @@ const Accordion = ({data,index}) => {
                 <div className="accordion-item" key={index}>
                     <h2 className="accordion-header" id={`heading${index}`}>
                     <button 
-                        className="accordion-button collapsed" 
+                        className="accordion-button collapsed ps-3" 
                         type="button" 
                         data-bs-toggle="collapse" 
                         data-bs-target={`#collapse${index}`} 
@@ -26,7 +26,7 @@ const Accordion = ({data,index}) => {
                     </button>
                     </h2>
                     <div id={`collapse${index}`} className="accordion-collapse collapse" aria-labelledby={`heading${index}`} data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
+                    <div className="accordion-body ps-3">
                         {data.description && parse(data.description)}
                     </div>
                     </div>

@@ -12,7 +12,9 @@ import Sidebar from '../../components/shared/sidebar/sidebarDefault';
 // partials
 import Detail from '../../components/partials/accountDetail/detail'
 import ChangeDetail from '../../components/partials/accountDetail/changeDetail'
-import ChangeEmail from '../../components/partials/accountDetail/changeEmail'
+
+// layout
+import withAuth from '../../components/layouts/withAuth';
 
 const AccountDetail = () => {
     const [path,setPath] = useState(1)
@@ -51,4 +53,4 @@ const AccountDetail = () => {
     )
 }
 
-export default AccountDetail ;
+export default withAuth(AccountDetail) ;

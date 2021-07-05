@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import TextLoop from "@jcdea/react-text-loop";
 import useTranslation from 'next-translate/useTranslation';
+import Slide from 'react-reveal/Slide';
 
 import React, { useState,useEffect } from 'react';
 
@@ -42,7 +43,7 @@ const HeaderDefault = () => {
 
     return(
         <header className="fixed-top">
-            <div className="running-text-promotion w-100 bg-dark text-white text-center">
+            <div className="running-text-promotion bg-dark text-white text-center">
                 <TextLoop>
                     <span>{t("100% MADE TO MEASURE")}</span>
                     <span>{t("CUSTOM-TAILORED CLOTHING")}</span>
@@ -75,15 +76,14 @@ const HeaderDefault = () => {
                     </div>
                 </div>            
             </nav>
-            {
-                isOpenModalGallery ? 
+            <Slide top when={isOpenModalGallery} duration={500}>
                 <div className="sub-navbar">
                     <div className="row">
                         <div className="col-12 col-lg-3">
                             <h6>BY PRODUCT</h6>
                             <div className="d-flex flex-column modal-navbar">
                                 {
-                                   CategoryList.map((data,index) => (
+                                    CategoryList.map((data,index) => (
                                         <Link 
                                             key={index} 
                                             href={`/products/${data.category}`} >
@@ -112,9 +112,8 @@ const HeaderDefault = () => {
                             </div>
                         </div>
                     </div>
-                </div> : null
-
-            }
+                </div>                
+            </Slide>
         </header>
     )
 }

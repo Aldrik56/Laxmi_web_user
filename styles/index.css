@@ -161,6 +161,7 @@ input[type=number]:focus,
   padding-left: 24px;
   padding-right: 24px;
   border-bottom: 1px solid #1E1E22;
+  z-index: 1;
 }
 
 .navbar .logo {
@@ -239,12 +240,14 @@ input[type=number]:focus,
 }
 
 .running-text-promotion {
+  position: relative;
   font-style: normal;
   font-weight: bold;
   font-size: 10px;
   line-height: 12px;
   padding-top: 3px;
   padding-bottom: 3px;
+  z-index: 999;
 }
 
 .sub-navbar {
@@ -253,6 +256,7 @@ input[type=number]:focus,
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(66, 66, 66, 0.2);
   border-radius: 0px 0px 4px 4px;
   padding: 24px 24px 24px  145px;
+  z-index: -1;
 }
 
 @media only screen and (max-width: 992px) {
@@ -2011,6 +2015,9 @@ form .unit {
 }
 
 .style-container .mini-category {
+  background-color: #FFFFFF;
+  z-index: 99999;
+  position: relative;
   border-right: 4px solid #EEEEEE;
   overflow-y: scroll;
   height: 90vh;

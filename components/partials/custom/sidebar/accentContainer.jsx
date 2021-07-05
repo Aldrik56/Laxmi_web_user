@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Slide from 'react-reveal/Slide';
 
 import React, { useState,useEffect } from 'react';
 
@@ -213,8 +214,6 @@ const AccentContainer = ({t}) => {
     }
 
     const SubCategorySuits = () => {
-        console.log(nameSubCategory === "blazer",'nameSubCategory')
-        console.log(subCategory,'subCategory')
         if(nameSubCategory === "blazer"){
             switch(subCategory.title) {
                 case 'Monogram':
@@ -296,9 +295,8 @@ const AccentContainer = ({t}) => {
     }
     return (
         <div className="style-container">
-            {
-                openStyle ? 
-                <div className="row sub-category">
+            <Slide left when={openStyle} duration={500}>
+                <div className={`row sub-category ${openStyle ? '' : 'd-none'}`}>
                     <div className="col-4 me-0 pe-0 d-flex flex-column align-items-center mini-category">
                     {
                             category !== "suits" ?                        
@@ -377,9 +375,8 @@ const AccentContainer = ({t}) => {
                             </>
                         }                        
                     </div>
-                    {
-                        openFabric ? 
-                        <div className="col-8 mx-0 px-0 open-fabric">
+                    <Slide left when={openFabric} duration={500}>
+                        <div className={`col-8 mx-0 px-0 open-fabric ${openFabric ? '' : 'd-none'}`}>
                             <div className="header d-flex justify-content-between align-items-center">
                                 <p>Filter</p>
                                 <span
@@ -414,118 +411,118 @@ const AccentContainer = ({t}) => {
                                 ))
                             }                                
                             </div>
-                        </div>  : 
-                        <div className="col-8 list-mini-category">
-                            <div className="header d-flex justify-content-between align-items-center">
-                                <p>{t(subCategory.title)}</p>
-                                <span
-                                    className="text-pointer" 
-                                    onClick={() => setOpenStyle(!openStyle)} >                                   
-                                    <ArrowLeft />
-                                </span>
-                            </div>
-                            {
-                                category !== "suits" ? 
-                                <SubCategory /> : <SubCategorySuits />
-                            }
+                        </div>                        
+                    </Slide>
+                    <div className="col-8 list-mini-category">
+                        <div className="header d-flex justify-content-between align-items-center">
+                            <p>{t(subCategory.title)}</p>
+                            <span
+                                className="text-pointer" 
+                                onClick={() => setOpenStyle(!openStyle)} >                                   
+                                <ArrowLeft />
+                            </span>
                         </div>
-                    }
-                </div> :
-                <div className="icon-style-list mt-2 pb-4">
-                <div className="row ">
-                    {
-                        category !== "suits" ?
-                        list.map((data,index) => (
-                            <div
-                                onClick={() => {
-                                    setSubCategory({
-                                        id : data.id,
-                                        title : data.title
-                                    })
-                                    setOpenStyle(true)
-                                }} 
-                                key={index} 
-                                className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                <div className="img-container">
-                                    <Icon
-                                        category={category}
-                                        icon={data.image}  />
+                        {
+                            category !== "suits" ? 
+                            <SubCategory /> : <SubCategorySuits />
+                        }
+                    </div>
+                </div>
+            </Slide>
+            <div className="icon-style-list mt-2 pb-4">
+                    <div className="row ">
+                        {
+                            category !== "suits" ?
+                            list.map((data,index) => (
+                                <div
+                                    onClick={() => {
+                                        setSubCategory({
+                                            id : data.id,
+                                            title : data.title
+                                        })
+                                        setOpenStyle(true)
+                                    }} 
+                                    key={index} 
+                                    className="col-12 icon-style-item d-flex align-items-center text-pointer">
+                                    <div className="img-container">
+                                        <Icon
+                                            category={category}
+                                            icon={data.image}  />
+                                    </div>
+                                    <h6 className="title mb-0">{t(data.title)}</h6>  
                                 </div>
-                                <h6 className="title mb-0">{t(data.title)}</h6>  
-                            </div>
-                        )) :
-                        <div className="accordion" id="accordionExample">
-                            <div className="accordion-item">
-                                <h2 className="accordion-header" id="headingOne">
-                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Jacket
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div className="accordion-body">
+                            )) :
+                            <div className="accordion" id="accordionExample">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="headingOne">
+                                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Jacket
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div className="accordion-body">
+                                            {
+                                                BlazerListAccent.map((data,index) => (
+                                                    <div
+                                                        onClick={() => {
+                                                            setSubCategory({
+                                                                id : data.id,
+                                                                title : data.title
+                                                            })
+                                                            setNameSubCategory("blazer")
+                                                            setOpenStyle(true)
+                                                        }} 
+                                                        key={index} 
+                                                        className="col-12 icon-style-item d-flex align-items-center text-pointer">
+                                                        <div className="img-container">
+                                                            <Icon
+                                                                category="blazer"
+                                                                icon={data.image}  />
+                                                        </div>
+                                                        <h6 className="title mb-0">{t(data.title)}</h6>  
+                                                    </div>
+                                                ))                                                 
+                                            }                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="headingThree">
+                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Vest
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div className="accordion-body">
                                         {
-                                            BlazerListAccent.map((data,index) => (
+                                            VestListAccent.map((data,index) => (
                                                 <div
                                                     onClick={() => {
                                                         setSubCategory({
                                                             id : data.id,
                                                             title : data.title
                                                         })
-                                                        setNameSubCategory("blazer")
+                                                        setNameSubCategory("vests")
                                                         setOpenStyle(true)
                                                     }} 
                                                     key={index} 
                                                     className="col-12 icon-style-item d-flex align-items-center text-pointer">
                                                     <div className="img-container">
                                                         <Icon
-                                                            category="blazer"
+                                                            category="vests"
                                                             icon={data.image}  />
                                                     </div>
                                                     <h6 className="title mb-0">{t(data.title)}</h6>  
                                                 </div>
                                             ))                                                 
-                                        }                                        
+                                        }
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="accordion-item">
-                                <h2 className="accordion-header" id="headingThree">
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Vest
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div className="accordion-body">
-                                    {
-                                        VestListAccent.map((data,index) => (
-                                            <div
-                                                onClick={() => {
-                                                    setSubCategory({
-                                                        id : data.id,
-                                                        title : data.title
-                                                    })
-                                                    setNameSubCategory("vests")
-                                                    setOpenStyle(true)
-                                                }} 
-                                                key={index} 
-                                                className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                <div className="img-container">
-                                                    <Icon
-                                                        category="vests"
-                                                        icon={data.image}  />
-                                                </div>
-                                                <h6 className="title mb-0">{t(data.title)}</h6>  
-                                            </div>
-                                        ))                                                 
-                                    }
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                            
-                    }
+                            </div>                            
+                        }
+                    </div>
                 </div>
-            </div>
-            }
         </div>
     )
 }

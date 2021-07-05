@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Slide from 'react-reveal/Slide';
 
 import React, { useState,useEffect } from 'react';
 
 // elements
 import {ArrowLeft} from '../../../elements/icon'
 import Icon from '../../../elements/icon/custom'
+
 
 // data
 import {
@@ -48,9 +50,8 @@ const StyleContainer = ({t}) => {
     },[category]);
     return (
         <div className="style-container">
-            {
-                openStyle ? 
-                <div className="row">
+                <Slide left when={openStyle} duration={500} >
+                <div className={`row ${openStyle ? '' : 'd-none'}`}>
                     <div className="col-4 me-0 pe-0 d-flex flex-column align-items-center mini-category">
                     {
                             category !== "suits" ?
@@ -177,7 +178,8 @@ const StyleContainer = ({t}) => {
                             </div>
                         </div>                        
                     </div>
-                </div> :
+                </div> 
+                </Slide>
                 <div className="icon-style-list mt-2 pb-4">
                     <div className="row ">
                         {
@@ -301,7 +303,6 @@ const StyleContainer = ({t}) => {
                         }
                     </div>
                 </div>
-            }
         </div>
     )
 }

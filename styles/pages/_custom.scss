@@ -142,6 +142,9 @@
         position: relative;
     }
     .mini-category{
+        background-color: #FFFFFF;
+        z-index: 99999;
+        position: relative;
         border-right: 4px solid $color-grey;
         overflow-y: scroll;
         height: 90vh;

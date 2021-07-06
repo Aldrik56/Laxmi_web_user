@@ -1,5 +1,9 @@
 import '../styles/index.css'
 import { withRouter } from 'next/router'
+import {
+  BrowserView,
+  MobileView
+} from "react-device-detect";
 
 // REDUX
 import { Provider } from 'react-redux'
@@ -13,6 +17,7 @@ import Layout from '../components/layouts/layout';
 
 // Shared
 import Header from '../components/shared/header/headerDefault';
+import HeaderMobileDefault from '../components/shared/header/headerMobileDefault';
 import Footer from '../components/shared/footer/footerDefault2';
 import Chat from '../components/shared/chat';
 import ChatHome from '../components/shared/chat/chatHome';
@@ -23,11 +28,21 @@ function MyApp({ router, Component, pageProps }) {
         <Layout>
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
+              <BrowserView>
               {
                 !pathName.includes('custom') ? 
                 <Header /> : null
               }
-              <Component {...pageProps} />
+              </BrowserView>
+              <MobileView>
+                <HeaderMobileDefault />
+              </MobileView>
+
+                {/* Rendered Page */}
+                <Component {...pageProps} />
+              
+              
+              <BrowserView>
               {
                 pathName === '/' ? 
                 <ChatHome /> : <Chat />
@@ -36,6 +51,7 @@ function MyApp({ router, Component, pageProps }) {
                 !pathName.includes('login') && !pathName.includes('custom') ? 
                 <Footer /> : null
               }
+              </BrowserView>
             </PersistGate>      
           </Provider>
         </Layout>            

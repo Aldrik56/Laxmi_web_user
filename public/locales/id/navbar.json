@@ -25,5 +25,26 @@
     "batiks":"batik",
     "shirts":"kemeja",
     "trousers":"celana panjang",
+
+    "blazzers":"blazer",
+    "tuxedo":"blazer",
+    "bomber jacket":"jaket bomber",
+
+    "Home" : "Beranda",
+    "Product" : "Produk",
+    "Custom" : "Kustom",
+    "Know More" : "Pelajari",
+    "Why Custom" : "Mengapa Kustom",
+    "How It Works" : "Cara Kerja Kami",
+    "Our Fabrics" : "Kain kami",
+    "Reviews" : "Ulasan",
+    "Blog" : "Blog",
+    "Social Media" : "Media sosial",
+    "My Account" : "Akun saya",
+    "Customer Data" : "Data pelanggan",
+    "Order" : "Order",
+    "Measurement Profiles" : "Profil Pengukuran",
+    "Address" : "Alamat",
+
     "custom":"custom"
 }

@@ -12,6 +12,9 @@ import {store,persistor} from '../stores/store'
 // REDUX-PERSIST
 import { PersistGate } from 'redux-persist/integration/react'
 
+// elements
+import {ChatBubble} from '../components/elements/icon';
+
 // Layout
 import Layout from '../components/layouts/layout';
 
@@ -40,8 +43,12 @@ function MyApp({ router, Component, pageProps }) {
 
                 {/* Rendered Page */}
                 <Component {...pageProps} />
-              
-              
+                <ChatBubble />
+                <MobileView>
+                  <span className="chat">
+                    <ChatBubble />
+                  </span>
+                </MobileView>
               <BrowserView>
               {
                 pathName === '/' ? 

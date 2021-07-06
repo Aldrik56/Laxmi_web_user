@@ -11,6 +11,12 @@ main {
   padding-top: 64px;
 }
 
+@media only screen and (max-width: 576px) {
+  main {
+    padding-top: 58px;
+  }
+}
+
 section {
   margin-top: 80px;
 }
@@ -32,7 +38,10 @@ hr {
 
 @media only screen and (max-width: 576px) {
   hr {
-    width: 130px;
+    width: 80px;
+    height: 4px !important;
+    background: #616161;
+    border-radius: 4.08163px;
   }
 }
 
@@ -44,10 +53,25 @@ hr {
   background-color: #FFFFFF !important;
 }
 
+@media only screen and (max-width: 576px) {
+  .bg-light {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
 .btn-primary {
   background-color: #1E1E22 !important;
   border-radius: 8px;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 576px) {
+  .btn-primary {
+    font-size: 14px !important;
+    padding: 11px 13px !important;
+    width: auto !important;
+  }
 }
 
 .btn-transparent {
@@ -161,7 +185,7 @@ input[type=number]:focus,
   padding-left: 24px;
   padding-right: 24px;
   border-bottom: 1px solid #1E1E22;
-  z-index: 1;
+  z-index: 100;
 }
 
 .navbar .logo {
@@ -308,14 +332,14 @@ input[type=number]:focus,
   height: 100vh;
   overflow: hidden;
   top: 0;
-  z-index: 10;
-  position: absolute;
+  z-index: 999;
+  position: fixed;
 }
 
 .sub-sidebar,
 .sidebar {
-  position: absolute;
-  z-index: 11;
+  position: fixed;
+  z-index: 9999;
   overflow-y: scroll;
   height: 100vh;
   width: 222px;
@@ -354,7 +378,7 @@ input[type=number]:focus,
 }
 
 .sub-sidebar {
-  z-index: 12 !important;
+  z-index: 99999 !important;
 }
 
 footer {
@@ -687,7 +711,7 @@ form .unit {
   margin-left: 100px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .banner .content {
     margin-left: 0px;
   }
@@ -739,6 +763,47 @@ form .unit {
   height: 43px;
 }
 
+.banner-mobile {
+  height: 513px;
+}
+
+.banner-mobile .content {
+  margin-bottom: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 0px !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.banner-mobile .content .title {
+  font-size: 44px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+  .banner-mobile .content .title {
+    width: 191px;
+    font-size: 24px;
+  }
+}
+
+.banner-mobile .content .desc-banner {
+  font-size: 18px;
+  width: 191px;
+  text-align: center;
+}
+
+.banner-mobile .content .btn-light {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  line-height: 2;
+}
+
 .head {
   font-style: normal;
   font-weight: normal;
@@ -748,6 +813,17 @@ form .unit {
 @media only screen and (max-width: 576px) {
   .head {
     font-size: 34px;
+  }
+}
+
+.head-mobile {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+@media only screen and (max-width: 576px) {
+  .head-mobile {
+    font-size: 14px;
   }
 }
 
@@ -1187,10 +1263,23 @@ form .unit {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 576px) {
+  .ourProduct-item {
+    margin-top: 24px !important;
+  }
+}
+
 .ourProduct-item .img-container {
   width: 332px;
   height: 430px;
   position: relative;
+}
+
+@media only screen and (max-width: 576px) {
+  .ourProduct-item .img-container {
+    width: 102px;
+    height: 172px;
+  }
 }
 
 .ourProduct-item .img-container:hover .filter {
@@ -1207,7 +1296,7 @@ form .unit {
   -webkit-box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
           box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
   opacity: 0.8;
-  z-index: 99;
+  z-index: 98;
 }
 
 .ourProduct-item .img-container .title {
@@ -1215,10 +1304,18 @@ form .unit {
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
+  text-align: center;
   line-height: 28px;
   letter-spacing: 0.0125em;
   text-transform: uppercase;
   color: #FFFFFF;
+  z-index: 99;
+}
+
+@media only screen and (max-width: 576px) {
+  .ourProduct-item .img-container .title {
+    font-size: 14px;
+  }
 }
 
 .product-list .product-banner {
@@ -1240,13 +1337,13 @@ form .unit {
   height: 6px;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 576px) {
   .product-list .sort-by {
     font-size: 12px;
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 576px) {
   .product-list .product-list-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1756,6 +1853,15 @@ form .unit {
   bottom: 32px;
   z-index: 1030;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .chat-home {
@@ -2332,6 +2438,12 @@ form .unit {
   height: 320px;
 }
 
+@media only screen and (max-width: 576px) {
+  .home .banner-sm {
+    height: 179px;
+  }
+}
+
 .home .banner-sm:hover .filter {
   opacity: 0.1;
 }
@@ -2369,7 +2481,7 @@ form .unit {
 
 @media only screen and (max-width: 576px) {
   .home .banner-sm .content .title {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 30px;
   }
 }
@@ -2385,12 +2497,6 @@ form .unit {
   .home .banner-sm .content .desc {
     font-size: 22px;
     line-height: 30px;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .home .banner-sm {
-    height: 220px;
   }
 }
 
@@ -2794,6 +2900,13 @@ form .unit {
 @media only screen and (max-width: 576px) {
   .faq .accordion-item .accordion-button {
     font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .testimonies {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
 

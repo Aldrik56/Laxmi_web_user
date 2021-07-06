@@ -1,12 +1,27 @@
+import {
+    BrowserView,
+    MobileView
+  } from "react-device-detect";
+
 const Heading = ({title}) => {
     return(
         <>
-            <h1 className="head text-center mt-5 mb-0 text-capitalize">
-                {title}
-            </h1>
-            <div className="d-flex justify-content-center text-capitalize">
-                <hr />
-            </div>        
+            <BrowserView>
+                <h1 className="head text-center mt-5 mb-0 text-capitalize">
+                    {title}
+                </h1>
+                <div className="d-flex justify-content-center text-capitalize">
+                    <hr />
+                </div>        
+            </BrowserView>
+            <MobileView>
+                <h1 className="head-mobile text-center mb-0 text-capitalize">
+                    {title}
+                </h1>
+                <div className="d-flex justify-content-center text-capitalize">
+                    <hr />
+                </div>                      
+            </MobileView>
         </>
     )
 }

@@ -10,6 +10,9 @@ body{
 }
 main{
     padding-top: 64px;
+    @media only screen and (max-width: $sm) {
+        padding-top: 58px;
+    }
 }
 section{
     margin-top: 80px;
@@ -27,7 +30,11 @@ hr{
     opacity: 1;
     background-color: #EEEEEE;
     @media only screen and (max-width: $sm) {
-        width: 130px;
+        width: 80px;
+        height: 4px !important;        
+        background: #616161;
+        border-radius: 4.08163px;
+
     }
 }
 .text-primary{
@@ -35,11 +42,20 @@ hr{
 }
 .bg-light{
     background-color: #FFFFFF !important; 
+    @media only screen and (max-width: $sm) {
+        font-weight: bold;
+        font-size: 14px;
+    }
 }
 .btn-primary{
     background-color: $color-primary !important;
     border-radius: 8px;
     font-weight: bold;
+    @media only screen and (max-width: $sm) {
+        font-size: 14px !important;
+        padding: 11px 13px !important;
+        width: auto !important;
+    }
 }
 .btn-transparent{
     border: 1px solid #FFFFFF;

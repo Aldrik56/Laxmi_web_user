@@ -182,7 +182,7 @@ const HeaderMobileDefault = ({router}) => {
                         onClick={() => setOpenSubSidebar(false)}
                         className="d-flex fw-bold align-items-center">
                         <span className="me-2"> <ChevronLeft /> </span>
-                        Back
+                        {t("Back")}
                     </div>
                     <div className="menu">
                     {

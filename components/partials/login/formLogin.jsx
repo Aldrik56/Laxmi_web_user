@@ -1,57 +1,73 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation';
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // redux
 import { connect } from 'react-redux'
-import {logout,loginAction,enterPage} from '../../../stores';
+import { logout, loginAction, enterPage } from '../../../stores';
 
 // elements
-import {Input} from '../../../components/elements/form';
+import { Input } from '../../../components/elements/form';
 
-const formLogin = ({authData,loginAction,enterPage}) => {
+const formLogin = ({ authData, loginAction, enterPage }) => {
     const router = useRouter()
 
-    const [form,setForm] = useState({})
-    const [error,setError] = useState({})
+    const [form, setForm] = useState({})
+    const [error, setError] = useState({})
 
-    const {t} = useTranslation("login")
+    const { t } = useTranslation("login")
 
     useEffect(() => {
         enterPage()
-        setError({})
-    },[]);   
-    
-    useEffect(() => {
         setError({
-            email : authData.error
+            email: "",
+            password: ""
         })
-    },[authData.error]);  
-    
+    }, []);
+
+    useEffect(() => {
+        console.log(authData);
+        console.log(authData.error);
+        setError({
+            email: authData.error,
+        })
+    }, [authData.error]);
+
+    const validateForm = () => {
+        let valid = true;
+        var newErrors = { ...error }
+
+        if (!form.email) {
+            newErrors.email = `Email ${t("common:cannot be empty")}`;
+            valid = false;
+        } else {
+            newErrors.email = null
+        }
+        if (!form.password) {
+            newErrors.password = `Password ${t("common:cannot be empty")}`;
+            valid = false;
+        } else {
+            newErrors.password = null
+        }
+        setError(newErrors);
+        return valid;
+    }
+
     // handle
     const handleSubmit = e => {
         e.preventDefault()
-        if(form.email){
-            if(form.password){
-                loginAction(form,router)
-            }else{
-                setError({
-                    password : `${t("common:Password")} ${t("common:cannot be empty")}`
-                })                
-            }
-        }else{
-            setError({
-                email : `Email ${t("common:cannot be empty")}`
-            })
+
+        if (validateForm()) {
+            loginAction(form, router)
         }
     }
     const handleChange = e => {
-        const {value,id} = e.target
+        const { value, id } = e.target
 
         setForm({
             ...form,
-            [id] : value
+            [id]: value
         })
     }
 
@@ -64,20 +80,20 @@ const formLogin = ({authData,loginAction,enterPage}) => {
                     {authData.error}
                 </div> : null     
             }             */}
-            <Input 
+            <Input
                 id="email"
                 type="text"
                 error={error.email}
                 label={t("Email")}
                 onChange={handleChange}
-            />   
-            <Input 
+            />
+            <Input
                 id="password"
                 type="password"
                 error={error.password}
                 label={t("Password")}
                 onChange={handleChange}
-            /> 
+            />
             <div className="form-check d-flex flex-row row justify-content-between">
                 <div className="col-12 col-sm-6">
                     {/* <input 
@@ -94,23 +110,23 @@ const formLogin = ({authData,loginAction,enterPage}) => {
                     </Link>
                 </div>
             </div>
-            <button 
+            <button
                 disabled={authData.isLoading}
-                type="submit" 
+                type="submit"
                 className="btn btn-primary w-100 py-3">{authData.isLoading ? 'Loading' : t("common:Login")}</button>
-        </form>  
+        </form>
     )
 }
 const mapStateToProps = state => {
     return {
-      authData: state.auth
+        authData: state.auth
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        logout : () => dispatch(logout()),
-        loginAction: (form,router) => dispatch(loginAction(form,router)),
-        enterPage : () => dispatch(enterPage())
+        logout: () => dispatch(logout()),
+        loginAction: (form, router) => dispatch(loginAction(form, router)),
+        enterPage: () => dispatch(enterPage())
     }
 }
 export default connect(

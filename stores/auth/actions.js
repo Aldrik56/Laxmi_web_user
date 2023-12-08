@@ -16,6 +16,7 @@ export const loginAction = (form,router) => {
       axios
         .post('/auth/signin',form)
         .then(response => {
+          console.log(response);
             const {status,message} = response.data;
             if(status) {
                 dispatch(loginSuccess(response.data.data))

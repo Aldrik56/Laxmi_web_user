@@ -32,10 +32,11 @@ function MyApp({ router, Component, pageProps }) {
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
               <BrowserView>
-              {
+              {/* {
                 !pathName.includes('custom') ? 
                 <Header /> : null
-              }
+              } */}
+              <Header />
               </BrowserView>
               <MobileView>
                 <HeaderMobileDefault />

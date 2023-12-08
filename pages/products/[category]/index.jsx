@@ -11,16 +11,16 @@ import ProductList from '../../../components/partials/product/productList'
 
 
 const ProductsList = () => {
-    const {t} = useTranslation("product")
+    const { t } = useTranslation("product")
     const router = useRouter()
     const { category } = router.query
 
     const pathBreadCumb = [{
-        'path' : `/productportal/${category}`,
-        'name' : `${t("Products")}`
-    },{
-        'path' : `/products/${category}`,
-        'name' : t(category)
+        'path': `/productportal/${category}`,
+        'name': `${t("Products")}`
+    }, {
+        'path': `/products/${category}`,
+        'name': t(category)
     }]
 
     return (
@@ -30,7 +30,7 @@ const ProductsList = () => {
                     layout="fill"
                     objectFit="cover"
                     src='/img/promotion/banner2.png'
-                    alt="laxmi" />                 
+                    alt="laxmi" />
             </div>
             <div className="container-fluid px-5">
                 <BreadCrumb path={pathBreadCumb} />

@@ -24,8 +24,8 @@ const Login = () => {
                 <div className="col-12 col-md-5 col-lg-4 col-xxl-3">
                     <div className="text-center">
                         <h2 className="heading">{t("Title")}</h2>
-                        <p className="desc">{t("Fill with your email & password")}</p>
-                    </div>
+                        <p className="desc">{t("Please enter your registered email and password")}</p>
+                    </div>  
                     <FormLogin />
                 </div>
             </section>

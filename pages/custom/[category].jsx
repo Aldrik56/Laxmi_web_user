@@ -9,21 +9,21 @@ import Heading from '../../components/elements/heading';
 import CustomContainer from '../../components/partials/custom/customContainer';
 
 const CustomShirt = () => {
-    const {t} = useTranslation("custom")
+    const { t } = useTranslation("custom")
     const router = useRouter()
     const { category } = router.query
 
     const pathBreadCumb = [{
-        'path' : '/howitworks',
-        'name' : `${t("common:custom")} ${t(`common:${category}`)}`
+        'path': '/howitworks',
+        'name': `${t("common:custom")} ${t(`common:${category}`)}`
     }]
 
-    return(
+    return (
         <div className="custom">
-            {/* <div className="container-fluid px-5">
+            <div className="container-fluid px-5">
                 <BreadCrumb path={pathBreadCumb} />
                 <Heading title={`${t("common:custom")} ${t(`common:${category}`)}`} />
-            </div> */}
+            </div>
             <section className="mt-3 d-flex justify-content-center">
                 <CustomContainer t={t} />
             </section>
@@ -31,4 +31,4 @@ const CustomShirt = () => {
     )
 }
 
-export default CustomShirt ;
+export default CustomShirt;

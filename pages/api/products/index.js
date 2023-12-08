@@ -1,11 +1,12 @@
 export default function handler(req, res) {
-    res.status(200).json({ 
+    res.status(200).json({
         "status": true,
         "message": "products was fetched",
         "page": 1,
         "limit": 9,
         "total_page": 1,
         "total_data": 1,
+        "req": `${req.body}`,
         "data": [
             {
                 "_id": "1",
@@ -59,9 +60,8 @@ export default function handler(req, res) {
                 "stocks": 10,
                 "currency": "IDR",
                 "price": 500000,
-                "is_new": true            
+                "is_new": true
             }
         ]
     })
 }
-  

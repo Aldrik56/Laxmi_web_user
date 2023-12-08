@@ -1,8 +1,13 @@
 export default function handler(req, res) {
     if (req.method === 'POST') {
-        const {email,password} = req.body
-        if(email === 'dafa@gmail.com' && password === '12345678'){
-            res.status(200).json({ 
+        const { email, password } = req.body
+        if (email !== 'dafa@gmail.com') {
+            res.status(200).json({
+                "status": false,
+                "message": "The email you are inputting is not registered yet",
+            })
+        } else if (email === 'dafa@gmail.com' && password === '12345678') {
+            res.status(200).json({
                 "status": true,
                 "message": "signin was successful",
                 "data": {
@@ -16,12 +21,11 @@ export default function handler(req, res) {
                     "role": "user"
                 }
             })
-        }else{
-            res.status(200).json({ 
+        } else {
+            res.status(200).json({
                 "status": false,
                 "message": "Username or Password False",
             })
         }
     }
 }
-  

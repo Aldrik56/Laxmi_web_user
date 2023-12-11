@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 6500
 
 # Define the command to run your app
-RUN npm run dev
+CMD npm run dev

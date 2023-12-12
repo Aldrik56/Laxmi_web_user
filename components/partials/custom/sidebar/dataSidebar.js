@@ -66,21 +66,21 @@ export const ShirtListStyle = [
             },
         ]
     },
-    {
-        id: 3,
-        title: "Fit",
-        image: 'Fit',
-        list_category: [
-            {
-                name: "Regular",
-                image: "/img/custom/styles/fit/regular.jpg",
-            },
-            {
-                name: "Slim",
-                image: "/img/custom/styles/fit/slim.jpg",
-            },
-        ]
-    },
+    // {
+    //     id: 3,
+    //     title: "Fit",
+    //     image: 'Fit',
+    //     list_category: [
+    //         {
+    //             name: "Regular",
+    //             image: "/img/custom/styles/fit/regular.jpg",
+    //         },
+    //         {
+    //             name: "Slim",
+    //             image: "/img/custom/styles/fit/slim.jpg",
+    //         },
+    //     ]
+    // },
     {
         id: 4,
         title: "Bottom",
@@ -132,25 +132,25 @@ export const ShirtListStyle = [
             },
         ]
     },
-    {
-        id: 7,
-        title: "Pleats",
-        image: 'Pleats',
-        list_category: [
-            {
-                name: "Box Pleat",
-                image: "/img/custom/styles/pleats/box_pleat.jpg",
-            },
-            {
-                name: "Side Pleat",
-                image: "/img/custom/styles/pleats/side_pleat.jpg",
-            },
-            {
-                name: "No Pleat",
-                image: "/img/custom/styles/pleats/no_pleat.jpg",
-            },
-        ]
-    }
+    // {
+    //     id: 7,
+    //     title: "Pleats",
+    //     image: 'Pleats',
+    //     list_category: [
+    //         {
+    //             name: "Box Pleat",
+    //             image: "/img/custom/styles/pleats/box_pleat.jpg",
+    //         },
+    //         {
+    //             name: "Side Pleat",
+    //             image: "/img/custom/styles/pleats/side_pleat.jpg",
+    //         },
+    //         {
+    //             name: "No Pleat",
+    //             image: "/img/custom/styles/pleats/no_pleat.jpg",
+    //         },
+    //     ]
+    // }
 ]
 
 export const TrouserListStyle = [

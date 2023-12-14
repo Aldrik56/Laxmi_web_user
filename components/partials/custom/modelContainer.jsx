@@ -24,7 +24,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 setPocket(styleSelect.category)
                 break;
             case "Placket":
-                setPlacket(styleSelect.category)
+                setPlacket(styleSelect.category.toLowerCase())
                 break;
             default:
                 break;

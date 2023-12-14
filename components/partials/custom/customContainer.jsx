@@ -18,20 +18,15 @@ const CustomContainer = ({ t }) => {
     const [sidebar, setSidebar] = useState(1)
     const [fabricSelect, setFabricSelect] = useState({})
     const [styleSelect, setStyleSelect] = useState({})
-
     const router = useRouter()
     const { category } = router.query
 
     const StepSidebar = () => {
         switch (sidebar) {
             case 1:
-                return <FabricContainer t={t} onClick={(v) => {
-                    setFabricSelect(v);
-                }} />
+                return <FabricContainer t={t} onClick={(v) => setFabricSelect(v)} />
             case 2:
-                return <StyleContainer t={t} onClick={(v) => {
-                    setStyleSelect(v);
-                }} />
+                return <StyleContainer t={t} onClick={(v) => setStyleSelect(v)} />
             case 3:
                 return <AccentContainer t={t} />
             default:

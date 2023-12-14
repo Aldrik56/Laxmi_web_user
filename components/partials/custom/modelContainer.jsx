@@ -8,7 +8,6 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     const [collar, setCollar] = useState("Band")
     const [pocket, setPocket] = useState("No Pocket")
     const [placket, setPlacket] = useState("standard")
-    const [pleat, setPleat] = useState("No Pleat")
     const [pov, setPov] = useState('front')
     useEffect(() => {
         switch (styleSelect.title) {
@@ -26,9 +25,6 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 break;
             case "Placket":
                 setPlacket(styleSelect.category)
-                break;
-            case "Pleats":
-                setPleat(styleSelect.category)
                 break;
             default:
                 break;

@@ -20,13 +20,11 @@ import {
 
 
 const StyleContainer = ({ t, onClick }) => {
-
     const router = useRouter()
     const { category } = router.query
     const [list, setList] = useState([])
     const [openStyle, setOpenStyle] = useState(false)
     const [subCategory, setSubCategory] = useState({})
-
 
     useEffect(() => {
         switch (category) {
@@ -154,22 +152,22 @@ const StyleContainer = ({ t, onClick }) => {
                     </div>
                     <div className="col-8 list-mini-category">
                         <div className="header d-flex justify-content-between align-items-center">
-                            <p>{t(subCategory.title)}</p>
+                            <p>{subCategory !== null ? t(subCategory.title) : ""}</p>
                             <span
                                 className="text-pointer"
-                                onClick={() => setOpenStyle(false)} >
+                                onClick={() => setOpenStyle(false)}  >
                                 <ArrowLeft />
                             </span>
                         </div>
                         <div className="row mt-4">
                             {
-                                subCategory.list && subCategory.list.map((v) => (
+                                // subCategory.list && 
+                                subCategory.list?.map((v) => (
                                     <div onClick={() => {
                                         onClick({
                                             title: subCategory.title,
                                             category: v.name,
                                         })
-                                        // setOpenStyle(true)
                                     }} className="col-12 col-lg-6 d-flex flex-column align-items-center">
                                         <Image
                                             width={65}
@@ -193,7 +191,8 @@ const StyleContainer = ({ t, onClick }) => {
                                     onClick={() => {
                                         setSubCategory({
                                             id: data.id,
-                                            title: data.title
+                                            title: data.title,
+                                            list: data.list_category,
                                         })
                                         setOpenStyle(true)
                                     }}

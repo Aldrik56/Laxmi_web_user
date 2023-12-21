@@ -93,7 +93,7 @@ const FormForgotPassword = () => {
                         if (status) {
                             swal(
                                 `${t("Password Changed Successfully")}`,
-                                `${t("Please log in again")}`, "success").then(() => {
+                                `${t("Please log in again")}`, "success").then((v) => {
                                     router.push('/login')
                                 })
                             setError({})
@@ -109,6 +109,8 @@ const FormForgotPassword = () => {
                             password: `${t("common:Something Wrong")}`
                         })
                     })
+                } else {
+                    setIsLoading(false)
                 }
             })
         }

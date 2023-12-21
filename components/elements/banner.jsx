@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 
 // herlper
-import Axios from '../../helpers/axiosConfig'
+// import Axios from '../../helpers/axiosConfig'
+import axios from 'axios';
 
 const Banner = ({ t }) => {
     const [data, setData] = useState({})
 
     useEffect(() => {
-        Axios.get(`/home/banner`)
+        axios.get(`/api/home/banner`)
             .then(response => {
                 const { data, status } = response.data
                 if (status) {

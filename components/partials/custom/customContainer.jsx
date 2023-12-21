@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -14,12 +14,42 @@ import AccentContainer from './sidebar/accentContainer'
 import ModelContainer from './modelContainer'
 import DetailContainer from './detailContainer'
 
+
+
 const CustomContainer = ({ t }) => {
+    const [styleSelect, setStyleSelect] = useState({})
     const [sidebar, setSidebar] = useState(1)
     const [fabricSelect, setFabricSelect] = useState({})
-    const [styleSelect, setStyleSelect] = useState({})
+    const [price, setPrice] = useState(30)
+    const [sleeve, setSleeve] = useState(3)
+    const [collar, setCollar] = useState(4)
+    const [pocket, setPocket] = useState(0)
+    const [placket, setPlacket] = useState(5)
     const router = useRouter()
     const { category } = router.query
+
+    useEffect(() => {
+        console.log(styleSelect.price);
+        setPrice(0)
+        switch (styleSelect.title) {
+            case "Collar":
+                setCollar(styleSelect.price)
+                break;
+            case "Sleeve":
+                setSleeve(styleSelect.price)
+                break;
+            case "Chest Pocket":
+                setPocket(styleSelect.price)
+                break;
+            case "Placket":
+                setPlacket(styleSelect.price)
+                break;
+            default:
+                break;
+        }
+        setPrice(fabricSelect.price + collar + sleeve + pocket + placket)
+    }, [styleSelect, fabricSelect])
+
 
     const StepSidebar = () => {
         switch (sidebar) {
@@ -84,6 +114,7 @@ const CustomContainer = ({ t }) => {
                     <DetailContainer
                         category={category}
                         sidebar={sidebar}
+                        price={price}
                         setSidebar={setSidebar}
                         t={t} />
                 </div>

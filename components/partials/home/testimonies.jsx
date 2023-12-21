@@ -3,18 +3,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // helper
-import Axios from '../../../helpers/axiosConfig'
+// import Axios from '../../../helpers/axiosConfig'
 
 // elements
 import Heading from '../../elements/heading'
 import Rating from '../webInformation/testimonies/module/rating'
+import axios from 'axios';
 
 const Testimonies = ({t}) => {
     const [data,setData] = useState(null)
     const [error,setError] = useState(null)
 
     useEffect(() => {
-        Axios.get(`/home/testimonies`)
+        axios.get(`/api/home/testimonies`)
         .then(response => {
             const {data,status,message} = response.data
             if(status){

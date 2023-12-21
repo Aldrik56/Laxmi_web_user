@@ -1,13 +1,14 @@
 import React, { useState,useEffect } from 'react';
 
 // herlper
-import Axios from '../../../../helpers/axiosConfig'
+// import Axios from '../../../../helpers/axiosConfig'
+import axios from 'axios';
 
 
 const SubCategory = ({t,params,handleSubCategory}) => {
     const [data,setData] = useState(null)
     useEffect(() => {
-        Axios.get(`/products/filter`)
+        axios.get(`/api/products/filter`)
         .then(response => {
             const {data,status} = response.data
             if(status){

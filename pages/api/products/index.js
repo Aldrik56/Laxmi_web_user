@@ -1,4 +1,12 @@
-export default function handler(req, res) {
+import axiosConfig from "../../../helpers/axiosConfig";
+
+export default async function handler(req, res) {
+
+    // try {
+    //     const response = await axios.get('/')
+    // } catch (e) {
+
+    // }
     res.status(200).json({
         "status": true,
         "message": "products was fetched",

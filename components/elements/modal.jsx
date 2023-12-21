@@ -3,13 +3,14 @@ import {Close} from '../elements/icon'
 import Image from 'next/image'
 
 // herlper
-import Axios from '../../helpers/axiosConfig'
+// import Axios from '../../helpers/axiosConfig'
+import axios from 'axios';
 
 export const ModalPromotion = () => {
     const [banner,setBanner] = useState(null)
 
     useEffect(() => {
-        Axios.get(`/home/popup`)
+        axios.get(`/api/home/popup`)
         .then(response => {
             const {data,status} = response.data
             if(status){

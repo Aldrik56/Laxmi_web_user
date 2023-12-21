@@ -57,7 +57,6 @@ const formLogin = ({ authData, loginAction, enterPage }) => {
     // handle
     const handleSubmit = e => {
         e.preventDefault()
-
         if (validateForm()) {
             loginAction(form, router)
         }

@@ -2,18 +2,19 @@ import React, { useState,useEffect } from 'react';
 import Link from 'next/link'
 
 // helper
-import Axios from '../../../helpers/axiosConfig'
+// import Axios from '../../../helpers/axiosConfig'
 
 // elements
 import Heading from '../../elements/heading'
 import Product from '../../elements/product/productHome'
+import axios from 'axios';
 
 const SomeProduct = ({t}) => {
     const [data,setData] = useState(null)
     const [error,setError] = useState(null)
 
     useEffect(() => {
-        Axios.get(`/home/products`)
+        axios.get(`/api/home/products`)
         .then(response => {
             const {data,status,message} = response.data
             if(status){

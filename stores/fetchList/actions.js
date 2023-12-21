@@ -1,11 +1,12 @@
 
+import axios from 'axios';
 import {
   FETCH_REQUEST,
   FETCH_SUCCESS,
   FETCH_FAILURE,
 } from './types';
 
-import axios from '../../helpers/axiosConfig'
+// import axios from '../../helpers/axiosConfig'
 
 export const fetcAction = (url, params) => {
   let urlParamsFilter = ''
@@ -20,7 +21,7 @@ export const fetcAction = (url, params) => {
   return (dispatch) => {
     dispatch(fetchActionRequest())
     axios
-      .get(`${url}?${urlParamsFilter}`)
+      .get(`/api${url}?${urlParamsFilter}`)
       .then(response => {
         const { status, message, data } = response.data
         if (status) {

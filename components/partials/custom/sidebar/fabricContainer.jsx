@@ -26,7 +26,7 @@ const FabricContainer = ({ t, onClick }) => {
                                         src={data.image}
                                         alt="laxmi" />
                                     <div className="price d-flex align-items-center w-100">
-                                        <h1> $ 0.00</h1>
+                                        <h1> $ {data.price}.0</h1>
                                     </div>
                                 </div>
                                 <h6 className="title mb-0">{data.title}</h6>

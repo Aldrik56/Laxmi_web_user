@@ -2,17 +2,18 @@ import React, { useState,useEffect } from 'react';
 import Image from 'next/image'
 
 // helper
-import Axios from '../../../helpers/axiosConfig'
+// import Axios from '../../../helpers/axiosConfig'
 
 // elements
 import Heading from '../../elements/heading'
+import axios from 'axios';
 
 const Clients = ({t}) => {
     const [data,setData] = useState(null)
     const [error,setError] = useState(null)
 
     useEffect(() => {
-        Axios.get(`/home/our_client`)
+        axios.get(`/api/home/our_client`)
         .then(response => {
             const {data,status,message} = response.data
             if(status){

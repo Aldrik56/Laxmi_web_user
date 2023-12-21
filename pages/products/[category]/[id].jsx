@@ -9,7 +9,7 @@ import {fetcAction} from '../../../stores';
 
 
 // helper
-import Axios from '../../../helpers/axiosConfig'
+// import Axios from '../../../helpers/axiosConfig'
 
 // elements
 import BreadCrumb from '../../../components/elements/breadcrumb'
@@ -24,6 +24,7 @@ import Heading from '../../../components/elements/heading';
 
 // shared
 import Testimonies from '../../../components/partials/home/testimonies';
+import axios from 'axios';
 
 const ProductsDetail = ({fetcAction,fetchResult}) => {
     const {t} = useTranslation("product")
@@ -43,7 +44,7 @@ const ProductsDetail = ({fetcAction,fetchResult}) => {
     },[category]);
 
     useEffect(() => {
-        Axios.get(`/products/details/${id}`)
+        axios.get(`/api/products/details/${id}`)
         .then(response => {
             const {data,status,message} = response.data
             if(status){

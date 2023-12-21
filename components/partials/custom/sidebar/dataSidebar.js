@@ -7,42 +7,53 @@ export const ShirtListStyle = [
             {
                 name: "Long",
                 image: "/img/custom/styles/collar/long.jpg",
+                price: 5
+
             },
             {
                 name: "Short",
                 image: "/img/custom/styles/collar/short.jpg",
+                price: 3
             },
             {
                 name: "Band",
                 image: "/img/custom/styles/collar/band.jpg",
+                price: 4
             },
             {
                 name: "Button Down",
                 image: "/img/custom/styles/collar/button_down.jpg",
+                price: 5
             },
             {
                 name: "Cutaway",
                 image: "/img/custom/styles/collar/cutaway.jpg",
+                price: 4
             },
             {
                 name: "Kent",
                 image: "/img/custom/styles/collar/kent.jpg",
+                price: 4
             },
             {
                 name: "New Kent",
                 image: "/img/custom/styles/collar/new_kent.jpg",
+                price: 5
             },
             {
                 name: "Pinned",
                 image: "/img/custom/styles/collar/pinned.jpg",
+                price: 6
             },
             {
                 name: "Rounded",
                 image: "/img/custom/styles/collar/rounded.jpg",
+                price: 4
             },
             {
                 name: "Wing",
                 image: "/img/custom/styles/collar/wing.jpg",
+                price: 5
             },
         ]
     },
@@ -59,10 +70,12 @@ export const ShirtListStyle = [
             {
                 name: "Long",
                 image: "/img/custom/styles/sleeve/long.jpg",
+                price: 5
             },
             {
                 name: "Short",
                 image: "/img/custom/styles/sleeve/short.jpg",
+                price: 3
             },
         ]
     },
@@ -94,22 +107,27 @@ export const ShirtListStyle = [
             {
                 name: "No Pocket",
                 image: "/img/custom/styles/pocket/no_pocket.jpg",
+                price: 0
             },
             {
                 name: "Standard",
                 image: "/img/custom/styles/pocket/standard.jpg",
+                price: 3
             },
             {
                 name: "With Flap",
                 image: "/img/custom/styles/pocket/with_flap.jpg",
+                price: 4
             },
             {
                 name: "Double Standard",
                 image: "/img/custom/styles/pocket/double_standard.jpg",
+                price: 5
             },
             {
                 name: "Double With Flap",
                 image: "/img/custom/styles/pocket/double_with_flap.jpg",
+                price: 6
             },
         ]
     },
@@ -121,14 +139,17 @@ export const ShirtListStyle = [
             {
                 name: "Standard",
                 image: "/img/custom/styles/placket/standard.jpg",
+                price: 5
             },
             {
                 name: "French",
                 image: "/img/custom/styles/placket/french.jpg",
+                price: 6
             },
             {
                 name: "Hidden",
                 image: "/img/custom/styles/placket/hidden.jpg",
+                price: 6
             },
         ]
     },
@@ -332,11 +353,11 @@ export const ShirtListAccent = [
         title: "Threads",
         image: 'Threads'
     },
-    {
-        id: 20,
-        title: "Elbow Patches",
-        image: 'ElbowPatches'
-    },
+    // {
+    //     id: 20,
+    //     title: "Elbow Patches",
+    //     image: 'ElbowPatches'
+    // },
     {
         id: 21,
         title: "Buttons",
@@ -396,20 +417,20 @@ export const ShirtAccentSubCategory = {
             image: '/img/custom/shirts/accent/CustomizeCuffs/Outer.svg'
         }
     ],
-    ElbowPatches: [
-        {
-            title: "Default",
-            modalFIlter: false,
-            isData: false,
-            image: '/img/custom/shirts/accent/ElbowPatches/Default.svg'
-        },
-        {
-            title: "Custom Color",
-            modalFIlter: true,
-            isData: false,
-            image: '/img/custom/shirts/accent/ElbowPatches/CustomColour.svg'
-        }
-    ],
+    // ElbowPatches: [
+    //     {
+    //         title: "Default",
+    //         modalFIlter: false,
+    //         isData: false,
+    //         image: '/img/custom/shirts/accent/ElbowPatches/Default.svg'
+    //     },
+    //     {
+    //         title: "Custom Color",
+    //         modalFIlter: true,
+    //         isData: false,
+    //         image: '/img/custom/shirts/accent/ElbowPatches/CustomColour.svg'
+    //     }
+    // ],
     Threads: [
         {
             title: "Default",
@@ -559,11 +580,11 @@ export const BatikListAccent = [
         title: "Threads",
         image: 'Threads'
     },
-    {
-        id: 31,
-        title: "Elbow Patches",
-        image: 'ElbowPatches'
-    },
+    // {
+    //     id: 31,
+    //     title: "Elbow Patches",
+    //     image: 'ElbowPatches'
+    // },
     {
         id: 32,
         title: "Buttons",
@@ -597,11 +618,11 @@ export const BlazerListAccent = [
         title: "Threads",
         image: 'Threads'
     },
-    {
-        id: 'bla6',
-        title: "Elbow Patches",
-        image: 'ElbowPatches'
-    },
+    // {
+    //     id: 'bla6',
+    //     title: "Elbow Patches",
+    //     image: 'ElbowPatches'
+    // },
     {
         id: 'bla7',
         title: "Neck Lining",
@@ -689,20 +710,20 @@ export const BlazerAccentSubCategory = {
             image: '/img/custom/blazer/accent/Threads/LapelsOnly.svg'
         }
     ],
-    ElbowPatches: [
-        {
-            title: "Without",
-            modalFIlter: false,
-            isData: false,
-            image: '/img/custom/blazer/accent/ElbowPatches/Without.svg'
-        },
-        {
-            title: "Custom Color",
-            modalFIlter: false,
-            isData: true,
-            image: '/img/custom/blazer/accent/ElbowPatches/CustomColor.svg'
-        }
-    ],
+    // ElbowPatches: [
+    //     {
+    //         title: "Without",
+    //         modalFIlter: false,
+    //         isData: false,
+    //         image: '/img/custom/blazer/accent/ElbowPatches/Without.svg'
+    //     },
+    //     {
+    //         title: "Custom Color",
+    //         modalFIlter: false,
+    //         isData: true,
+    //         image: '/img/custom/blazer/accent/ElbowPatches/CustomColor.svg'
+    //     }
+    // ],
     NeckLining: [
         {
             title: "Default",

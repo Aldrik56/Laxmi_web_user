@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Slide from 'react-reveal/Slide';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 // elements
 import { ArrowLeft } from '../../../elements/icon'
@@ -21,10 +21,16 @@ import {
 
 const StyleContainer = ({ t, onClick }) => {
     const router = useRouter()
+    const initialValue = {
+        id: 1,
+        title: "Collar",
+        list: []
+    }
     const { category } = router.query
     const [list, setList] = useState([])
-    const [openStyle, setOpenStyle] = useState(false)
-    const [subCategory, setSubCategory] = useState({})
+    const [openStyle, setOpenStyle] = useState(true)
+    const [subCategory, setSubCategory] = useState(initialValue)
+    const [selectOnClick, setSelecOnClick]=useState({})
 
     useEffect(() => {
         switch (category) {
@@ -43,8 +49,6 @@ const StyleContainer = ({ t, onClick }) => {
             case 'blazer':
                 setList(BlazerListStyle)
                 break;
-            default:
-                return false
         }
     }, [category]);
     return (
@@ -152,7 +156,7 @@ const StyleContainer = ({ t, onClick }) => {
                     </div>
                     <div className="col-8 list-mini-category">
                         <div className="header d-flex justify-content-between align-items-center">
-                            <p>{subCategory !== null ? t(subCategory.title) : ""}</p>
+                            <p>{t(subCategory.title)}</p>
                             <span
                                 className="text-pointer"
                                 onClick={() => setOpenStyle(false)}  >
@@ -161,14 +165,15 @@ const StyleContainer = ({ t, onClick }) => {
                         </div>
                         <div className="row mt-4">
                             {
-                                // subCategory.list && 
+                                subCategory.list &&
                                 subCategory.list?.map((v) => (
-                                    <div onClick={() => {
+                                    <div onClick={() =>
                                         onClick({
                                             title: subCategory.title,
                                             category: v.name,
+                                            price: v.price,
                                         })
-                                    }} className="col-12 col-lg-6 d-flex flex-column align-items-center">
+                                    } className="col-12 col-lg-6 d-flex flex-column align-items-center">
                                         <Image
                                             width={65}
                                             height={80}
@@ -182,7 +187,7 @@ const StyleContainer = ({ t, onClick }) => {
                     </div>
                 </div>
             </Slide>
-            <div className="icon-style-list mt-2 pb-4">
+            {/* <div className="icon-style-list mt-2 pb-4">
                 <div className="row ">
                     {
                         category !== "suits" ?
@@ -305,7 +310,7 @@ const StyleContainer = ({ t, onClick }) => {
                             </div>
                     }
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

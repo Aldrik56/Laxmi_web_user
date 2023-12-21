@@ -3,19 +3,22 @@ export const FabricList = [
         isNew: false,
         title: "C-Blue",
         image: '/img/custom/fabric/C-Blue.png',
-        category: 'Cotton'
+        category: 'Cotton',
+        price: 30
     },
     {
         isNew: false,
         title: "P-Blue",
         image: '/img/custom/fabric/P-Blue.png',
-        category: 'Cotton'
+        category: 'Cotton',
+        price: 30
     },
     {
         isNew: false,
         title: "S-Blue",
         image: '/img/custom/fabric/S-Blue.png',
-        category: 'Cotton'
+        category: 'Cotton',
+        price: 30
     },
     // {
     //     isNew: true,

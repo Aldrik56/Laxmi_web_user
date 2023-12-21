@@ -9,7 +9,9 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     const [pocket, setPocket] = useState("No Pocket")
     const [placket, setPlacket] = useState("standard")
     const [pov, setPov] = useState('front')
+    
     useEffect(() => {
+        console.log(styleSelect);
         switch (styleSelect.title) {
             case "Fit":
                 setFit(styleSelect.category)

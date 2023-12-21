@@ -6,7 +6,7 @@ export default function handler(req, res) {
         axios.post("/auth/send_email", {
             email: email,
             // link: `http://localhost:3000/login/forgotpassword`,
-            link: `http://${process.env.BASE_URL}/login/forgotpassword`,
+            link: `http://34.101.70.83:6500/login/forgotpassword`,
         }).then((response) => {
             const { status, message } = response.data
             if (status) {

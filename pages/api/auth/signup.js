@@ -27,16 +27,5 @@ export default function handler(req, res) {
                 "message": message,
             })
         })
-        // if(email === 'dafa@gmail.com'){
-        //     res.status(200).json({ 
-        //         "status": false,
-        //         "message": "email already exist"            
-        //     })
-        // }else{
-        //     res.status(200).json({ 
-        //         "status": true,
-        //         "message": "signup was successful, check your email"            
-        //     })
-        // }
     }
 }

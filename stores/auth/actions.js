@@ -76,7 +76,7 @@ export const registerAction = (form) => {
 }
 
 export const forgotAction1 = form => {
-  return axios.post(`/auth/forgot_p1`, form)
+  return axios.post(`/api/auth/forgot_p1`, form)
     .then(response => {
       return response.data
     })
@@ -89,7 +89,7 @@ export const forgotAction1 = form => {
 }
 
 export const forgotAction2 = form => {
-  return axios.post(`/auth/forgot_p2`, form)
+  return axios.post(`/api/auth/forgot_p2`, form)
     .then(response => {
       return response.data
     })
@@ -102,7 +102,7 @@ export const forgotAction2 = form => {
 }
 
 export const forgotAction3 = form => {
-  return axios.post(`/auth/forgot_p3`, form)
+  return axios.post(`/api/auth/forgot_p3`, form)
     .then(response => {
       return response.data
     })

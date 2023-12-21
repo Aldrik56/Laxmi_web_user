@@ -41,6 +41,9 @@ const formLogin = ({ authData, loginAction, enterPage }) => {
         if (!form.email) {
             newErrors.email = `Email ${t("common:cannot be empty")}`;
             valid = false;
+        } else if (!form.email.includes("@")) {
+            newErrors.email = `Email ${t("common:is not valid")}`;
+            valid = false;
         } else {
             newErrors.email = null
         }

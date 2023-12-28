@@ -275,7 +275,7 @@ const CustomContainer = ({ t }) => {
                                                         price: v.price,
                                                     })
                                                 } className="col-12 col-lg-6 d-flex flex-column align-items-center">
-                                                    {
+                                                    {/* {
                                                          styleSelect.category === v.name && (
                                                             <CheckCircleOutline
                                                                 width={20}
@@ -283,7 +283,7 @@ const CustomContainer = ({ t }) => {
                                                                 color={"grey"}
                                                             />
                                                         )
-                                                    }
+                                                    } */}
                                                     <Image
                                                         width={65}
                                                         height={80}

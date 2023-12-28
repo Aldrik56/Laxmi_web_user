@@ -7,7 +7,7 @@ const Heading = ({title}) => {
     return(
         <>
             <BrowserView>
-                <h1 className="head text-center mt-5 mb-0 text-capitalize">
+                <h1 className="head text-center mb-0 text-capitalize">
                     {title}
                 </h1>
                 <div className="d-flex justify-content-center text-capitalize">

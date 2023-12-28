@@ -13,14 +13,16 @@ const CustomShirt = () => {
     const router = useRouter()
     const { category } = router.query
 
-    const pathBreadCumb = [{
-        'path': '/howitworks',
-        'name': `${t("common:custom")} ${t(`common:${category}`)}`
-    }]
+    const pathBreadCumb = [
+        {
+            'path': '/howitworks',
+            'name': `${t("common:custom")} ${t(`common:${category}`)}`
+        },
+    ]
 
     return (
         <div className="custom">
-            <div className="container-fluid px-5">
+            <div className="container-fluid px-5" style={{ marginTop: 100 }}>
                 <BreadCrumb path={pathBreadCumb} />
                 <Heading title={`${t("common:custom")} ${t(`common:${category}`)}`} />
             </div>

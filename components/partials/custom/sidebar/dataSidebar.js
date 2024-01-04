@@ -336,22 +336,74 @@ export const ShirtListAccent = [
     {
         id: 16,
         title: "Embroidory",
-        image: 'Embroidory'
+        image: 'Embroidory',
+        list_category: []
     },
     {
         id: 17,
         title: "Contrasted Collar",
-        image: 'ContrastedCollar'
+        image: 'ContrastedCollar',
+        list_category: [
+            {
+                name: "Default",
+                image: "/img/custom/accent/collar/default.png",
+                price: 3,
+            },
+            {
+                name: "Inner",
+                image: "/img/custom/accent/collar/inner.png",
+                price: 5,
+            },
+            {
+                name: "Outer",
+                image: "/img/custom/accent/collar/outer.png",
+                price: 5,
+            },
+            {
+                name: "All",
+                image: "/img/custom/accent/collar/all.png",
+                price: 10,
+            },
+        ]
     },
     {
         id: 18,
         title: "Customize Cuffs",
-        image: 'CustomizeCuffs'
+        image: 'CustomizeCuffs',
+        list_category: [
+            {
+                name: "Inner",
+                image: "/img/custom/accent/cuffs/inner.png",
+                price: 5,
+            },
+            {
+                name: "Outer",
+                image: "/img/custom/accent/cuffs/outer.png",
+                price: 5,
+            },
+            {
+                name: "All",
+                image: "/img/custom/accent/cuffs/all.png",
+                price: 10,
+            },
+        ]
     },
     {
         id: 19,
         title: "Threads",
-        image: 'Threads'
+        image: 'Threads',
+        list_category: [
+            {
+                name: "All",
+                image: "/img/custom/accent/threads/all.png",
+                price: 10,
+            },
+            {
+                name: "Default",
+                image: "/img/custom/accent/threads/default.png",
+                price: 10,
+            },
+        ]
     },
     // {
     //     id: 20,
@@ -361,7 +413,19 @@ export const ShirtListAccent = [
     {
         id: 21,
         title: "Buttons",
-        image: 'Buttons'
+        image: 'Buttons',
+        list_category: [
+            {
+                name: "Custom",
+                image: "/img/custom/accent/buttons/custom.png",
+                price: 10,
+            },
+            {
+                name: "Default",
+                image: "/img/custom/accent/buttons/default.png",
+                price: 10,
+            },
+        ]
     }
 ]
 export const ShirtAccentSubCategory = {
@@ -460,8 +524,8 @@ export const ShirtAccentSubCategory = {
         },
         {
             title: "Custom",
-            modalFIlter: false,
-            isData: true,
+            modalFIlter: true,
+            isData: false,
             image: '/img/custom/shirts/accent/Buttons/Custom.svg'
         }
     ]

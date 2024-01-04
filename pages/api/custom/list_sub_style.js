@@ -1,9 +1,8 @@
 import axios from "../../../helpers/axiosConfig";
 
 export default function handler(req, res) {
-    // console.log(req);
     if (req.method === "GET") {
-        axios.get("/detail_fabric").then((response) => {
+        axios.get("/detail_sub_style?name_style=Collar").then((response) => {
             const { status, message } = response.data
             if (status) {
                 const { data } = response.data
@@ -28,4 +27,5 @@ export default function handler(req, res) {
             })
         })
     }
+
 }

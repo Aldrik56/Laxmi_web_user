@@ -8,6 +8,9 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     const [collar, setCollar] = useState("Kent")
     const [collarAccent, setCollarAccent] = useState("Default")
     const [collarColor, setCollarColor] = useState("Black")
+    const [cuffs, setCuffs] = useState("Double Rounded French")
+    const [cuffsAccent, setCuffsAccent] = useState("Default")
+    const [cuffsColor, setCuffsColor] = useState("Default")
     const [pocket, setPocket] = useState("No Pocket")
     const [placket, setPlacket] = useState("standard")
     const [pov, setPov] = useState('front')
@@ -23,12 +26,19 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 setCollarAccent(`${collarAccent.split(" ")[0]} ${styleSelect.category}`)
                 break;
             case "Contrasted Collar":
-                console.log(`${styleSelect.category} ${collar} ${styleSelect.color}`);
                 setCollarColor(`${styleSelect.color}`)
                 setCollarAccent(`${styleSelect.category} ${collar}`);
                 break;
             case "Sleeve":
                 setSleeve(styleSelect.category.toLowerCase())
+                break;
+            case "Cuffs":
+                setCuffs(styleSelect.category.toLowerCase())
+                setCuffsAccent(`${cuffsAccent.split(" ")[0]} ${styleSelect.category}`)
+                break;
+            case "Customize Cuffs":
+                setCuffsColor(styleSelect.color)
+                setCuffsAccent(`${styleSelect.category} ${cuffs}`)
                 break;
             case "Chest Pocket":
                 setPocket(styleSelect.category)
@@ -40,6 +50,15 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 break;
         }
     }, [styleSelect])
+
+    function removeFirstWord(text) {
+        const words = text.split(' ');
+        if (words.length > 1) {
+            return words.slice(1).join(' ');
+        } else {
+            return '';
+        }
+    }
     return (
         <div className="model-container row">
             {/* front */}
@@ -116,8 +135,20 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/sleeve/${sleeve}.png`}
                                 alt="laxmi" />
                         </div>
+                        {/* accent cuffs */}
+                        {
+                            sleeve === "long" && cuffsAccent.split(" ")[0] !== "Inner" && cuffsColor !== "Default" && (
+                                <div style={{ zIndex: 7, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={`/img/custom/${category}/accent/${pov}/cuffs/${cuffsColor}.png`}
+                                        alt="laxmi" />
+                                </div>
+                            )
+                        }
                         {/* pocket */}
-                        <div style={{ zIndex: 7, position: 'relative' }}>
+                        <div style={{ zIndex: 8, position: 'relative' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -166,13 +197,29 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* sleeve */}
-                        <div style={{ zIndex: 6, position: 'relative' }}>
+                        <div style={{
+                            zIndex: 6,
+                            position: (sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner") ? 'absolute' : 'relative'
+                        }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/sleeve/${sleeve}.png`}
                                 alt="laxmi" />
                         </div>
+                        {/* accent cuffs */}
+                        {
+                            sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner" && (
+                                <div style={{ zIndex: 8, position: 'relative' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={`/img/custom/${category}/accent/${pov}/cuffs/${removeFirstWord(cuffsAccent)} ${cuffsColor}.png`}
+                                        alt="laxmi" />
+                                </div>
+
+                            )
+                        }
                     </div>
                 </div>
                 {/* folded */}
@@ -225,6 +272,19 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/sleeve/${sleeve}.png`}
                                 alt="laxmi" />
                         </div>
+                        {/* accent cuffs */}
+                        {
+                            sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner" && (
+                                <div style={{ zIndex: 6, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={512} // 292 | 512 | 585 | 731 | 1579
+                                        src={`/img/custom/${category}/accent/${pov}/cuffs/${removeFirstWord(cuffsAccent)} ${cuffsColor}.png`}
+                                        alt="laxmi" />
+                                </div>
+                            )
+                        }
+
                         {/* pocket */}
                         <div style={{ zIndex: 7, position: 'relative' }}>
                             <Image
@@ -233,7 +293,6 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/pocket/${pocket}.png`}
                                 alt="laxmi" />
                         </div>
-
                     </div>
                 </div>
             </div>

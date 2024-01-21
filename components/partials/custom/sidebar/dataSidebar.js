@@ -60,7 +60,61 @@ export const ShirtListStyle = [
     {
         id: 2,
         title: "Cuffs",
-        image: 'Cuffs'
+        image: 'Cuffs',
+        list_category: [
+            {
+                name: "Double Rounded French",
+                image: "/img/custom/styles/cuff/drf.png",
+                price: 5,
+            },
+            {
+                name: "Double Square French",
+                image: "/img/custom/styles/cuff/dsf.png",
+                price: 5,
+            },
+
+            {
+                name: "Rounded One",
+                image: "/img/custom/styles/cuff/r1.png",
+                price: 5,
+            },
+            {
+                name: "Rounded Two",
+                image: "/img/custom/styles/cuff/r2.png",
+                price: 5,
+            },
+            {
+                name: "Rounded French",
+                image: "/img/custom/styles/cuff/rf.png",
+                price: 5,
+            },
+            {
+                name: "Square French",
+                image: "/img/custom/styles/cuff/sf.png",
+                price: 5,
+            },
+            {
+                name: "Single One Button",
+                image: "/img/custom/styles/cuff/s1.png",
+                price: 5,
+            },
+            {
+                name: "Single Two Button",
+                image: "/img/custom/styles/cuff/s2.png",
+                price: 5,
+            },
+
+            {
+                name: "One Button Cut",
+                image: "/img/custom/styles/cuff/obc.png",
+                price: 5,
+            },
+            {
+                name: "Two Button Cut",
+                image: "/img/custom/styles/cuff/tbc.png",
+                price: 5,
+            },
+        ]
     },
     {
         id: 3,

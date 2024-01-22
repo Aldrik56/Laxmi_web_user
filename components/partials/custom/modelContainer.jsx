@@ -34,7 +34,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 break;
             case "Cuffs":
                 setSleeve("long")
-                setCuffs(styleSelect.category.toLowerCase())
+                setCuffs(styleSelect.category)
                 setCuffsAccent(`${cuffsAccent.split(" ")[0]} ${styleSelect.category}`)
                 break;
             case "Customize Cuffs":
@@ -295,17 +295,33 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* sleeve */}
-                        <div style={{ zIndex: 6, position: 'absolute' }}>
-                            <Image
-                                width={350} // 200 | 350 | 400 | 500 | 1080
-                                height={512} // 292 | 512 | 585 | 731 | 1579
-                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/sleeve/${sleeve}.png`}
-                                alt="laxmi" />
-                        </div>
+                        {
+                            sleeve !== "long" && (
+                                <div style={{ zIndex: 6, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={512} // 292 | 512 | 585 | 731 | 1579
+                                        src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/sleeve/${sleeve}.png`}
+                                        alt="laxmi" />
+                                </div>
+                            )
+                        }
+                        {/* cuffs */}
+                        {
+                            sleeve === "long" && (
+                                <div style={{ zIndex: 7, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={512} // 292 | 512 | 585 | 731 | 1579
+                                        src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/cuffs/${cuffs}.png`}
+                                        alt="laxmi" />
+                                </div>
+                            )
+                        }
                         {/* accent cuffs */}
                         {
                             sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner" && (
-                                <div style={{ zIndex: 6, position: 'absolute' }}>
+                                <div style={{ zIndex: 8, position: 'absolute' }}>
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={512} // 292 | 512 | 585 | 731 | 1579
@@ -316,7 +332,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                         }
 
                         {/* pocket */}
-                        <div style={{ zIndex: 7, position: 'absolute' }}>
+                        <div style={{ zIndex: 9, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={512} // 292 | 512 | 585 | 731 | 1579
@@ -324,7 +340,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* no model */}
-                        <div style={{ zIndex: 8, position: 'relative' }}>
+                        <div style={{ zIndex: 10, position: 'relative' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={512} // 292 | 512 | 585 | 731 | 1579

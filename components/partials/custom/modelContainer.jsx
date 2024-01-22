@@ -16,6 +16,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     const [pov, setPov] = useState('front')
 
     useEffect(() => {
+        console.log(styleSelect);
         switch (styleSelect.title) {
             case "Fit":
                 setFit(styleSelect.category)
@@ -32,6 +33,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 setSleeve(styleSelect.category.toLowerCase())
                 break;
             case "Cuffs":
+                setSleeve("long")
                 setCuffs(styleSelect.category.toLowerCase())
                 setCuffsAccent(`${cuffsAccent.split(" ")[0]} ${styleSelect.category}`)
                 break;

@@ -206,13 +206,29 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* sleeve */}
-                        <div style={{ zIndex: 6, position: 'absolute' }}>
-                            <Image
-                                width={350} // 200 | 350 | 400 | 500 | 1080
-                                height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/sleeve/${sleeve}.png`}
-                                alt="laxmi" />
-                        </div>
+                        {
+                            sleeve !== "long" && (
+                                <div style={{ zIndex: 6, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/sleeve/${sleeve}.png`}
+                                        alt="laxmi" />
+                                </div>
+                            )
+                        }
+                        {/* cuffs */}
+                        {
+                            sleeve === "long" && (
+                                <div style={{ zIndex: 7, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/cuffs/${cuffs}.png`}
+                                        alt="laxmi" />
+                                </div>
+                            )
+                        }
                         {/* accent cuffs */}
                         {
                             sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner" && (

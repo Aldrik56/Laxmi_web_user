@@ -16,7 +16,6 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     const [pov, setPov] = useState('front')
 
     useEffect(() => {
-        console.log(styleSelect);
         switch (styleSelect.title) {
             case "Fit":
                 setFit(styleSelect.category)

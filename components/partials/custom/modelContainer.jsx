@@ -149,11 +149,19 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                             )
                         }
                         {/* pocket */}
-                        <div style={{ zIndex: 8, position: 'relative' }}>
+                        <div style={{ zIndex: 8, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/pocket/${pocket}.png`}
+                                alt="laxmi" />
+                        </div>
+                        {/* no model */}
+                        <div style={{ zIndex: 9, position: 'relative' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/front_no_model.png`}
                                 alt="laxmi" />
                         </div>
 
@@ -198,10 +206,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* sleeve */}
-                        <div style={{
-                            zIndex: 6,
-                            position: (sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner") ? 'absolute' : 'relative'
-                        }}>
+                        <div style={{ zIndex: 6, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -211,7 +216,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                         {/* accent cuffs */}
                         {
                             sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner" && (
-                                <div style={{ zIndex: 8, position: 'relative' }}>
+                                <div style={{ zIndex: 8, position: 'absolute' }}>
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -221,6 +226,14 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
 
                             )
                         }
+                        {/* no model */}
+                        <div style={{ zIndex: 9, position: 'relative' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/back_no_model.png`}
+                                alt="laxmi" />
+                        </div>
                     </div>
                 </div>
                 {/* folded */}
@@ -287,11 +300,19 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                         }
 
                         {/* pocket */}
-                        <div style={{ zIndex: 7, position: 'relative' }}>
+                        <div style={{ zIndex: 7, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={512} // 292 | 512 | 585 | 731 | 1579
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/pocket/${pocket}.png`}
+                                alt="laxmi" />
+                        </div>
+                        {/* no model */}
+                        <div style={{ zIndex: 8, position: 'relative' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={512} // 292 | 512 | 585 | 731 | 1579
+                                src={`/img/custom/folded_no_model.png`}
                                 alt="laxmi" />
                         </div>
                     </div>

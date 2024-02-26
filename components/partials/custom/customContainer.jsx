@@ -760,9 +760,7 @@ const CustomContainer = ({ t }) => {
                     <p
                         onClick={() => {
                             setOpenStyle(false)
-                            setSidebar(2)
-                        }
-                        }
+                            setSidebar(2)}}
                         className={`${sidebar === 2 ? 'active' : ''} text-pointer`}>{t("Style")}</p>
                     {
                         category !== "trousers" ?

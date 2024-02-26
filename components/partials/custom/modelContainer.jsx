@@ -27,6 +27,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 break;
             case "Contrasted Collar":
                 setCollarColor(`${styleSelect.color}`)
+                if (pov === "back") setPov("folded")
                 setCollarAccent(`${styleSelect.category} ${collar}`);
                 break;
             case "Sleeve":
@@ -34,6 +35,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                 break;
             case "Cuffs":
                 setSleeve("long")
+                if (pov === "front") setPov("back")
                 setCuffs(styleSelect.category)
                 setCuffsAccent(`${cuffsAccent.split(" ")[0]} ${styleSelect.category}`)
                 break;

@@ -151,7 +151,31 @@ export const ShirtListStyle = [
     {
         id: 4,
         title: "Bottom",
-        image: 'Bottom'
+        image: 'Bottom',
+        list_category: [
+            {
+                name: "Tail",
+                image: "/img/custom/styles/bottom/tail.jpg",
+                price: 0,
+            },
+            {
+                name: "Square",
+                image: "/img/custom/styles/bottom/square.jpg",
+                price: 0,
+            },
+        ],
+        other_category: [
+            {
+                name: "Tucked",
+                image: "/img/custom/styles/bottom/tucked.jpg",
+                price: 0,
+            },
+            {
+                name: "Untucked",
+                image: "/img/custom/styles/bottom/untucked.jpg",
+                price: 0,
+            },
+        ]
     },
     {
         id: 5,

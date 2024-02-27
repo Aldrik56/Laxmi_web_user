@@ -201,6 +201,7 @@ const CustomContainer = ({ t }) => {
                                                             id: data.id,
                                                             title: data.title,
                                                             list: data.list_category,
+                                                            other_list: data.other_category,
                                                         })
                                                     }}
                                                     // onClick={() => changeSubCategory(data)}
@@ -301,17 +302,17 @@ const CustomContainer = ({ t }) => {
                                         </span>
                                     </div>
                                     <div className="row mt-4">
-                                        {
-                                            subCategory.list && subCategory.list?.map((v) => (
-
-                                                <div onClick={() =>
-                                                    setStyleSelect({
-                                                        title: subCategory.title,
-                                                        category: v.name,
-                                                        price: v.price,
-                                                    })
-                                                } className="col-12 col-lg-6 d-flex flex-column align-items-center">
-                                                    {/* {
+                                        <>
+                                            {
+                                                subCategory.list && subCategory.list?.map((v) => (
+                                                    <div onClick={() =>
+                                                        setStyleSelect({
+                                                            title: subCategory.title,
+                                                            category: v.name,
+                                                            price: v.price,
+                                                        })
+                                                    } className="col-12 col-lg-6 d-flex flex-column align-items-center">
+                                                        {/* {
                                                          styleSelect.category === v.name && (
                                                             <CheckCircleOutline
                                                                 width={20}
@@ -320,16 +321,54 @@ const CustomContainer = ({ t }) => {
                                                             />
                                                         )
                                                     } */}
-                                                    <Image
-                                                        width={65}
-                                                        height={80}
-                                                        src={v.image}
-                                                        alt="laxmi" />
-                                                    <p>{v.name}</p>
-                                                </div>
+                                                        <Image
+                                                            width={65}
+                                                            height={80}
+                                                            src={v.image}
+                                                            alt="laxmi" />
+                                                        <p>{v.name}</p>
+                                                    </div>
 
-                                            ))
-                                        }
+                                                ))
+
+                                            }
+                                            {
+                                                subCategory.other_list && (
+                                                    <p>{t("How are you going to wear this shirt?")}</p>
+                                                )
+                                            }
+
+                                            {
+                                                subCategory.other_list && subCategory.other_list?.map((v) => (
+                                                    <>
+                                                        <div onClick={() =>
+                                                            setStyleSelect({
+                                                                title: subCategory.title,
+                                                                category: v.name,
+                                                                price: v.price,
+                                                            })
+                                                        } className="col-12 col-lg-6 d-flex flex-column align-items-center">
+                                                            {/* {
+                                                         styleSelect.category === v.name && (
+                                                            <CheckCircleOutline
+                                                                width={20}
+                                                                height={20}
+                                                                color={"grey"}
+                                                            />
+                                                        )
+                                                    } */}
+                                                            <Image
+                                                                width={65}
+                                                                height={80}
+                                                                src={v.image}
+                                                                alt="laxmi" />
+                                                            <p>{v.name}</p>
+                                                        </div>
+                                                    </>
+
+                                                ))
+                                            }
+                                        </>
                                     </div>
                                 </div>
                             </div>
@@ -760,7 +799,8 @@ const CustomContainer = ({ t }) => {
                     <p
                         onClick={() => {
                             setOpenStyle(false)
-                            setSidebar(2)}}
+                            setSidebar(2)
+                        }}
                         className={`${sidebar === 2 ? 'active' : ''} text-pointer`}>{t("Style")}</p>
                     {
                         category !== "trousers" ?

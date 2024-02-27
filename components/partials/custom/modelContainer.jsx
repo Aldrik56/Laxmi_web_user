@@ -3,7 +3,8 @@ import { ChevronLeft, ChevronRight } from '../../elements/icon'
 import { useEffect, useState } from 'react';
 
 const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
-    const [fit, setFit] = useState("Regular")
+    // const [fit, setFit] = useState("Regular")
+    const [bottom, setBottom] = useState("Untucked")
     const [sleeve, setSleeve] = useState("short")
     const [collar, setCollar] = useState("Kent")
     const [collarAccent, setCollarAccent] = useState("Default")
@@ -18,8 +19,11 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     useEffect(() => {
         console.log(styleSelect);
         switch (styleSelect.title) {
-            case "Fit":
-                setFit(styleSelect.category)
+            // case "Fit":
+            //     setFit(styleSelect.category)
+            //     break;
+            case "Bottom":
+                setBottom(styleSelect.category)
                 break;
             case "Collar":
                 setCollar(styleSelect.category)
@@ -105,7 +109,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/${fit}.png`}
+                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/${bottom}.png`}
                                 alt="laxmi" />
                         </div>
                         {/* collar */}
@@ -273,7 +277,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={512} // 292 | 512 | 585 | 731 | 1579
-                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/${fit}.png`}
+                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/${bottom}.png`}
                                 alt="laxmi" />
                         </div>
                         {/* collar */}

@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 
 const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     // const [fit, setFit] = useState("Regular")
-    const [bottom, setBottom] = useState("Untucked")
+    const [bottom, setBottom] = useState("Square")
+    const [bottomSecondary, setBottomSecondary] = useState("Untucked")
     const [sleeve, setSleeve] = useState("short")
     const [collar, setCollar] = useState("Kent")
     const [collarAccent, setCollarAccent] = useState("Default")
@@ -23,7 +24,11 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
             //     setFit(styleSelect.category)
             //     break;
             case "Bottom":
-                setBottom(styleSelect.category)
+                if (styleSelect.type == "secondary") {
+                    setBottomSecondary(styleSelect.category)
+                } else {
+                    setBottom(styleSelect.category)
+                }
                 break;
             case "Collar":
                 setCollar(styleSelect.category)
@@ -104,16 +109,24 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 src={`/img/custom/model_${pov}.png`}
                                 alt="laxmi" />
                         </div>
-                        {/* body */}
+                        {/* pant */}
                         <div style={{ zIndex: 3, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/${bottom}.png`}
+                                src={`/img/custom/model_${pov}_pant.png`}
+                                alt="laxmi" />
+                        </div>
+                        {/* body */}
+                        <div style={{ zIndex: 4, position: 'absolute' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/${bottomSecondary === "Untucked" ? bottom : bottomSecondary}.png`}
                                 alt="laxmi" />
                         </div>
                         {/* collar */}
-                        <div style={{ zIndex: 4, position: 'absolute' }}>
+                        <div style={{ zIndex: 5, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -121,7 +134,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* accent collar */}
-                        <div style={{ zIndex: 5, position: 'absolute' }}>
+                        <div style={{ zIndex: 6, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -135,7 +148,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* sleeve */}
-                        <div style={{ zIndex: 6, position: 'absolute' }}>
+                        <div style={{ zIndex: 7, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -145,7 +158,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                         {/* accent cuffs */}
                         {
                             sleeve === "long" && cuffsAccent.split(" ")[0] !== "Inner" && cuffsColor !== "Default" && (
-                                <div style={{ zIndex: 7, position: 'absolute' }}>
+                                <div style={{ zIndex: 8, position: 'absolute' }}>
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -155,7 +168,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                             )
                         }
                         {/* pocket */}
-                        <div style={{ zIndex: 8, position: 'absolute' }}>
+                        <div style={{ zIndex: 9, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -163,7 +176,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* no model */}
-                        <div style={{ zIndex: 9, position: 'relative' }}>
+                        <div style={{ zIndex: 10, position: 'relative' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -187,16 +200,24 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 src={`/img/custom/model_${pov}.png`}
                                 alt="laxmi" />
                         </div>
-                        {/* body */}
+                        {/* pant */}
                         <div style={{ zIndex: 3, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/body/Regular.png`}
+                                src={`/img/custom/model_${pov}_pant.png`}
+                                alt="laxmi" />
+                        </div>
+                        {/* body */}
+                        <div style={{ zIndex: 4, position: 'absolute' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/body/${bottomSecondary === "Untucked" ? bottom : bottomSecondary}.png`}
                                 alt="laxmi" />
                         </div>
                         {/* collar */}
-                        <div style={{ zIndex: 4, position: 'absolute' }}>
+                        <div style={{ zIndex: 5, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -204,7 +225,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 alt="laxmi" />
                         </div>
                         {/* accent collar */}
-                        <div style={{ zIndex: 5, position: 'absolute' }}>
+                        <div style={{ zIndex: 6, position: 'absolute' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -214,7 +235,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                         {/* sleeve */}
                         {
                             sleeve !== "long" && (
-                                <div style={{ zIndex: 6, position: 'absolute' }}>
+                                <div style={{ zIndex: 7, position: 'absolute' }}>
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -226,7 +247,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                         {/* cuffs */}
                         {
                             sleeve === "long" && (
-                                <div style={{ zIndex: 7, position: 'absolute' }}>
+                                <div style={{ zIndex: 8, position: 'absolute' }}>
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -238,7 +259,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                         {/* accent cuffs */}
                         {
                             sleeve === "long" && cuffsAccent !== "Default" && cuffsColor !== "Default" && cuffsAccent.split(" ")[0] !== "Inner" && (
-                                <div style={{ zIndex: 8, position: 'absolute' }}>
+                                <div style={{ zIndex: 9, position: 'absolute' }}>
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -249,7 +270,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                             )
                         }
                         {/* no model */}
-                        <div style={{ zIndex: 9, position: 'relative' }}>
+                        <div style={{ zIndex: 10, position: 'relative' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -277,7 +298,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={512} // 292 | 512 | 585 | 731 | 1579
-                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/${bottom}.png`}
+                                src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/body/Regular.png`}
                                 alt="laxmi" />
                         </div>
                         {/* collar */}

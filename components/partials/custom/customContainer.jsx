@@ -307,6 +307,7 @@ const CustomContainer = ({ t }) => {
                                                 subCategory.list && subCategory.list?.map((v) => (
                                                     <div onClick={() =>
                                                         setStyleSelect({
+                                                            type: "primary",
                                                             title: subCategory.title,
                                                             category: v.name,
                                                             price: v.price,
@@ -337,12 +338,12 @@ const CustomContainer = ({ t }) => {
                                                     <p>{t("How are you going to wear this shirt?")}</p>
                                                 )
                                             }
-
                                             {
                                                 subCategory.other_list && subCategory.other_list?.map((v) => (
                                                     <>
                                                         <div onClick={() =>
                                                             setStyleSelect({
+                                                                type: "secondary",
                                                                 title: subCategory.title,
                                                                 category: v.name,
                                                                 price: v.price,

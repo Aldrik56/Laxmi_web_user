@@ -3,9 +3,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mr+Bedfort&family=Philosopher&family=Princess+Sofia&family=Rakkas&family=Revalia&display=swap");
 
+@font-face {
+  font-family: 'Ananda Black';
+  src: url("../public/fonts/Ananda\ Black.ttf") format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Curetro';
+  src: url("../public/fonts/Curetro.ttf") format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Naliko Betah';
+  src: url("../public/fonts/Naliko\ Betah.ttf") format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #1E1E22;
+}
+
+
+.test {
+  color: red;
+  font-family: 'Ananda Black' !important;
 }
 
 main {

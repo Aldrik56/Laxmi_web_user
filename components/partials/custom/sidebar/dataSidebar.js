@@ -55,7 +55,8 @@ export const ShirtListStyle = [
                 image: "/img/custom/styles/collar/wing.jpg",
                 price: 5
             },
-        ]
+        ],
+
     },
     {
         id: 2,
@@ -442,6 +443,23 @@ export const ShirtListAccent = [
                 image: "/img/custom/accent/collar/all.png",
                 price: 10,
             },
+        ],
+        list_color: [
+            {
+                name: "Black",
+                code: "#323232",
+                price: 0,
+            },
+            {
+                name: "Navy",
+                code: "#1d2541",
+                price: 0,
+            },
+            {
+                name: "Red",
+                code: "#b40808",
+                price: 0,
+            },
         ]
     },
     {
@@ -463,6 +481,23 @@ export const ShirtListAccent = [
                 name: "All",
                 image: "/img/custom/accent/cuffs/all.png",
                 price: 10,
+            },
+        ],
+        list_color: [
+            {
+                name: "Black",
+                code: "#323232",
+                price: 0,
+            },
+            {
+                name: "Navy",
+                code: "#1d2541",
+                price: 0,
+            },
+            {
+                name: "Red",
+                code: "#b40808",
+                price: 0,
             },
         ]
     },
@@ -503,7 +538,25 @@ export const ShirtListAccent = [
                 image: "/img/custom/accent/buttons/default.png",
                 price: 10,
             },
+        ],
+        list_color: [
+            {
+                name: "Black",
+                code: "#323232",
+                price: 0,
+            },
+            {
+                name: "Navy",
+                code: "#1d2541",
+                price: 0,
+            },
+            {
+                name: "Red",
+                code: "#b40808",
+                price: 0,
+            },
         ]
+
     }
 ]
 export const ShirtAccentSubCategory = {

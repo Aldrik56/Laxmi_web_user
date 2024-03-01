@@ -1,3 +1,4 @@
+
 const fontList = [
     {
         fontFamily : "Mr Bedfort",
@@ -18,6 +19,18 @@ const fontList = [
     {
         fontFamily : "Revalia",
         type : "cursive"
+    },
+    {
+        fontFamily : "Ananda Black",
+        type : "sans-serif"
+    },
+    {
+        fontFamily : "Curetro",
+        type : "sans-serif"
+    },
+    {
+        fontFamily : "Naliko Betah",
+        type : "sans-serif"
     },
 ]
 

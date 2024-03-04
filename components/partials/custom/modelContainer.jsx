@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from '../../elements/icon'
 import { useEffect, useState } from 'react';
 
-const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
+const ModelContainer = ({ category, fabricSelect, styleSelect, bordir }) => {
     // const [fit, setFit] = useState("Regular")
     const [bottom, setBottom] = useState("Square")
     const [bottomSecondary, setBottomSecondary] = useState("Untucked")
@@ -16,6 +16,11 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
     const [pocket, setPocket] = useState("No Pocket")
     const [placket, setPlacket] = useState("standard")
     const [pov, setPov] = useState('front')
+    const [bordirs, setBordirs] = useState()
+
+    useEffect(() => {
+        setBordirs(bordir)
+    }, [bordir])
 
     useEffect(() => {
         console.log(styleSelect);
@@ -68,14 +73,59 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
         }
     }, [styleSelect])
 
-    function removeFirstWord(text) {
-        const words = text.split(' ');
-        if (words.length > 1) {
-            return words.slice(1).join(' ');
-        } else {
-            return '';
+    function getBordirPosition(defPosition, typePosition) {
+        switch (typePosition) {
+            case "Chest":
+                if (defPosition === "top") {
+                    return 195;
+                } else if (defPosition === "right") {
+                    return 160;
+                }
+            case "Medium":
+                if (defPosition === "top") {
+                    return 260;
+                } else if (defPosition === "right") {
+                    return 160;
+                }
+            case "Low":
+                if (defPosition === "top") {
+                    return 320;
+                } else if (defPosition === "right") {
+                    return 160;
+                }
+            case "Cuff":
+                if (defPosition === "top") {
+                    return 380;
+                } else if (defPosition === "right") {
+                    return 105;
+                }
+
+            default:
+                break;
         }
+        // chest
+        // top: 195,
+        // right: 160,
+        // medium
+        // top: 260,
+        // right: 160,
+        // low
+        // top: 320,
+        // right: 160,
+        // cuffs
+        // top: 380,
+        // right: 108,
     }
+
+    // function removeFirstWord(text) {
+    //     const words = text.split(' ');
+    //     if (words.length > 1) {
+    //         return words.slice(1).join(' ');
+    //     } else {
+    //         return '';
+    //     }
+    // }
+
     return (
         <div className="model-container row">
             {/* front */}
@@ -178,8 +228,23 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/pocket/${pocket}.png`}
                                 alt="laxmi" />
                         </div>
+                        <div style={{
+                            width: 350, // 200 | 350 | 400 | 500 | 1080
+                            height: 953, // 544 | 953 | 1089 | 1361 | 2940
+                            zIndex: 10, position: 'absolute',
+                            // backgroundColor: 'red',
+                        }}>
+                            <label style={{
+                                position: 'absolute',
+                                fontFamily: bordirs?.font ?? "Arial",
+                                fontSize: 6,
+                                top: getBordirPosition('top', bordirs?.position),
+                                right: getBordirPosition('right', bordirs?.position),
+                                color: bordirs?.color,
+                            }}>{bordirs?.name}</label>
+                        </div>
                         {/* no model */}
-                        <div style={{ zIndex: 10, position: 'relative' }}>
+                        <div style={{ zIndex: 11, position: 'relative' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -373,8 +438,27 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                                 src={`/img/custom/${category}/${fabricSelect.title ?? "C-Blue"}/${pov}/${placket}/pocket/${pocket}.png`}
                                 alt="laxmi" />
                         </div>
+                        {
+                            bordirs && bordirs.position && bordirs.position === "Chest" && (
+                                <div style={{
+                                    width: 350, // 200 | 350 | 400 | 500 | 1080
+                                    height: 512, // 544 | 953 | 1089 | 1361 | 2940
+                                    zIndex: 10, position: 'absolute',
+                                    // backgroundColor: 'red',
+                                }}>
+                                    <label style={{
+                                        position: 'absolute',
+                                        fontFamily: bordirs?.font ?? "Arial",
+                                        fontSize: 12,
+                                        top: 340,
+                                        right: 122,
+                                        color: bordirs.color,
+                                    }}>{bordirs.name}</label>
+                                </div>
+                            )
+                        }
                         {/* no model */}
-                        <div style={{ zIndex: 10, position: 'relative' }}>
+                        <div style={{ zIndex: 11, position: 'relative' }}>
                             <Image
                                 width={350} // 200 | 350 | 400 | 500 | 1080
                                 height={512} // 292 | 512 | 585 | 731 | 1579
@@ -384,7 +468,7 @@ const ModelContainer = ({ category, fabricSelect, styleSelect }) => {
                     </div>
                 </div>
             </div>
-            <div className='col-2 d-flex align-items-center' style={{ height: "80vh" }}>
+            <div className='col-2 d-flex align-items-center' style={{ height: "80vh", zIndex: 12 }}>
                 <div onClick={() => {
                     switch (pov) {
                         case "front":

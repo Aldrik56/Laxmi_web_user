@@ -2274,8 +2274,9 @@ form .unit {
 }
 
 .style-container .list-mini-category {
-  height: 65vh;
-  overflow-y: scroll;
+  height: 61vh;
+  /* overflow-y: scroll; */
+  overflow: auto;
   padding: 0px 20px;
 }
 

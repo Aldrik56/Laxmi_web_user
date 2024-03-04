@@ -416,7 +416,7 @@ export const ShirtListAccent = [
         id: 16,
         title: "Embroidory",
         image: 'Embroidory',
-        list_category: []
+        list_category: [],
     },
     {
         id: 17,

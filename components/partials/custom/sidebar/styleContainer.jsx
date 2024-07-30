@@ -9,17 +9,7 @@ import { ArrowLeft } from '../../../elements/icon'
 import Icon from '../../../elements/icon/custom'
 
 
-// data
-import {
-    BlazerListStyle,
-    ShirtListStyle,
-    TrouserListStyle,
-    VestListStyle,
-    BatikListStyle
-} from './dataSidebar'
-
-
-const StyleContainer = ({ t, onClick }) => {
+const StyleContainer = (props) => {
     const router = useRouter()
     const initialValue = {
         id: 1,
@@ -27,44 +17,32 @@ const StyleContainer = ({ t, onClick }) => {
         list: []
     }
     const { category } = router.query
-    const [list, setList] = useState([])
-    const [openStyle, setOpenStyle] = useState(true)
     const [subCategory, setSubCategory] = useState(initialValue)
-    const [selectOnClick, setSelecOnClick]=useState({})
-
     useEffect(() => {
-        switch (category) {
-            case 'vests':
-                setList(VestListStyle)
-                break;
-            case 'batiks':
-                setList(BatikListStyle)
-                break;
-            case 'shirts':
-                setList(ShirtListStyle)
-                break;
-            case 'trousers':
-                setList(TrouserListStyle)
-                break;
-            case 'blazer':
-                setList(BlazerListStyle)
-                break;
+        if (props.styleSelected) {
+            setSubCategory({
+                id: props.styleSelected.id,
+                title: props.styleSelected.title,
+                list: props.styleSelected.list,
+            })
         }
-    }, [category]);
+    }, [props.styleSelected])
+
     return (
-        <div className="style-container">
-            <Slide left when={openStyle} duration={500} >
-                <div className={`row ${openStyle ? '' : 'd-none'}`}>
-                    <div className="col-4 me-0 pe-0 d-flex flex-column align-items-center mini-category">
-                        {
-                            category !== "suits" ?
-                                list.map((data, index) => (
+        <>
+            <div className="style-container" >
+                <Slide left when={props.isOpenStyle} duration={500} >
+                    <div className={`row ${props.isOpenStyle ? '' : 'd-none'}`}>
+                        <div className="col-4 me-0 pe-0 d-flex flex-column align-items-center mini-category">
+                            {
+                                props.listStyle.map((data, index) => (
                                     <div
                                         onClick={() => {
                                             setSubCategory({
                                                 id: data.id,
                                                 title: data.title,
                                                 list: data.list_category,
+                                                other_list: data.other_category,
                                             })
                                         }}
                                         key={index}
@@ -75,243 +53,74 @@ const StyleContainer = ({ t, onClick }) => {
                                                 category={category}
                                                 icon={data.image} />
                                         </div>
-                                        <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                    </div>
-                                )) :
-                                <>
-                                    <div className="sub-category-item w-100 text-pointer">
-                                        <p className={`title text-center fw-bold`}>{t("common:blazer")}</p>
-                                    </div>
-                                    {
-                                        BlazerListStyle.map((data, index) => (
-                                            <div
-                                                onClick={() => {
-                                                    setSubCategory({
-                                                        id: data.id,
-                                                        title: data.title
-                                                    })
-                                                }}
-                                                key={index}
-                                                className="sub-category-item w-100 text-pointer">
-                                                <div className="d-flex justify-content-center">
-                                                    <Icon
-                                                        color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
-                                                        category="blazer"
-                                                        icon={data.image} />
-                                                </div>
-                                                <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                            </div>
-                                        ))
-                                    }
-                                    <div className="sub-category-item w-100 text-pointer">
-                                        <p className={`title text-center fw-bold`}>{t("common:trousers")}</p>
-                                    </div>
-                                    {
-                                        TrouserListStyle.map((data, index) => (
-                                            <div
-                                                onClick={() => {
-                                                    setSubCategory({
-                                                        id: data.id,
-                                                        title: data.title
-                                                    })
-                                                }}
-                                                key={index}
-                                                className="sub-category-item w-100 text-pointer">
-                                                <div className="d-flex justify-content-center">
-                                                    <Icon
-                                                        color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
-                                                        category="trousers"
-                                                        icon={data.image} />
-                                                </div>
-                                                <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                            </div>
-                                        ))
-                                    }
-                                    <div className="sub-category-item w-100 text-pointer">
-                                        <p className={`title text-center fw-bold`}>{t("common:vests")}</p>
-                                    </div>
-                                    {
-                                        VestListStyle.map((data, index) => (
-                                            <div
-                                                onClick={() => {
-                                                    setSubCategory({
-                                                        id: data.id,
-                                                        title: data.title
-                                                    })
-                                                }}
-                                                key={index}
-                                                className="sub-category-item w-100 text-pointer">
-                                                <div className="d-flex justify-content-center">
-                                                    <Icon
-                                                        color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
-                                                        category="vests"
-                                                        icon={data.image} />
-                                                </div>
-                                                <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                            </div>
-                                        ))
-                                    }
-                                </>
-                        }
-                    </div>
-                    <div className="col-8 list-mini-category">
-                        <div className="header d-flex justify-content-between align-items-center">
-                            <p>{t(subCategory.title)}</p>
-                            <span
-                                className="text-pointer"
-                                onClick={() => setOpenStyle(false)}  >
-                                <ArrowLeft />
-                            </span>
-                        </div>
-                        <div className="row mt-4">
-                            {
-                                subCategory.list &&
-                                subCategory.list?.map((v) => (
-                                    <div onClick={() =>
-                                        onClick({
-                                            title: subCategory.title,
-                                            category: v.name,
-                                            price: v.price,
-                                        })
-                                    } className="col-12 col-lg-6 d-flex flex-column align-items-center">
-                                        <Image
-                                            width={65}
-                                            height={80}
-                                            src={v.image}
-                                            alt="laxmi" />
-                                        <p>{v.name}</p>
+                                        <p className={`title text-center ${props.subCategory?.title === data.title ? 'text-primary fw-bold' : ''}`}>{props.t(data.title)}</p>
                                     </div>
                                 ))
                             }
                         </div>
+                        <div className="col-8 list-mini-category">
+                            <div className="header d-flex justify-content-between align-items-center">
+                                <p>{props.t(subCategory.title)}</p>
+                                <span
+                                    className="text-pointer"
+                                    onClick={() => props.onClickOpenStyle(false)}  >
+                                    <ArrowLeft />
+                                </span>
+                            </div>
+                            <div className="row mt-4">
+                                <>
+                                    {
+                                        subCategory.list && subCategory.list?.map((v) => (
+                                            <div
+                                                onClick={() => props.onClick({
+                                                    id: subCategory.id,
+                                                    title: subCategory.title,
+                                                    list: subCategory.list,
+                                                    name: v.name,
+                                                })}
+                                                className='col-12 col-lg-6 d-flex flex-column align-items-center text-pointer'>
+                                                <Image
+                                                    width={65}
+                                                    height={80}
+                                                    src={v.image}
+                                                    alt="laxmi" />
+                                                <p>{v.name}</p>
+                                            </div>
+                                        ))
+                                    }
+                                </>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </Slide>
-            {/* <div className="icon-style-list mt-2 pb-4">
-                <div className="row ">
-                    {
-                        category !== "suits" ?
-                            list.map((data, index) => (
+                </Slide>
+                <div className={`icon-style-list mt-2 pb-4 ${!props.isOpenStyle ? '' : 'd-none'}`}>
+                    <div className={`row`}>
+                        {
+                            props.listStyle.map((data, index) => (
                                 <div
                                     onClick={() => {
                                         setSubCategory({
                                             id: data.id,
                                             title: data.title,
                                             list: data.list_category,
+                                            other_list: data.other_category,
                                         })
-                                        setOpenStyle(true)
+                                        props.onClickOpenStyle(true)
                                     }}
-                                    key={index}
-                                    className="col-12 icon-style-item d-flex align-items-center text-pointer">
+                                    className='col-12 icon-style-item d-flex align-items-center text-pointer'>
                                     <div className="img-container">
                                         <Icon
                                             category={category}
                                             icon={data.image} />
                                     </div>
-                                    <h6 className="title mb-0">{t(data.title)}</h6>
+                                    <h6 className="title mb-0">{props.t(data.title)}</h6>
                                 </div>
-                            )) :
-                            <div className="accordion" id="accordionExample">
-                                <div className="accordion-item">
-                                    <h2 className="accordion-header" id="headingOne">
-                                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Jacket
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div className="accordion-body">
-                                            {
-                                                BlazerListStyle.map((data, index) => (
-                                                    <div
-                                                        onClick={() => {
-                                                            setSubCategory({
-                                                                id: data.id,
-                                                                title: data.title
-                                                            })
-                                                            setOpenStyle(true)
-                                                        }}
-                                                        key={index}
-                                                        className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                        <div className="img-container">
-                                                            <Icon
-                                                                category="blazer"
-                                                                icon={data.image} />
-                                                        </div>
-                                                        <h6 className="title mb-0">{t(data.title)}</h6>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="accordion-item">
-                                    <h2 className="accordion-header" id="headingTwo">
-                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Trouser
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div className="accordion-body">
-                                            {
-                                                TrouserListStyle.map((data, index) => (
-                                                    <div
-                                                        onClick={() => {
-                                                            setSubCategory({
-                                                                id: data.id,
-                                                                title: data.title
-                                                            })
-                                                            setOpenStyle(true)
-                                                        }}
-                                                        key={index}
-                                                        className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                        <div className="img-container">
-                                                            <Icon
-                                                                category="trousers"
-                                                                icon={data.image} />
-                                                        </div>
-                                                        <h6 className="title mb-0">{t(data.title)}</h6>
-                                                    </div>
-                                                ))
-                                            }                                             </div>
-                                    </div>
-                                </div>
-                                <div className="accordion-item">
-                                    <h2 className="accordion-header" id="headingThree">
-                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Vest
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div className="accordion-body">
-                                            {
-                                                VestListStyle.map((data, index) => (
-                                                    <div
-                                                        onClick={() => {
-                                                            setSubCategory({
-                                                                id: data.id,
-                                                                title: data.title
-                                                            })
-                                                            setOpenStyle(true)
-                                                        }}
-                                                        key={index}
-                                                        className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                        <div className="img-container">
-                                                            <Icon
-                                                                category="vests"
-                                                                icon={data.image} />
-                                                        </div>
-                                                        <h6 className="title mb-0">{t(data.title)}</h6>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    }
+                            ))
+                        }
+                    </div>
                 </div>
-            </div> */}
-        </div>
+            </div>
+        </>
     )
 }
 

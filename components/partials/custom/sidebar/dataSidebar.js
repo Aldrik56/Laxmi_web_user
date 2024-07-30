@@ -4,19 +4,9 @@ export const ShirtListStyle = [
         title: "Collar",
         image: 'Collar',
         list_category: [
-            {
-                name: "Long",
-                image: "/img/custom/styles/collar/long.jpg",
-                price: 5
 
-            },
             {
-                name: "Short",
-                image: "/img/custom/styles/collar/short.jpg",
-                price: 3
-            },
-            {
-                name: "Band",
+                name: "Stand Up",
                 image: "/img/custom/styles/collar/band.jpg",
                 price: 4
             },
@@ -31,7 +21,7 @@ export const ShirtListStyle = [
                 price: 4
             },
             {
-                name: "Kent",
+                name: "Kent Collar",
                 image: "/img/custom/styles/collar/kent.jpg",
                 price: 4
             },
@@ -54,6 +44,16 @@ export const ShirtListStyle = [
                 name: "Wing",
                 image: "/img/custom/styles/collar/wing.jpg",
                 price: 5
+            },
+            {
+                name: "Long",
+                image: "/img/custom/styles/collar/long.jpg",
+                price: 5
+            },
+            {
+                name: "Short Classic",
+                image: "/img/custom/styles/collar/short.jpg",
+                price: 3
             },
         ],
 

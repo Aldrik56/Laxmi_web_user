@@ -3,7 +3,7 @@ import axios from "../../../helpers/axiosConfig";
 export default function handler(req, res) {
     // console.log(req);
     if (req.method === "GET") {
-        axios.get("/detail_fabric").then((response) => {
+        axios.get("/get_fabric").then((response) => {
             const { status, message } = response.data
             if (status) {
                 const { data } = response.data

@@ -14,6 +14,7 @@
     "html-react-parser": "^1.2.6",
     "js-cookie": "^2.2.1",
     "js-number-formatter": "^1.0.1",
+    "jwt-decode": "^4.0.0",
     "next": "10.2.0",
     "next-translate": "^1.0.7",
     "prop-types": "^15.7.2",

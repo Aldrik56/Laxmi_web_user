@@ -35,6 +35,7 @@ import Icon from '../../elements/icon/custom'
 import ModelContainer from './modelContainer'
 import DetailContainer from './detailContainer'
 import axios from 'axios'
+import useHookCustom from './hookCustom';
 const fontList = [
     // {
     //     fontFamily: "Mr Bedfort",
@@ -91,20 +92,24 @@ const CustomContainer = ({ t }) => {
         title: "Collar",
         list: []
     }
+    const {
+        openStyle,
+        listStyle,
+        fabricList,
+        styleSelect,
+        fabricSelect,
+        dataStyle,
+        isLoading,
+        isLoadingFabric,
+        setOpenStyle,
+        setStyleSelect,
+        setFabricSelect,
+    } = useHookCustom();
 
     const [bordir, setBordir] = useState({})
-    const [styleSelect, setStyleSelect] = useState({})
+
     const [sidebar, setSidebar] = useState(1)
-    const [fabricList, setFabricList] = useState([])
-    const [fabricSelect, setFabricSelect] = useState({})
-    const [price, setPrice] = useState(30)
-    const [sleeve, setSleeve] = useState(3)
-    const [collar, setCollar] = useState(4)
-    const [pocket, setPocket] = useState(0)
-    const [placket, setPlacket] = useState(5)
-    const [list, setList] = useState([])
     const [listAccent, setListAccent] = useState([])
-    const [openStyle, setOpenStyle] = useState(false)
     const [subCategory, setSubCategory] = useState(initialValue)
     const router = useRouter()
     const debouncedHandleTyping = _debounce(handleTyping, 500);
@@ -124,67 +129,67 @@ const CustomContainer = ({ t }) => {
     //     },
     // ]
 
-    useEffect(() => {
-        switch (category) {
-            case 'vests':
-                setList(VestListStyle)
-                setListAccent(VestListAccent)
-                break;
-            case 'batiks':
-                setList(BatikListStyle)
-                setListAccent(BatikListAccent)
-                break;
-            case 'shirts':
-                setList(ShirtListStyle)
-                setListAccent(ShirtListAccent)
-                break;
-            case 'trousers':
-                setList(TrouserListStyle)
-                break;
-            case 'blazer':
-                setList(BlazerListStyle)
-                setListAccent(BlazerListAccent)
-                break;
-        }
-    }, [category]);
+    // useEffect(() => {
+    //     switch (category) {
+    //         case 'vests':
+    //             setList(VestListStyle)
+    //             setListAccent(VestListAccent)
+    //             break;
+    //         case 'batiks':
+    //             setList(BatikListStyle)
+    //             setListAccent(BatikListAccent)
+    //             break;
+    //         case 'shirts':
+    //             setList(ShirtListStyle)
+    //             setListAccent(ShirtListAccent)
+    //             break;
+    //         case 'trousers':
+    //             setList(TrouserListStyle)
+    //             break;
+    //         case 'blazer':
+    //             setList(BlazerListStyle)
+    //             setListAccent(BlazerListAccent)
+    //             break;
+    //     }
+    // }, [category]);
 
-    useEffect(async () => {
-        try {
-            var response = await axios.get("/api/fabric/list");
-            console.log(response);
-            const { status, message } = response.data
-            if (status) {
-                const { data } = response.data
-                setFabricList(data)
-            } else {
-                setFabricList([])
-            }
-        } catch (e) {
-            setFabricList([])
-        }
-    }, [])
+    // useEffect(async () => {
+    //     try {
+    //         var response = await axios.get("/api/fabric/list");
+    //         console.log(response);
+    //         const { status, message } = response.data
+    //         if (status) {
+    //             const { data } = response.data
+    //             setFabricList(data)
+    //         } else {
+    //             setFabricList([])
+    //         }
+    //     } catch (e) {
+    //         setFabricList([])
+    //     }
+    // }, [])
 
-    useEffect(() => {
-        console.log(styleSelect.price);
-        setPrice(0)
-        switch (styleSelect.title) {
-            case "Collar":
-                setCollar(styleSelect.price)
-                break;
-            case "Sleeve":
-                setSleeve(styleSelect.price)
-                break;
-            case "Chest Pocket":
-                setPocket(styleSelect.price)
-                break;
-            case "Placket":
-                setPlacket(styleSelect.price)
-                break;
-            default:
-                break;
-        }
-        setPrice(fabricSelect.price + collar + sleeve + pocket + placket)
-    }, [styleSelect, fabricSelect])
+    // useEffect(() => {
+    //     console.log(styleSelect.price);
+    //     setPrice(0)
+    //     switch (styleSelect.title) {
+    //         case "Collar":
+    //             setCollar(styleSelect.price)
+    //             break;
+    //         case "Sleeve":
+    //             setSleeve(styleSelect.price)
+    //             break;
+    //         case "Chest Pocket":
+    //             setPocket(styleSelect.price)
+    //             break;
+    //         case "Placket":
+    //             setPlacket(styleSelect.price)
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    //     setPrice(fabricSelect?.price + collar + sleeve + pocket + placket)
+    // }, [styleSelect, fabricSelect])
 
 
 
@@ -193,367 +198,334 @@ const CustomContainer = ({ t }) => {
         console.log(v);
     }
 
-
-
-
-
-
+    // return (
+    //     <div className="style-container" >
+    //         <Slide left when={openStyle} duration={500} >
+    //             <div className={`row ${openStyle ? '' : 'd-none'}`}>
+    //                 <div className="col-4 me-0 pe-0 d-flex flex-column align-items-center mini-category">
+    //                     {
+    //                         category !== "suits" ?
+    //                             list.map((data, index) => (
+    //                                 <div
+    //                                     onClick={() => {
+    //                                         setSubCategory({
+    //                                             id: data.id,
+    //                                             title: data.title,
+    //                                             list: data.list_category,
+    //                                             other_list: data.other_category,
+    //                                             // list_color: data.list_color,
+    //                                         })
+    //                                     }}
+    //                                     // onClick={() => changeSubCategory(data)}
+    //                                     key={index}
+    //                                     className="sub-category-item w-100 text-pointer">
+    //                                     <div className="d-flex justify-content-center">
+    //                                         <Icon
+    //                                             color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
+    //                                             category={category}
+    //                                             icon={data.image} />
+    //                                     </div>
+    //                                     <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
+    //                                 </div>
+    //                             )) :
+    //                             <>
+    //                                 <div className="sub-category-item w-100 text-pointer">
+    //                                     <p className={`title text-center fw-bold`}>{t("common:blazer")}</p>
+    //                                 </div>
+    //                                 {
+    //                                     BlazerListStyle.map((data, index) => (
+    //                                         <div
+    //                                             onClick={() => {
+    //                                                 setSubCategory({
+    //                                                     id: data.id,
+    //                                                     title: data.title
+    //                                                 })
+    //                                             }}
+    //                                             key={index}
+    //                                             className="sub-category-item w-100 text-pointer">
+    //                                             <div className="d-flex justify-content-center">
+    //                                                 <Icon
+    //                                                     color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
+    //                                                     category="blazer"
+    //                                                     icon={data.image} />
+    //                                             </div>
+    //                                             <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
+    //                                         </div>
+    //                                     ))
+    //                                 }
+    //                                 <div className="sub-category-item w-100 text-pointer">
+    //                                     <p className={`title text-center fw-bold`}>{t("common:trousers")}</p>
+    //                                 </div>
+    //                                 {
+    //                                     TrouserListStyle.map((data, index) => (
+    //                                         <div
+    //                                             onClick={() => {
+    //                                                 setSubCategory({
+    //                                                     id: data.id,
+    //                                                     title: data.title
+    //                                                 })
+    //                                             }}
+    //                                             key={index}
+    //                                             className="sub-category-item w-100 text-pointer">
+    //                                             <div className="d-flex justify-content-center">
+    //                                                 <Icon
+    //                                                     color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
+    //                                                     category="trousers"
+    //                                                     icon={data.image} />
+    //                                             </div>
+    //                                             <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
+    //                                         </div>
+    //                                     ))
+    //                                 }
+    //                                 <div className="sub-category-item w-100 text-pointer">
+    //                                     <p className={`title text-center fw-bold`}>{t("common:vests")}</p>
+    //                                 </div>
+    //                                 {
+    //                                     VestListStyle.map((data, index) => (
+    //                                         <div
+    //                                             onClick={() => {
+    //                                                 setSubCategory({
+    //                                                     id: data.id,
+    //                                                     title: data.title
+    //                                                 })
+    //                                             }}
+    //                                             key={index}
+    //                                             className="sub-category-item w-100 text-pointer">
+    //                                             <div className="d-flex justify-content-center">
+    //                                                 <Icon
+    //                                                     color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
+    //                                                     category="vests"
+    //                                                     icon={data.image} />
+    //                                             </div>
+    //                                             <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
+    //                                         </div>
+    //                                     ))
+    //                                 }
+    //                             </>
+    //                     }
+    //                 </div>
+    //                 <div className="col-8 list-mini-category">
+    //                     <div className="header d-flex justify-content-between align-items-center">
+    //                         <p>{t(subCategory.title)}</p>
+    //                         <span
+    //                             className="text-pointer"
+    //                             onClick={() => setOpenStyle(false)}  >
+    //                             <ArrowLeft />
+    //                         </span>
+    //                     </div>
+    //                     <div className="row mt-4">
+    //                         <>
+    //                             {
+    //                                 subCategory.list && subCategory.list?.map((v) => (
+    //                                     <div onClick={() =>
+    //                                         setStyleSelect({
+    //                                             type: "primary",
+    //                                             title: subCategory.title,
+    //                                             category: v.name,
+    //                                             price: v.price,
+    //                                         })
+    //                                     } className="col-12 col-lg-6 d-flex flex-column align-items-center">
+    //                                         {/* {
+    //                                          styleSelect.category === v.name && (
+    //                                             <CheckCircleOutline
+    //                                                 width={20}
+    //                                                 height={20}
+    //                                                 color={"grey"}
+    //                                             />
+    //                                         )
+    //                                     } */}
+    //                                         <Image
+    //                                             width={65}
+    //                                             height={80}
+    //                                             src={v.image}
+    //                                             alt="laxmi" />
+    //                                         <p>{v.name}</p>
+    //                                     </div>
+    //                                 ))
+    //                             }
+    //                             {
+    //                                 subCategory.other_list && (
+    //                                     <p>{t("How are you going to wear this shirt?")}</p>
+    //                                 )
+    //                             }
+    //                             {
+    //                                 subCategory.other_list && subCategory.other_list?.map((v) => (
+    //                                     <>
+    //                                         <div onClick={() =>
+    //                                             setStyleSelect({
+    //                                                 type: "secondary",
+    //                                                 title: subCategory.title,
+    //                                                 category: v.name,
+    //                                                 price: v.price,
+    //                                             })
+    //                                         } className="col-12 col-lg-6 d-flex flex-column align-items-center">
+    //                                             {/* {
+    //                                          styleSelect.category === v.name && (
+    //                                             <CheckCircleOutline
+    //                                                 width={20}
+    //                                                 height={20}
+    //                                                 color={"grey"}
+    //                                             />
+    //                                         )
+    //                                     } */}
+    //                                             <Image
+    //                                                 width={65}
+    //                                                 height={80}
+    //                                                 src={v.image}
+    //                                                 alt="laxmi" />
+    //                                             <p>{v.name}</p>
+    //                                         </div>
+    //                                     </>
+    //                                 ))
+    //                             }
+    //                         </>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </Slide>
+    //         <div className={`icon-style-list mt-2 pb-4 ${!openStyle ? '' : 'd-none'}`}>
+    //             <div className={`row`}>
+    //                 {
+    //                     category !== "suits" ?
+    //                         list.map((data, index) => (
+    //                             <div
+    //                                 onClick={() => {
+    //                                     setSubCategory({
+    //                                         id: data.id,
+    //                                         title: data.title,
+    //                                         list: data.list_category,
+    //                                         other_list: data.other_category,
+    //                                     })
+    //                                     setOpenStyle(true)
+    //                                 }}
+    //                                 key={index}
+    //                                 className="col-12 icon-style-item d-flex align-items-center text-pointer">
+    //                                 <div className="img-container">
+    //                                     <Icon
+    //                                         category={category}
+    //                                         icon={data.image} />
+    //                                 </div>
+    //                                 <h6 className="title mb-0">{t(data.title)}</h6>
+    //                             </div>
+    //                         )) :
+    //                         <div className="accordion" id="accordionExample">
+    //                             <div className="accordion-item">
+    //                                 <h2 className="accordion-header" id="headingOne">
+    //                                     <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    //                                         Jacket
+    //                                     </button>
+    //                                 </h2>
+    //                                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    //                                     <div className="accordion-body">
+    //                                         {
+    //                                             BlazerListStyle.map((data, index) => (
+    //                                                 <div
+    //                                                     onClick={() => {
+    //                                                         setSubCategory({
+    //                                                             id: data.id,
+    //                                                             title: data.title
+    //                                                         })
+    //                                                         setOpenStyle(true)
+    //                                                     }}
+    //                                                     key={index}
+    //                                                     className="col-12 icon-style-item d-flex align-items-center text-pointer">
+    //                                                     <div className="img-container">
+    //                                                         <Icon
+    //                                                             category="blazer"
+    //                                                             icon={data.image} />
+    //                                                     </div>
+    //                                                     <h6 className="title mb-0">{t(data.title)}</h6>
+    //                                                 </div>
+    //                                             ))
+    //                                         }
+    //                                     </div>
+    //                                 </div>
+    //                             </div>
+    //                             <div className="accordion-item">
+    //                                 <h2 className="accordion-header" id="headingTwo">
+    //                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+    //                                         Trouser
+    //                                     </button>
+    //                                 </h2>
+    //                                 <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    //                                     <div className="accordion-body">
+    //                                         {
+    //                                             TrouserListStyle.map((data, index) => (
+    //                                                 <div
+    //                                                     onClick={() => {
+    //                                                         setSubCategory({
+    //                                                             id: data.id,
+    //                                                             title: data.title
+    //                                                         })
+    //                                                         setOpenStyle(true)
+    //                                                     }}
+    //                                                     key={index}
+    //                                                     className="col-12 icon-style-item d-flex align-items-center text-pointer">
+    //                                                     <div className="img-container">
+    //                                                         <Icon
+    //                                                             category="trousers"
+    //                                                             icon={data.image} />
+    //                                                     </div>
+    //                                                     <h6 className="title mb-0">{t(data.title)}</h6>
+    //                                                 </div>
+    //                                             ))
+    //                                         }                                             </div>
+    //                                 </div>
+    //                             </div>
+    //                             <div className="accordion-item">
+    //                                 <h2 className="accordion-header" id="headingThree">
+    //                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+    //                                         Vest
+    //                                     </button>
+    //                                 </h2>
+    //                                 <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+    //                                     <div className="accordion-body">
+    //                                         {
+    //                                             VestListStyle.map((data, index) => (
+    //                                                 <div
+    //                                                     onClick={() => {
+    //                                                         setSubCategory({
+    //                                                             id: data.id,
+    //                                                             title: data.title
+    //                                                         })
+    //                                                         setOpenStyle(true)
+    //                                                     }}
+    //                                                     key={index}
+    //                                                     className="col-12 icon-style-item d-flex align-items-center text-pointer">
+    //                                                     <div className="img-container">
+    //                                                         <Icon
+    //                                                             category="vests"
+    //                                                             icon={data.image} />
+    //                                                     </div>
+    //                                                     <h6 className="title mb-0">{t(data.title)}</h6>
+    //                                                 </div>
+    //                                             ))
+    //                                         }
+    //                                     </div>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                 }
+    //             </div>
+    //         </div>
+    //     </div>
+    // )
     const StepSidebar = () => {
         switch (sidebar) {
             case 1:
-                // return <FabricContainer t={t} onClick={(v) => setFabricSelect(v)} />
-                return (
-                    <div className="fabric-container">
-                        <p className="title mb-0">{t("Select")} {t("Fabrics")}</p>
-                        <p className="total mb-0">Total {t("Fabrics")} : {FabricList.length}</p>
-                        <div className="fabric-list mt-2">
-                            <div className="row ">
-                                {
-                                    FabricList.map((data, index) => (
-                                        <div key={index} onClick={() => setFabricSelect(data)} className="mx-0 col-xl-4 col-lg-6 col-12 fabric-item text-pointer">
-                                            <div className="img-container">
-                                                {
-                                                    data.isNew ?
-                                                        <div className="new">
-                                                            {t("common:New")}
-                                                        </div> : null
-                                                }
-                                                <Image
-                                                    layout="fill"
-                                                    objectFit="cover"
-                                                    src={data.image}
-                                                    alt="laxmi" />
-                                                <div className="price d-flex align-items-center w-100">
-                                                    <h1> $ {data.price}.0</h1>
-                                                </div>
-                                            </div>
-                                            <h6 className="title mb-0">{data.title}</h6>
-                                            <p className="category mb-0">{data.category}</p>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
-                    </div>
-                )
+                return <FabricContainer
+                    t={t}
+                    list={fabricList}
+                    listSelected={fabricSelect}
+                    onClick={(v) => setFabricSelect(v)} />
             case 2:
-                // return <StyleContainer t={t} onClick={(v) => setStyleSelect(v)} />
-                return (
-                    <div className="style-container" >
-                        <Slide left when={openStyle} duration={500} >
-                            <div className={`row ${openStyle ? '' : 'd-none'}`}>
-                                <div className="col-4 me-0 pe-0 d-flex flex-column align-items-center mini-category">
-                                    {
-                                        category !== "suits" ?
-                                            list.map((data, index) => (
-                                                <div
-                                                    onClick={() => {
-                                                        setSubCategory({
-                                                            id: data.id,
-                                                            title: data.title,
-                                                            list: data.list_category,
-                                                            other_list: data.other_category,
-                                                            // list_color: data.list_color,
-                                                        })
-                                                    }}
-                                                    // onClick={() => changeSubCategory(data)}
-                                                    key={index}
-                                                    className="sub-category-item w-100 text-pointer">
-                                                    <div className="d-flex justify-content-center">
-                                                        <Icon
-                                                            color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
-                                                            category={category}
-                                                            icon={data.image} />
-                                                    </div>
-                                                    <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                                </div>
-                                            )) :
-                                            <>
-                                                <div className="sub-category-item w-100 text-pointer">
-                                                    <p className={`title text-center fw-bold`}>{t("common:blazer")}</p>
-                                                </div>
-                                                {
-                                                    BlazerListStyle.map((data, index) => (
-                                                        <div
-                                                            onClick={() => {
-                                                                setSubCategory({
-                                                                    id: data.id,
-                                                                    title: data.title
-                                                                })
-                                                            }}
-                                                            key={index}
-                                                            className="sub-category-item w-100 text-pointer">
-                                                            <div className="d-flex justify-content-center">
-                                                                <Icon
-                                                                    color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
-                                                                    category="blazer"
-                                                                    icon={data.image} />
-                                                            </div>
-                                                            <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                                        </div>
-                                                    ))
-                                                }
-                                                <div className="sub-category-item w-100 text-pointer">
-                                                    <p className={`title text-center fw-bold`}>{t("common:trousers")}</p>
-                                                </div>
-                                                {
-                                                    TrouserListStyle.map((data, index) => (
-                                                        <div
-                                                            onClick={() => {
-                                                                setSubCategory({
-                                                                    id: data.id,
-                                                                    title: data.title
-                                                                })
-                                                            }}
-                                                            key={index}
-                                                            className="sub-category-item w-100 text-pointer">
-                                                            <div className="d-flex justify-content-center">
-                                                                <Icon
-                                                                    color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
-                                                                    category="trousers"
-                                                                    icon={data.image} />
-                                                            </div>
-                                                            <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                                        </div>
-                                                    ))
-                                                }
-                                                <div className="sub-category-item w-100 text-pointer">
-                                                    <p className={`title text-center fw-bold`}>{t("common:vests")}</p>
-                                                </div>
-                                                {
-                                                    VestListStyle.map((data, index) => (
-                                                        <div
-                                                            onClick={() => {
-                                                                setSubCategory({
-                                                                    id: data.id,
-                                                                    title: data.title
-                                                                })
-                                                            }}
-                                                            key={index}
-                                                            className="sub-category-item w-100 text-pointer">
-                                                            <div className="d-flex justify-content-center">
-                                                                <Icon
-                                                                    color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
-                                                                    category="vests"
-                                                                    icon={data.image} />
-                                                            </div>
-                                                            <p className={`title text-center ${subCategory.title === data.title ? 'text-primary fw-bold' : ''}`}>{t(data.title)}</p>
-                                                        </div>
-                                                    ))
-                                                }
-                                            </>
-                                    }
-                                </div>
-                                <div className="col-8 list-mini-category">
-                                    <div className="header d-flex justify-content-between align-items-center">
-                                        <p>{t(subCategory.title)}</p>
-                                        <span
-                                            className="text-pointer"
-                                            onClick={() => setOpenStyle(false)}  >
-                                            <ArrowLeft />
-                                        </span>
-                                    </div>
-                                    <div className="row mt-4">
-                                        <>
-                                            {
-                                                subCategory.list && subCategory.list?.map((v) => (
-                                                    <div onClick={() =>
-                                                        setStyleSelect({
-                                                            type: "primary",
-                                                            title: subCategory.title,
-                                                            category: v.name,
-                                                            price: v.price,
-                                                        })
-                                                    } className="col-12 col-lg-6 d-flex flex-column align-items-center">
-                                                        {/* {
-                                                         styleSelect.category === v.name && (
-                                                            <CheckCircleOutline
-                                                                width={20}
-                                                                height={20}
-                                                                color={"grey"}
-                                                            />
-                                                        )
-                                                    } */}
-                                                        <Image
-                                                            width={65}
-                                                            height={80}
-                                                            src={v.image}
-                                                            alt="laxmi" />
-                                                        <p>{v.name}</p>
-                                                    </div>
-
-                                                ))
-
-                                            }
-                                            {
-                                                subCategory.other_list && (
-                                                    <p>{t("How are you going to wear this shirt?")}</p>
-                                                )
-                                            }
-                                            {
-                                                subCategory.other_list && subCategory.other_list?.map((v) => (
-                                                    <>
-                                                        <div onClick={() =>
-                                                            setStyleSelect({
-                                                                type: "secondary",
-                                                                title: subCategory.title,
-                                                                category: v.name,
-                                                                price: v.price,
-                                                            })
-                                                        } className="col-12 col-lg-6 d-flex flex-column align-items-center">
-                                                            {/* {
-                                                         styleSelect.category === v.name && (
-                                                            <CheckCircleOutline
-                                                                width={20}
-                                                                height={20}
-                                                                color={"grey"}
-                                                            />
-                                                        )
-                                                    } */}
-                                                            <Image
-                                                                width={65}
-                                                                height={80}
-                                                                src={v.image}
-                                                                alt="laxmi" />
-                                                            <p>{v.name}</p>
-                                                        </div>
-                                                    </>
-
-                                                ))
-                                            }
-                                        </>
-                                    </div>
-                                </div>
-                            </div>
-                        </Slide>
-                        <div className={`icon-style-list mt-2 pb-4 ${!openStyle ? '' : 'd-none'}`}>
-                            <div className={`row`}>
-
-                                {
-                                    category !== "suits" ?
-                                        list.map((data, index) => (
-                                            <div
-                                                onClick={() => {
-                                                    setSubCategory({
-                                                        id: data.id,
-                                                        title: data.title,
-                                                        list: data.list_category,
-                                                        other_list: data.other_category,
-                                                    })
-                                                    setOpenStyle(true)
-                                                }}
-                                                key={index}
-                                                className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                <div className="img-container">
-                                                    <Icon
-                                                        category={category}
-                                                        icon={data.image} />
-                                                </div>
-                                                <h6 className="title mb-0">{t(data.title)}</h6>
-                                            </div>
-                                        )) :
-                                        <div className="accordion" id="accordionExample">
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header" id="headingOne">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Jacket
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        {
-                                                            BlazerListStyle.map((data, index) => (
-                                                                <div
-                                                                    onClick={() => {
-                                                                        setSubCategory({
-                                                                            id: data.id,
-                                                                            title: data.title
-                                                                        })
-                                                                        setOpenStyle(true)
-                                                                    }}
-                                                                    key={index}
-                                                                    className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                                    <div className="img-container">
-                                                                        <Icon
-                                                                            category="blazer"
-                                                                            icon={data.image} />
-                                                                    </div>
-                                                                    <h6 className="title mb-0">{t(data.title)}</h6>
-                                                                </div>
-                                                            ))
-                                                        }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header" id="headingTwo">
-                                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Trouser
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        {
-                                                            TrouserListStyle.map((data, index) => (
-                                                                <div
-                                                                    onClick={() => {
-                                                                        setSubCategory({
-                                                                            id: data.id,
-                                                                            title: data.title
-                                                                        })
-                                                                        setOpenStyle(true)
-                                                                    }}
-                                                                    key={index}
-                                                                    className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                                    <div className="img-container">
-                                                                        <Icon
-                                                                            category="trousers"
-                                                                            icon={data.image} />
-                                                                    </div>
-                                                                    <h6 className="title mb-0">{t(data.title)}</h6>
-                                                                </div>
-                                                            ))
-                                                        }                                             </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header" id="headingThree">
-                                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Vest
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        {
-                                                            VestListStyle.map((data, index) => (
-                                                                <div
-                                                                    onClick={() => {
-                                                                        setSubCategory({
-                                                                            id: data.id,
-                                                                            title: data.title
-                                                                        })
-                                                                        setOpenStyle(true)
-                                                                    }}
-                                                                    key={index}
-                                                                    className="col-12 icon-style-item d-flex align-items-center text-pointer">
-                                                                    <div className="img-container">
-                                                                        <Icon
-                                                                            category="vests"
-                                                                            icon={data.image} />
-                                                                    </div>
-                                                                    <h6 className="title mb-0">{t(data.title)}</h6>
-                                                                </div>
-                                                            ))
-                                                        }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                )
+                return <StyleContainer
+                    t={t}
+                    isOpenStyle={openStyle}
+                    listStyle={listStyle}
+                    styleSelected={styleSelect}
+                    onClickOpenStyle={(v) => setOpenStyle(v)}
+                    onClick={(v) => setStyleSelect(v)} />
             case 3:
                 const [bordirs, setBordirs] = useState(bordir)
                 // return <AccentContainer t={t} />
@@ -993,7 +965,6 @@ const CustomContainer = ({ t }) => {
     return (
         <div className="container-fluid custom">
             <div className="position-relative w-100 d-flex justify-content-center align-items-center nav">
-
                 <div className="stepper mt-4 d-flex flex-row">
                     <p
                         onClick={() => setSidebar(1)}
@@ -1025,13 +996,17 @@ const CustomContainer = ({ t }) => {
                     <StepSidebar />
                 </div>
                 <div className="col-5 d-flex justify-content-center">
-                    <ModelContainer t={t} fabricSelect={fabricSelect} styleSelect={styleSelect} category={category.toLowerCase()} bordir={bordir} />
+                    <ModelContainer
+                        t={t}
+                        isLoading={isLoading}
+                        isLoadingFabric={isLoadingFabric}
+                        dataStyle={dataStyle} />
                 </div>
                 <div className="col-3">
                     <DetailContainer
                         category={category}
                         sidebar={sidebar}
-                        price={price}
+                        price={0}
                         setSidebar={setSidebar}
                         t={t} />
                 </div>

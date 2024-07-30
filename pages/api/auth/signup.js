@@ -8,6 +8,7 @@ export default function handler(req, res) {
             name: name,
             password: password
         }).then((response) => {
+            console.log(response);
             const { status, message } = response.data
             if (status) {
                 res.status(200).json({

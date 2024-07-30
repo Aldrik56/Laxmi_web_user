@@ -10,14 +10,11 @@ import Icon from '../../../elements/icon/custom'
 
 
 const StyleContainer = (props) => {
+    const [data, setData] = useState(props)
     const router = useRouter()
-    const initialValue = {
-        id: 1,
-        title: "Collar",
-        list: []
-    }
     const { category } = router.query
-    const [subCategory, setSubCategory] = useState(initialValue)
+    const [subCategory, setSubCategory] = useState()
+    console.log("ini subCategory",subCategory);
     useEffect(() => {
         if (props.styleSelected) {
             setSubCategory({
@@ -28,11 +25,13 @@ const StyleContainer = (props) => {
         }
     }, [props.styleSelected])
 
+
     return (
         <>
             <div className="style-container" >
-                <Slide left when={props.isOpenStyle} duration={500} >
-                    <div className={`row ${props.isOpenStyle ? '' : 'd-none'}`}>
+                {subCategory ? 
+                    <Slide when={true} left duration={500} >
+                    <div className={`row`}>
                         <div className="col-4 me-0 pe-0 d-flex flex-column align-items-center mini-category">
                             {
                                 props.listStyle.map((data, index) => (
@@ -46,7 +45,7 @@ const StyleContainer = (props) => {
                                             })
                                         }}
                                         key={index}
-                                        className="sub-category-item w-100 text-pointer">
+                                        className={`sub-category-item w-100 text-pointer`}>
                                         <div className="d-flex justify-content-center">
                                             <Icon
                                                 color={subCategory.title === data.title ? '#1E1E22' : '#757575'}
@@ -67,10 +66,11 @@ const StyleContainer = (props) => {
                                     <ArrowLeft />
                                 </span>
                             </div>
-                            <div className="row mt-4">
+                            <div className="row mt-4 apapunItu">
                                 <>
                                     {
                                         subCategory.list && subCategory.list?.map((v) => (
+                                        
                                             <div
                                                 onClick={() => props.onClick({
                                                     id: subCategory.id,
@@ -78,7 +78,8 @@ const StyleContainer = (props) => {
                                                     list: subCategory.list,
                                                     name: v.name,
                                                 })}
-                                                className='col-12 col-lg-6 d-flex flex-column align-items-center text-pointer'>
+                                                
+                                                className='col-12 col-lg-6 d-flex flex-column align-items-center text-pointer '>
                                                 <Image
                                                     width={65}
                                                     height={80}
@@ -93,6 +94,9 @@ const StyleContainer = (props) => {
                         </div>
                     </div>
                 </Slide>
+
+                : 
+
                 <div className={`icon-style-list mt-2 pb-4 ${!props.isOpenStyle ? '' : 'd-none'}`}>
                     <div className={`row`}>
                         {
@@ -104,8 +108,9 @@ const StyleContainer = (props) => {
                                             title: data.title,
                                             list: data.list_category,
                                             other_list: data.other_category,
-                                        })
-                                        props.onClickOpenStyle(true)
+                                        });
+                                        // props.onClickOpenStyle(true);
+                                        console.log("ini subCategory",subCategory);
                                     }}
                                     className='col-12 icon-style-item d-flex align-items-center text-pointer'>
                                     <div className="img-container">
@@ -119,6 +124,9 @@ const StyleContainer = (props) => {
                         }
                     </div>
                 </div>
+
+                }
+                
             </div>
         </>
     )

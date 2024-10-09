@@ -14,7 +14,6 @@ const StyleContainer = (props) => {
     const router = useRouter()
     const { category } = router.query
     const [subCategory, setSubCategory] = useState()
-    console.log("ini subCategory",subCategory);
     useEffect(() => {
         if (props.styleSelected) {
             setSubCategory({
@@ -109,8 +108,6 @@ const StyleContainer = (props) => {
                                             list: data.list_category,
                                             other_list: data.other_category,
                                         });
-                                        // props.onClickOpenStyle(true);
-                                        console.log("ini subCategory",subCategory);
                                     }}
                                     className='col-12 icon-style-item d-flex align-items-center text-pointer'>
                                     <div className="img-container">

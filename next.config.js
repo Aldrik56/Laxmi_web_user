@@ -8,6 +8,6 @@ module.exports = {
         API_KEY: process.env.API_KEY
     },
     images: {
-        domains: ['34.101.70.83']
+        domains: ['34.101.70.83','via.placeholder.com']
     }
 }

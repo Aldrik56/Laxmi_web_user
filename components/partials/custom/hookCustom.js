@@ -1,4 +1,6 @@
 import axios from "axios";
+// import frenchPlacket from "../../../public/img/placket/Placket French.svg";
+
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
 import {
@@ -30,6 +32,10 @@ const initStyle = {
         "image": "",
         "name": "No Pocket"
     },
+    "placket": {
+        "image": "",
+        "name": "Standard"
+    }
 }
 
 const useHookCustom = () => {
@@ -90,6 +96,8 @@ const useHookCustom = () => {
                 newDataStyle.cuffs.name = styleSelect.name
                 newDataStyle.sleeve.name = "Long"
                 break;
+            case "Placket":
+                newDataStyle.placket.name = styleSelect.name
             default: break;
         }
         getCustomStyle()
@@ -120,15 +128,28 @@ const useHookCustom = () => {
             var response = await axios.get(`/api/custom/custom_style?fabric=${fabricSelect._id}&collar=${dataStyle.collar.name}&cuff=${dataStyle.cuffs.name}&sleeve=${dataStyle.sleeve.name}&bottom=${dataStyle.bottom.name}&chestpocket=${dataStyle.pocket.name}`);
             const { status, data } = response.data
             const newDataStyle = { ...dataStyle }
-            newDataStyle.bottom.name = data.bottom.name
-            newDataStyle.bottom.image = data.bottom.image
+            // newDataStyle.bottom.name = data.bottom.name
+            // newDataStyle.bottom.image = data.bottom.image
             newDataStyle.collar.name = data.collar.name
             newDataStyle.collar.image = data.collar.image
             newDataStyle.sleeve.name = data.sleeve.name
             newDataStyle.sleeve.image = data.sleeve.image
             newDataStyle.pocket.name = data.chestpocket.name
             newDataStyle.pocket.image = data.chestpocket.image
+            if(dataStyle.placket.name==="French"){
+                newDataStyle.placket.name = 'French'
+                newDataStyle.placket.image = '/img/placket/Placket French.svg';
+            }else if(dataStyle.placket.name==="Hidden"){
+                newDataStyle.placket.name = 'Hidden'
+                newDataStyle.placket.image = '/img/placket/Placket Hidden.svg';
+            }else if(dataStyle.placket.name==="Standard"){
+                newDataStyle.placket.name = 'Standard'
+                newDataStyle.placket.image = '/img/placket/Placket Standard.svg';
+            }
+            // newDataStyle.placket.name = dataStyle.placket.name
+            // newDataStyle.placket.image = dataStyle.placket.image
             setDataStyle(newDataStyle)
+            console.log(newDataStyle)
         } catch (e) {
             console.log(e);
         } finally {

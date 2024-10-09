@@ -1,11 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import {AddShoppingCart,Edit} from '../../../elements/icon';
 
 // helpers
 import NumberFormat from '../../../../helpers/numberFormat'
 
 const ProductDetailDescription = ({t,data,category}) => {
+    const router = useRouter()
+    function addToCart(){
+        router.push({
+            pathname: '/products/cart',
+            query: { data: JSON.stringify(data) },
+        });
+    }
     return (
         <>
             <div className="d-flex justify-content-between">
@@ -20,11 +28,11 @@ const ProductDetailDescription = ({t,data,category}) => {
             </div>
             <div className="d-flex flex-row justify-content-between button-container">
                 <div className="d-flex align-items-end button-container">
-                    <Link href={'/products/cart'} > 
-                        <a 
+                    {/* <Link href='/products/cart'>  */}
+                        <a onClick = {()=>addToCart()}
                             disabled={data.stocks < 1}
                             className="btn btn-primary btn-lg ms-0"><AddShoppingCart /> {t("ADD TO CHART")}</a>
-                    </Link>
+                    {/* </Link> */}
                     <Link href={`/custom/${category}`} >
                         <a 
                             disabled={data.stocks < 1}

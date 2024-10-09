@@ -16,7 +16,7 @@ const withAuth = (WrappedComponent,type) => {
             return value;
         }
     });
-    const auth = JSON.parse(parseObject1.auth, function (key, value) {
+    const auth = JSON.parse(parseObject1?.auth || null, function (key, value) {
         if (key == "birth") {
             return new Date(value);
         } else {
@@ -24,7 +24,7 @@ const withAuth = (WrappedComponent,type) => {
         }
     });
     if(type === 'auth'){
-        if (auth.isLogin) {
+        if (auth?.isLogin || false) {
             Router.replace("/");
             return null;
         }

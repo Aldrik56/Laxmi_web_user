@@ -77,6 +77,16 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                                     alt="laxmi" /> : <></>
                         }
                     </div>
+                    <div style={{ zIndex: 8, position: 'absolute' }}>
+                        {
+                            dataStyle.placket.image !== "" && dataStyle.placket.image !== null ?
+                                <img
+                                    width={350} // 200 | 350 | 400 | 500 | 1080
+                                    height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                    src={dataStyle.placket.image}
+                                    alt="laxmi" /> : <></>
+                        }
+                    </div>
                     {
                         isLoading ? <div style={{
                             width: "350px",

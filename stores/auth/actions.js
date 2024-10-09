@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -8,14 +7,15 @@ import {
 } from './types';
 
 // axios
-// import axios from '../../helpers/axiosConfig';
+import axios from '../../helpers/axiosConfig';
 
 
 export const loginAction = (form, router) => {
+  debugger
   return (dispatch) => {
     dispatch(loginActionRequest())
     axios
-      .post('/api/auth/signin', form)
+      .post('/auth/login', form)
       .then(response => {
         console.log(response);
         const { status, message } = response.data;

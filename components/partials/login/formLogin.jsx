@@ -27,6 +27,11 @@ const formLogin = ({ authData, loginAction, enterPage }) => {
     }, []);
 
     useEffect(() => {
+
+        console.log('FORM ', form)
+    }, [])
+
+    useEffect(() => {
         console.log(authData);
         console.log(authData.error);
         setError({
@@ -57,10 +62,10 @@ const formLogin = ({ authData, loginAction, enterPage }) => {
         return valid;
     }
 
-    // handle
     const handleSubmit = e => {
         e.preventDefault()
         if (validateForm()) {
+            debugger
             loginAction(form, router)
         }
     }

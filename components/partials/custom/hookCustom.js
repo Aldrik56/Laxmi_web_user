@@ -18,7 +18,7 @@ const initStyle = {
     },
     "collar": {
         "image": "",
-        "name": "Cutaway"
+        "name": "Stand Up"
     },
     "sleeve": {
         "image": "",
@@ -136,18 +136,53 @@ const useHookCustom = () => {
             newDataStyle.sleeve.image = data.sleeve.image
             newDataStyle.pocket.name = data.chestpocket.name
             newDataStyle.pocket.image = data.chestpocket.image
-            if(dataStyle.placket.name==="French"){
-                newDataStyle.placket.name = 'French'
-                newDataStyle.placket.image = '/img/placket/Placket French.svg';
-            }else if(dataStyle.placket.name==="Hidden"){
-                newDataStyle.placket.name = 'Hidden'
-                newDataStyle.placket.image = '/img/placket/Placket Hidden.svg';
-            }else if(dataStyle.placket.name==="Standard"){
-                newDataStyle.placket.name = 'Standard'
-                newDataStyle.placket.image = '/img/placket/Placket Standard.svg';
+            if(fabricSelect._id==="6705fffa8f14879009126d1d"){
+                if(dataStyle.placket.name==="French"){
+                    newDataStyle.placket.name = 'French'
+                    newDataStyle.placket.image = '/img/placket/Placket French Red.svg';
+                }else if(dataStyle.placket.name==="Hidden"){
+                    newDataStyle.placket.name = 'Hidden'
+                    newDataStyle.placket.image = '/img/placket/Placket Hidden Red.svg';
+                }else if(dataStyle.placket.name==="Standard"){
+                    newDataStyle.placket.name = 'Standard'
+                    newDataStyle.placket.image = '/img/placket/Placket Standard Red.svg';
+                }
+            }else if(fabricSelect._id==="670600c78f14879009126d4c"){
+                if(dataStyle.placket.name==="French"){
+                    newDataStyle.placket.name = 'French'
+                    newDataStyle.placket.image = '/img/placket/Placket French.svg';
+                }else if(dataStyle.placket.name==="Hidden"){
+                    newDataStyle.placket.name = 'Hidden'
+                    newDataStyle.placket.image = '/img/placket/Placket Hidden.svg';
+                }else if(dataStyle.placket.name==="Standard"){
+                    newDataStyle.placket.name = 'Standard'
+                    newDataStyle.placket.image = '/img/placket/Placket Standard.svg';
+                }
+            }else if(fabricSelect._id==="6706008c8f14879009126d3a"){
+                if(dataStyle.placket.name==="French"){
+                    newDataStyle.placket.name = 'French'
+                    newDataStyle.placket.image = '/img/placket/Placket French Blackdot.svg';
+                }else if(dataStyle.placket.name==="Hidden"){
+                    newDataStyle.placket.name = 'Hidden'
+                    newDataStyle.placket.image = '/img/placket/Placket Hidden Blackdot.svg';
+                }else if(dataStyle.placket.name==="Standard"){
+                    newDataStyle.placket.name = 'Standard'
+                    newDataStyle.placket.image = '/img/placket/Placket Standard Blackdot.svg';
+                }
+            }else if(fabricSelect._id==="67060d5e8f14879009126d8e"){
+                if(dataStyle.placket.name==="French"){
+                    newDataStyle.placket.name = 'French'
+                    newDataStyle.placket.image = '/img/placket/Placket French RSK.svg';
+                }else if(dataStyle.placket.name==="Hidden"){
+                    newDataStyle.placket.name = 'Hidden'
+                    newDataStyle.placket.image = '/img/placket/Placket Hidden RSK.svg';
+                }else if(dataStyle.placket.name==="Standard"){
+                    newDataStyle.placket.name = 'Standard'
+                    newDataStyle.placket.image = '/img/placket/Placket Standard RSK.svg';
+                }
             }
-            // newDataStyle.placket.name = dataStyle.placket.name
-            // newDataStyle.placket.image = dataStyle.placket.image
+            
+            console.log(fabricSelect.id)
             setDataStyle(newDataStyle)
             console.log(newDataStyle)
         } catch (e) {

@@ -65,7 +65,7 @@ const StyleContainer = (props) => {
                                     <ArrowLeft />
                                 </span>
                             </div>
-                            <div className="row mt-4 apapunItu">
+                            <div className="row mt-4">
                                 <>
                                     {
                                         subCategory.list && subCategory.list?.map((v) => (

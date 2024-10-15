@@ -5,7 +5,23 @@ import axios from 'axios';
 
 const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
 
-    const [pov, setPov] = useState('front')
+    const [pov, setPov] = useState('folded');
+
+     // Array containing the possible values
+    const povOptions = ['front', 'back', 'folded'];
+
+    const handlePrevPovChange = () => {
+        const currentIndex = povOptions.indexOf(pov);
+        const prevIndex = (currentIndex - 1 + povOptions.length) % povOptions.length; // Fix for negative index
+        setPov(povOptions[prevIndex]);
+    };
+
+    // Function to handle next POV change (cyclic forward)
+    const handleNextPovChange = () => {
+        const currentIndex = povOptions.indexOf(pov);
+        const nextIndex = (currentIndex + 1) % povOptions.length;
+        setPov(povOptions[nextIndex]);
+    };
 
     return (
         <>
@@ -14,15 +30,16 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                 height: "100vh",
                 display: "flex",
                 flexDirection: "row",
+                justifyContent: "center",
                 // backgroundColor: "red"
             }}>
                 <div style={{ height: "80%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <div style={{ border: "2px solid black", borderRadius: "24px", padding: "8px 12px", cursor: "pointer" }}>
+                    <div style={{ border: "2px solid black", borderRadius: "24px", padding: "8px 12px", cursor: "pointer" }} onClick={handlePrevPovChange}>
                         &#8678;
                     </div>
                 </div>
                 {/* front */}
-                <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
+                <div style={{ display: pov === "front" ? 'flex' : 'none', width: "100%", position: "relative", justifyContent: "center" }}>
                     <div style={{ zIndex: 2, position: 'absolute' }}>
                         <Image
                             width={350} // 200 | 350 | 400 | 500 | 1080
@@ -110,9 +127,198 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                             : <></>
                     }
                 </div>
+                {/* {back} */}
+                <div className='slide' style={{ display: pov === "back" ? 'block' : 'none', justifyContent: "center" ,width:'100%' }} >
+                     <div className="img-container" style={{
+                        position: 'relative',
+                        zIndex: 1,
+                        display: "flex",
+                        justifyContent: "center"
+                    }}>
+                        {/* model */}
+                        <div style={{ zIndex: 2, position: 'absolute' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/model_${pov}.png`}
+                                alt="laxmi" />
+                        </div>
+                        {/* pant */}
+                        <div style={{ zIndex: 3, position: 'absolute' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/model_${pov}_pant.png`}
+                                alt="laxmi" />
+                        </div>
+                        {/* body */}
+                        <div style={{ zIndex: 4, position: 'absolute' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/model_${pov}_pant.png`}
+                                // src={`/img/custom/${category}/${fabricSelect?.title ?? "C-Blue"}/${pov}/body/${bottomSecondary === "Untucked" ? bottom : bottomSecondary}.png`}
+                                alt="laxmi" />
+                         </div>
+                        {/* collar */}
+                        <div style={{ zIndex: 5, position: 'absolute' }}>
+                             <Image
+                                 width={350} // 200 | 350 | 400 | 500 | 1080
+                                 height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                 src={dataStyle.collarBack.image}
+                                // src={`/img/custom/${category}/${fabricSelect?.title ?? "C-Blue"}/${pov}/collar/collar.png`}
+                                alt="laxmi" />
+                        </div>
+                        {/* accent collar */}
+                                <div style={{ zIndex: 6, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={`/img/custom/model_${pov}_pant.png`}
+                                        // src={`/img/custom/${category}/accent/${pov}/collar/${collarColor}.png`}
+                                        alt="laxmi" />
+                                </div>
+                        {/* sleeve */}
+                                <div style={{ zIndex: 7, position: 'absolute' }}>
+                                    {console.log(dataStyle)}
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={dataStyle.cuffsBack.image}
+                                        alt="laxmi" />
+                                </div>
+                        
+                        {/* cuffs */}
+                       
+                                <div style={{ zIndex: 8, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={`/img/custom/model_${pov}_pant.png`}
+                                        // src={`/img/custom/${category}/${fabricSelect?.title ?? "C-Blue"}/${pov}/cuffs/${cuffs}.png`}
+                                        alt="laxmi" />
+                                </div>
+                       
+                        {/* pleats */}
+                                <div style={{ zIndex: 9, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={dataStyle.pleats.image}
+                                        alt="laxmi" />
+                                </div>
+                        
+                        {/* accent cuffs */}
+                                <div style={{ zIndex: 9, position: 'absolute' }}>
+                                    <Image
+                                        width={350} // 200 | 350 | 400 | 500 | 1080
+                                        height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                        src={dataStyle.cuffsBack.image}
+                                        alt="laxmi" />
+                                </div>
+
+                        <div style={{ zIndex: 10, position: 'relative' }}>
+                            <Image
+                                width={350} // 200 | 350 | 400 | 500 | 1080
+                                height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                src={`/img/custom/back_no_model.png`}
+                                alt="laxmi" />
+                        </div>
+                    </div>
+                </div>
+                
+                {/* folded */}
+                <div style={{ display: pov === "folded" ? 'flex' : 'none', width: "100%", position: "relative", justifyContent: "center" }}>
+                    <div style={{ zIndex: 2, position: 'absolute' }}>
+                        {/* <Image
+                            width={350} // 200 | 350 | 400 | 500 | 1080
+                            height={953} // 544 | 953 | 1089 | 1361 | 2940
+                            src={`/img/custom/model_${pov}.svg`}
+                            alt="laxmi" /> */}
+                    </div>
+                    <div style={{ zIndex: 3, position: 'absolute' }}>
+                        {/* <Image
+                            width={350} // 200 | 350 | 400 | 500 | 1080
+                            height={953} // 544 | 953 | 1089 | 1361 | 2940
+                            src={`/img/custom/model_${pov}_pant.svg`}
+                            alt="laxmi" /> */}
+                    </div>
+                    <div style={{ zIndex: 4, position: 'absolute' }}>
+                        {
+                            dataStyle.bottom.image !== "" && dataStyle.bottom.image !== null ?
+                                <img
+                                    width={350} // 200 | 350 | 400 | 500 | 1080
+                                    height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                    src={dataStyle.bottom.image}
+                                    alt="laxmi" /> : <></>
+                        }
+                    </div>
+                    <div style={{ zIndex: 5, position: 'absolute' }}>
+                        {
+                            dataStyle.collarFold.image !== "" && dataStyle.collarFold.image !== null ?
+                                <img
+                                    width={350} // 200 | 350 | 400 | 500 | 1080
+                                    height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                    src={dataStyle.collarFold.image}
+                                    alt="laxmi" /> : <></>
+                        }
+                    </div>
+                    <div style={{ zIndex: 99, position: 'absolute' }}>
+                        {
+                            dataStyle.cuffsFold.image !== "" && dataStyle.cuffsFold.image !== null ?
+                                <img
+                                    width={350} // 200 | 350 | 400 | 500 | 1080
+                                    height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                    src={dataStyle.cuffsFold.image}
+                                    alt="laxmi" /> : <></>
+                        }
+                    </div>
+                    <div style={{ zIndex: 13, position: 'absolute' }}>
+                        {
+                            dataStyle.pocketFold.image !== "" && dataStyle.pocketFold.image !== null ?
+                                <img
+                                    width={350} // 200 | 350 | 400 | 500 | 1080
+                                    height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                    src={dataStyle.pocketFold.image}
+                                    alt="laxmi"  style={{marginTop:'-120px'}}/> : <></>
+                         }
+                    </div>
+                    <div style={{ zIndex: 8, position: 'absolute' }}>
+                        {
+                            dataStyle.placketFold.image !== "" && dataStyle.placketFold.image !== null ?
+                                <img
+                                    width={350} // 200 | 350 | 400 | 500 | 1080
+                                    height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                    src={dataStyle.placketFold.image}
+                                    alt="laxmi" /> : <></>
+                        }
+                    </div>
+                    {
+                        isLoading ? <div style={{
+                            width: "350px",
+                            height: "953px",
+                            // backgroundColor: "white",
+                            // backgroundColor: "rgba(0,0,0,.3)",
+                            paddingTop: "30vh",
+                            zIndex: 100, position: "absolute",
+                        }}><div className="loader"></div></div>
+                            : <></>
+                    }
+                    {
+                        isLoadingFabric ? <div style={{
+                            width: "350px",
+                            height: "953px",
+                            backgroundColor: "white",
+                            // backgroundColor: "rgba(0,0,0,.3)",
+                            paddingTop: "30vh",
+                            zIndex: 200, position: "absolute",
+                        }}><div className="loader"></div></div>
+                            : <></>
+                    }
+                </div>
 
                 <div style={{ height: "80%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <div style={{ border: "2px solid black", borderRadius: "24px", padding: "8px 12px", cursor: "pointer" }}>
+                    <div style={{ border: "2px solid black", borderRadius: "24px", padding: "8px 12px", cursor: "pointer" }} onClick={handleNextPovChange}>
                         &#8680;
                     </div>
                 </div>

@@ -179,9 +179,11 @@ const useHookCustom = () => {
 
                 if(dataStyle.cuffs.name==="Double Rounded French"){
                     newDataStyle.cuffsBack.name = 'Double Rounded French'
+                    newDataStyle.cuffsBack.image = '/img/sleeve_back/red/Cuffs Double Rounded French Back.svg';
 
                 }else if(dataStyle.cuffs.name==="Double Square French"){
                     newDataStyle.cuffsBack.name = 'Double Square French'
+                    newDataStyle.cuffsBack.image = '/img/sleeve_back/red/Cuffs Double Square French Back';
 
                 }else if(dataStyle.cuffs.name==="Rounded One"){
                     newDataStyle.cuffsBack.name = "Rounded One"

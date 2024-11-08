@@ -2,13 +2,23 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from '../../elements/icon'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import useHookCustom from './hookCustom';
 
 const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
 
-    const [pov, setPov] = useState('folded');
+    const {pov} = useHookCustom();
 
      // Array containing the possible values
     const povOptions = ['front', 'back', 'folded'];
+    const duration= 1000;
+    const interval = 300
+    const [sleeveFlicker, setSleeveFlicker] = useState(false);
+    const [collarFlicker, setCollarFlicker] = useState(false);
+    const [cuffsFlicker, setCuffsFlicker] = useState(false);
+    const [placketFlicker, setPlacketFlicker] = useState(false);
+    const [pocketFlicker, setPocketFlicker] = useState(false);
+    const [pleatsFlicker, setPleatsFlicker] = useState(false);
+    
 
     const handlePrevPovChange = () => {
         const currentIndex = povOptions.indexOf(pov);
@@ -22,6 +32,7 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
         const nextIndex = (currentIndex + 1) % povOptions.length;
         setPov(povOptions[nextIndex]);
     };
+    console.log(dataStyle)
 
     return (
         <>
@@ -81,6 +92,7 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                                     width={350} // 200 | 350 | 400 | 500 | 1080
                                     height={953} // 544 | 953 | 1089 | 1361 | 2940
                                     src={dataStyle.sleeve.image}
+                                    style={{opacity: sleeveFlicker ? 1 : 0.8}}
                                     alt="laxmi" /> : <></>
                         }
                     </div>

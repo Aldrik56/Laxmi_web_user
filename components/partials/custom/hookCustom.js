@@ -74,6 +74,7 @@ const useHookCustom = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [isLoadingFabric, setIsLoadingFabric] = useState(false)
     const { category } = router.query
+    const [pov, setPov] = useState("folded")
 
     useEffect(() => {
         getCustomStyle()
@@ -152,9 +153,12 @@ const useHookCustom = () => {
     }, [category]);
 
     const getCustomStyle = async () => {
+        console.log(fabricList)
+        console.log(dataStyle)
         try {
-            var response = await axios.get(`/api/custom/custom_style?fabric=${fabricSelect._id}&collar=${dataStyle.collar.name}&cuff=${dataStyle.cuffs.name}&sleeve=${dataStyle.sleeve.name}&bottom=${dataStyle.bottom.name}&chestpocket=${dataStyle.pocket.name}`);
+            var response = await axios.get(`/api/custom/custom_style?fabric=${fabricSelect._id}&collar=Collar Botton Down Placket French Folded&cuff=${dataStyle.cuffs.name}&sleeve=${dataStyle.sleeve.name}&bottom=${dataStyle.bottom.name}&chestpocket=${dataStyle.pocket.name}&pov=${pov}`);
             const { status, data } = response.data
+            console.log(data)
             const newDataStyle = { ...dataStyle }
             // newDataStyle.bottom.name = data.bottom.name
             // newDataStyle.bottom.image = data.bottom.image
@@ -176,7 +180,7 @@ const useHookCustom = () => {
                     newDataStyle.placket.name = 'Standard'
                     newDataStyle.placket.image = '/img/placket/Placket Standard Red.svg';
                 }
-
+  
                 if(dataStyle.cuffs.name==="Double Rounded French"){
                     newDataStyle.cuffsBack.name = 'Double Rounded French'
                     newDataStyle.cuffsBack.image = '/img/sleeve_back/red/Cuffs Double Rounded French Back.svg';
@@ -277,11 +281,11 @@ const useHookCustom = () => {
                     newDataStyle.pocketFold.image="/img/folded/red/pocket/Chestpocket Double With Flap Folded.svg"
                 }
 
-            }else if(fabricSelect._id==="670600c78f14879009126d4c"){
+            }else if(fabricSelect._id==="670600c78f14879009126d4c" || fabricSelect._id==="6728881c596d15d9e5951ddc" || fabricSelect._id==="67241efd596d15d9e5951d28" || fabricSelect._id==="672411d2596d15d9e5951c0b"){
                 if(dataStyle.placket.name==="French"){
                     newDataStyle.placket.name = 'French'
                     newDataStyle.placket.image = '/img/placket/Placket French.svg';
-                }else if(dataStyle.placket.name==="Hidden"){
+                }else if(dataStyle.placket.name==="Hidden"){ 
                     newDataStyle.placket.name = 'Hidden'
                     newDataStyle.placket.image = '/img/placket/Placket Hidden.svg';
                 }else if(dataStyle.placket.name==="Standard"){
@@ -319,7 +323,7 @@ const useHookCustom = () => {
                 }
 
                 newDataStyle.pleats.image="/img/pleats/yellow/Pleats Box Tucked.svg"
-
+                newDataStyle.collarBack.image="/img/pleats/yellow/Collar Back.svg"
 
                 // folded yellow
                 if(dataStyle.collar.name==="Stand Up"){
@@ -636,6 +640,8 @@ const useHookCustom = () => {
         dataStyle,
         isLoading,
         isLoadingFabric,
+        pov,
+        setPov,
         setDataStyle,
         setIsLoading,
         setOpenStyle,

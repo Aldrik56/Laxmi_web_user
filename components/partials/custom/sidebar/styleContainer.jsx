@@ -102,6 +102,7 @@ const StyleContainer = (props) => {
                             props.listStyle.map((data, index) => (
                                 <div
                                     onClick={() => {
+                                        console.log(data.title)
                                         setSubCategory({
                                             id: data.id,
                                             title: data.title,

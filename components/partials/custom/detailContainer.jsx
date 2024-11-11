@@ -12,7 +12,7 @@ const OrderContainer = ({ fabricSelect ,category, t, setSidebar, sidebar, price,
                     bottom: dataStyle.bottom.name,
                     chest_pocket: dataStyle.pocket.name,
                     // price: price,
-                    // placket: dataStyle.placket.name
+                    placket: dataStyle.placket.name
                 }
             );
 

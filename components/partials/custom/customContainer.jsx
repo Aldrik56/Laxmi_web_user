@@ -610,6 +610,7 @@ const CustomContainer = ({ t }) => {
                     <ModelContainer
                         t={t}
                         isLoading={isLoading}
+                        fabricSelect={fabricSelect}
                         isLoadingFabric={isLoadingFabric}
                         dataStyle={dataStyle} />
                 </div>

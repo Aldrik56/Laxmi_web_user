@@ -2,7 +2,7 @@ import axios from "axios";
 // import frenchPlacket from "../../../public/img/placket/Placket French.svg";
 
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState,useRef } from "react"
 import {
     BlazerListStyle,
     ShirtListStyle,
@@ -30,7 +30,7 @@ const initStyle = {
     },
     "cuffs": {
         "image": "",
-        "name": "Square French"
+        "name": "One Button Cut"
     },
     "cuffsBack": {
         "image": "/img/sleeve_back/Cuffs Double Rounded French Back.svg",
@@ -75,9 +75,30 @@ const useHookCustom = () => {
     const [isLoadingFabric, setIsLoadingFabric] = useState(false)
     const { category } = router.query
     const [pov, setPov] = useState("FRONT")
+    const fabricSelectRef = useRef(null)
+    var fabric;
 
-    const updatePov = (newPov) => {
+    
+    useEffect(() => {
+        if (fabricSelect) {
+            getCustomStyle()
+            fabricSelectRef.current = fabricSelect
+        }
+    }, [fabricSelect])
+
+    useEffect(() => {
+        setIsLoadingFabric(true)
+        console.log("ini new pov", pov);
+        if (!fabricSelect && fabricSelectRef.current) {
+            setFabricSelect(fabricSelectRef.current)
+        } else {
+            getCustomStyle()
+        }
+    }, [pov]);
+
+    const updatePov = (newPov, newFabric) => {
         setPov(newPov);
+        setFabricSelect(newFabric)
       };
 
     useEffect(() => {
@@ -100,7 +121,6 @@ const useHookCustom = () => {
     }, [])
 
     useEffect(async () => {
-        console.log("fabricSelect");
         setIsLoadingFabric(true)
         getCustomStyle()
     }, [fabricSelect]);
@@ -163,8 +183,13 @@ const useHookCustom = () => {
     }, [category]);
 
     const getCustomStyle = async () => {
-        console.log(fabricSelect);
-        
+        const currentFabricSelect = fabricSelect || fabricSelectRef.current;
+        console.log(currentFabricSelect);
+        if (!currentFabricSelect) {
+            console.log("No fabric selected");
+            setIsLoadingFabric(false);
+            return;
+        }
         try {
             let placketName = "",
             isTucked = false;
@@ -175,7 +200,7 @@ const useHookCustom = () => {
             }
         
             
-            var url = `/api/custom/custom_style?fabric=${fabricSelect._id}&collar=${dataStyle.collar.name}&cuffs=${dataStyle.cuffs.name}&sleeve=${dataStyle.sleeve.name}&bottom=${dataStyle.bottom.name}&chestpocket=${dataStyle.pocket.name}&placket=${dataStyle.placket.name}&pov=${pov}`;
+            var url = `/api/custom/custom_style?fabric=${currentFabricSelect._id}&collar=${dataStyle.collar.name}&cuffs=${dataStyle.cuffs.name}&sleeve=${dataStyle.sleeve.name}&bottom=${dataStyle.bottom.name}&chestpocket=${dataStyle.pocket.name}&placket=${dataStyle.placket.name}&pov=${pov}`;
             var response = await axios.get(url);
             console.log(url)
             const { status, data } = response.data
@@ -192,10 +217,83 @@ const useHookCustom = () => {
             newDataStyle.pocket.image = data.styles.chestpocket?.image || ""
             newDataStyle.placket.name = data.styles.placket?.name || ""
             newDataStyle.placket.image = data.styles.placket?.image || ""
+            fabric= fabricSelect
             
             console.log(fabricSelect._id)
             setDataStyle(newDataStyle)
             console.log(newDataStyle)
+
+            // if(fabricSelect._id==="6705fffa8f14879009126d1d"){
+                
+                newDataStyle.pleats.image="/img/pleats/red/Pleats Box Tucked.svg"
+                newDataStyle.collarBack.image="/img/pleats/red/Collar Back.svg"
+              
+                if(dataStyle.placket.name==="French"){
+                    newDataStyle.placketFold.image="/img/folded/red/pleats/Placket French Body Folded.svg"
+                }else if(dataStyle.placket.name==="Hidden"){
+                    newDataStyle.placketFold.image="/img/folded/red/pleats/Placket Hidden Body Folded.svg"
+                }else if(dataStyle.placket.name==="Standard"){
+                    newDataStyle.placketFold.image="/img/folded/red/pleats/Placket Standard Body Folded.svg"
+                }
+
+                if(dataStyle.collar.name==="Stand Up"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Stand Up Placket French Folded.svg"
+                }else if(dataStyle.collar.name==="Button Down"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Button Down Placket French Folded.svg"
+
+                }else if(dataStyle.collar.name==="Cutaway"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Cutaway Placket French Folded.svg"
+
+                }else if(dataStyle.collar.name==="Kent Collar"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Kent Collar Placket French Folded.svg"
+                }else if(dataStyle.collar.name==="New Kent"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar New Kent Placket French Folded.svg"
+                }else if(dataStyle.collar.name==="Pinned"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Pinned Placket French Folded.svg"
+                }else if(dataStyle.collar.name==="Rounded"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Rounded Placket French Folded.svg"
+                }else if(dataStyle.collar.name==="Wing"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Wing Placket French Folded.svg"
+                }else if(dataStyle.collar.name==="Long"){
+                    newDataStyle.collarFold.image="/img/folded/red/collar/Collar Long Placket French Folded.svg"
+                }else if(dataStyle.collar.name==="Short Classic"){
+
+                }
+
+                if(dataStyle.pocket.name==="No Pocket"){
+
+                }else if(dataStyle.pocket.name==="Standard"){
+                    newDataStyle.pocketFold.image="/img/folded/red/pocket/Chestpocket Standard Folded.svg"
+                }else if(dataStyle.pocket.name==="With Flap"){
+                    newDataStyle.pocketFold.image="/img/folded/red/pocket/Chestpocket With Flap Folded.svg"
+                }else if(dataStyle.pocket.name==="Double Standard"){
+                    newDataStyle.pocketFold.image="/img/folded/red/pocket/Chestpocket Double Standard Folded.svg"
+                }else if(dataStyle.pocket.name==="Double With Flap"){
+                    newDataStyle.pocketFold.image="/img/folded/red/pocket/Chestpocket Double With Flap Folded.svg"
+                }
+
+                if(dataStyle.cuffs.name==="Double Rounded French"){
+                    newDataStyle.cuffsFold.image="/img/folded/red/sleeve/Cuffs Double Rounded French Folded.svg"
+                }else if(dataStyle.cuffs.name==="Double Square French"){
+
+                }else if(dataStyle.cuffs.name==="Rounded One"){
+                    newDataStyle.cuffsFold.image="/img/folded/red/sleeve/Cuffs Rounded One Button Folded.svg"
+                }else if(dataStyle.cuffs.name==="Rounded Two"){
+
+                }else if(dataStyle.cuffs.name==="Square French"){
+                    newDataStyle.cuffsFold.image="/img/folded/red/sleeve/Cuffs Square French Folded.svg"
+                }else if(dataStyle.cuffs.name==="Single One Button"){
+
+                }else if(dataStyle.cuffs.name==="Single Two Button"){
+
+                }else if(dataStyle.cuffs.name==="One Button Cut"){
+                    newDataStyle.cuffsFold.image="/img/folded/red/sleeve/Cuffs One Button Cut  Folded.svg"
+                }else if(dataStyle.cuffs.name==="Two Button Cut"){
+
+                }else if(dataStyle.cuffs.name==="Short"){
+                    newDataStyle.cuffsFold.image="/img/folded/red/sleeve/Sleeve Short Folded.svg"
+                }
+
         } catch (e) {
             console.log(e);
         } finally {

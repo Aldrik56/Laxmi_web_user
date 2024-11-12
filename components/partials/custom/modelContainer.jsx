@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useHookCustom from './hookCustom';
 
-const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
+const ModelContainer = ({ fabricSelect,isLoading, isLoadingFabric, dataStyle }) => {
 
-    const {pov,updatePov} = useHookCustom();
+    const { pov, updatePov } = useHookCustom();
 
      // Array containing the possible values
     const povOptions = ['FRONT', 'BACK', 'FOLDED'];
@@ -18,19 +18,25 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
     const [placketFlicker, setPlacketFlicker] = useState(false);
     const [pocketFlicker, setPocketFlicker] = useState(false);
     const [pleatsFlicker, setPleatsFlicker] = useState(false);
+
+    
+      useEffect(() => {
+        updatePov(povOptions[0], fabricSelect);
+      },[])
     
 
     const handlePrevPovChange = () => {
         const currentIndex = povOptions.indexOf(pov);
         const prevIndex = (currentIndex - 1 + povOptions.length) % povOptions.length; // Fix for negative index
-        updatePov(povOptions[prevIndex])
+        updatePov(povOptions[prevIndex], fabricSelect)
     };
 
     // Function to handle next POV change (cyclic forward)
     const handleNextPovChange = () => {
         const currentIndex = povOptions.indexOf(pov);
         const nextIndex = (currentIndex + 1) % povOptions.length;
-        updatePov(povOptions[nextIndex])
+        updatePov(povOptions[nextIndex], fabricSelect)
+        console.log(povOptions[nextIndex])
     };
 
     return (
@@ -173,15 +179,18 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                          </div>
                         {/* collar */}
                         <div style={{ zIndex: 5, position: 'absolute' }}>
+                            {dataStyle.collar.image !== "" && dataStyle.collar.image !== null ? 
                              <Image
                                  width={350} // 200 | 350 | 400 | 500 | 1080
                                  height={953} // 544 | 953 | 1089 | 1361 | 2940
                                  src={dataStyle.collarBack.image}
                                 // src={`/img/custom/${category}/${fabricSelect?.title ?? "C-Blue"}/${pov}/collar/collar.png`}
-                                alt="laxmi" />
+                                alt="laxmi" /> : <></>
+                            }
                         </div>
                         {/* accent collar */}
                                 <div style={{ zIndex: 6, position: 'absolute' }}>
+                                    
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
@@ -192,11 +201,13 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                         {/* sleeve */}
                                 <div style={{ zIndex: 7, position: 'absolute' }}>
                                     {console.log(dataStyle)}
+                                    {dataStyle.sleeve.image !== "" && dataStyle.sleeve.image !== null ?
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                        src={dataStyle.cuffsBack.image}
+                                        src={dataStyle.sleeve.image}
                                         alt="laxmi" />
+                                    : <></>}
                                 </div>
                         
                         {/* cuffs */}
@@ -221,11 +232,13 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                         
                         {/* accent cuffs */}
                                 <div style={{ zIndex: 9, position: 'absolute' }}>
+                                    {dataStyle.cuffs.image !== "" && dataStyle.cuffs.image !== null ?
                                     <Image
                                         width={350} // 200 | 350 | 400 | 500 | 1080
                                         height={953} // 544 | 953 | 1089 | 1361 | 2940
                                         src={dataStyle.cuffsBack.image}
                                         alt="laxmi" />
+                                    : <></>}
                                 </div>
 
                         <div style={{ zIndex: 10, position: 'relative' }}>
@@ -270,17 +283,27 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                                 <img
                                     width={350} // 200 | 350 | 400 | 500 | 1080
                                     height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                    src={dataStyle.collar.image}
+                                    src={dataStyle.collarFold.image}
                                     alt="laxmi" /> : <></>
                         }
                     </div>
+                    {/* <div style={{ zIndex: 6, position: 'absolute' }}>
+                        {
+                            dataStyle.sleeve.image !== "" && dataStyle.sleeve.image !== null ?
+                                <img
+                                    width={350} // 200 | 350 | 400 | 500 | 1080 
+                                    height={953} // 544 | 953 | 1089 | 1361 | 2940
+                                    src={dataStyle.sleeve.image}
+                                    alt="laxmi" /> : <></>
+                    }
+                    </div> */}
                     <div style={{ zIndex: 99, position: 'absolute' }}>
                         {
                             dataStyle.cuffsFold.image !== "" && dataStyle.cuffsFold.image !== null ?
                                 <img
                                     width={350} // 200 | 350 | 400 | 500 | 1080
                                     height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                    src={dataStyle.cuffs.image}
+                                    src={dataStyle.cuffsFold.image}
                                     alt="laxmi" /> : <></>
                         }
                     </div>
@@ -290,17 +313,18 @@ const ModelContainer = ({ isLoading, isLoadingFabric, dataStyle }) => {
                                 <img
                                     width={350} // 200 | 350 | 400 | 500 | 1080
                                     height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                    src={dataStyle.pocket.image}
+                                    src={dataStyle.pocketFold.image}
                                     alt="laxmi"  style={{marginTop:'-120px'}}/> : <></>
                          }
                     </div>
+                    
                     <div style={{ zIndex: 8, position: 'absolute' }}>
                         {
                             dataStyle.placketFold.image !== "" && dataStyle.placketFold.image !== null ?
                                 <img
                                     width={350} // 200 | 350 | 400 | 500 | 1080
                                     height={953} // 544 | 953 | 1089 | 1361 | 2940
-                                    src={dataStyle.placket.image}
+                                    src={dataStyle.placketFold.image}
                                     alt="laxmi" /> : <></>
                         }
                     </div>

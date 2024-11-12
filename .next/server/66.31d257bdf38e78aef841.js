@@ -1,0 +1,11 @@
+exports.ids = [66];
+exports.modules = {
+
+/***/ "w89s":
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"Cart\":\"Keranjang\",\"Products\":\"Produk\",\"Remove\":\"Hapus\",\"Modify\":\"Ubah\",\"Detail Shopping Bag\":\"Detail Tas Belanja\",\"Measurements\":\"Pengukuran\",\"Checkout\":\"Pemeriksaan\",\"Payment\":\"Pembayaran\",\"Total Price\":\"Total harga\",\"suits\":\"setelan\",\"vests\":\"rompi\",\"batiks\":\"batik\",\"shirts\":\"kemeja\",\"trousers\":\"celana panjang\",\"custom\":\"custom\",\"You Might Like\":\"Anda mungkin ingin\",\"Related Products\":\"Produk-produk terkait\",\"Processing Orders\":\"Memproses Pesanan\",\"Please Follow the Steps\":\"Silahkan Ikuti Langkahnya\",\"Name\":\"Nama\",\"Height\":\"Tinggi\",\"Weight\":\"Bobot\",\"Age\":\"Usia\",\"The more accurate you give your height and weight, the better the system will help you take your measurements\":\"Semakin akurat Anda memberikan tinggi dan berat badan Anda, semakin baik sistem akan membantu Anda melakukan pengukuran\",\"NEXT\":\"SELANJUTNYA\",\"BACK\":\"KEMBALI\",\"Edit\":\"Ubah\",\"Shoulder\":\"Bahu\",\"Straight\":\"Lurus\",\"Normal\":\"Normal\",\"Stooped\":\"bungkuk\",\"Abdomen\":\"perut\",\"Thin\":\"Tipis\",\"Large\":\"Besar\",\"Chest\":\"Dada\",\"Strong\":\"Kuat\",\"Corpulent\":\"Bayak\",\"Stance\":\"Pendirian\",\"Curved\":\"Lengkung\",\"Shipping Addres\":\"Alamat pengiriman\",\"Expedition Delivery\":\"Pengiriman Ekspedisi\",\"Estimated Time of Arrival\":\"Perkiraan Waktu Kedatangan\",\"Ordered Product\":\"Produk yang dipesan\",\"Amount\":\"Jumlah\",\"Price\":\"Harga\",\"pcs\":\"buah\",\"Payment Method\":\"Cara Pembayaran\",\"Transfer Manual\":\"manual transfer\",\"Shiping Price\":\"Harga Pengirimane\",\"Product Price\":\"Harga Produk\",\"Discount Coupons\":\"Kupon Diskon\",\"Add Coupon Code\":\"Tambahkan Kode Kupon\",\"Proceed To Pay\":\"Lanjutkan Untuk Membayar\",\"Main Destination\":\"Tujuan Utama\",\"Total  Product Price\":\"Total Harga Produk\",\"Account Number\":\"Nomor akun\",\"Cancel Order\":\"Batalkan pesanan\",\"Already Paid\":\"Sudah dibayar\",\"Thank you for your payment\":\"Terima kasih atas pembayaran Anda\",\"Your order has been received, Click check button to see receipt for this transaction\":\"Pesanan Anda telah diterima. Klik tombol centang untuk melihat tanda terima transaksi ini\",\"Check\":\"Periksa\"}");
+
+/***/ })
+
+};;

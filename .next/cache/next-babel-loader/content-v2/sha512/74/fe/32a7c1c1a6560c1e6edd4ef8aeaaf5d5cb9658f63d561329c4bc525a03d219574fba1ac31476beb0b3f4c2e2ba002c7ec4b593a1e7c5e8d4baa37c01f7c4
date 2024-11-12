@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function handler(req, res) {\n  res.status(200).json({\n    \"status\": true,\n    \"message\": \"popup was fetched\",\n    \"data\": {\n      \"image\": \"/img/promotion/popup.png\"\n    }\n  });\n}","map":null,"metadata":{},"sourceType":"module"}

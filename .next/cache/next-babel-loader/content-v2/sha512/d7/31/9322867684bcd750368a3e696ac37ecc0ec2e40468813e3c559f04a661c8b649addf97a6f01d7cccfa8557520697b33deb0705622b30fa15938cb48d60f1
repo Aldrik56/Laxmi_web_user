@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport parse from 'html-react-parser';\n\nconst About = ({\n  t,\n  data\n}) => {\n  return /*#__PURE__*/_jsx(\"div\", {\n    className: \"html-parse container-fluid px-5\",\n    children: parse(data.about_us)\n  });\n};\n\nexport default About;","map":null,"metadata":{},"sourceType":"module"}

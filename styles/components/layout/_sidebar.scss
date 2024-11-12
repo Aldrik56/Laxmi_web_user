@@ -1,0 +1,44 @@
+.sidebar{
+    .name{
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.0015em;
+    }
+    .desc{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.0025em;
+        cursor: pointer;        
+    }
+    .menu-container{
+        .menu{
+            border-bottom:1px solid $color-grey ;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 32px;
+            &:hover{
+                background-color: $color-grey;
+            }
+        }
+        .active{
+            background-color: $color-grey;
+            &:hover{
+                background-color: $color-grey;
+            }
+            a{
+                // color: $color-white;
+                &:hover{
+                    background-color: $color-grey;
+                    // color: $color-white !important;
+                }    
+            }
+        }
+    }
+}

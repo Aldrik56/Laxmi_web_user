@@ -1,0 +1,11 @@
+exports.ids = [54];
+exports.modules = {
+
+/***/ "BpGf":
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"Cart\":\"Cart\",\"Products\":\"Products\",\"Remove\":\"Remove\",\"Modify\":\"Modify\",\"Detail Shopping Bag\":\"Detail Shopping Bag\",\"Measurements\":\"Measurements\",\"Checkout\":\"Checkout\",\"Payment\":\"Payment\",\"Total Price\":\"Total Price\",\"suits\":\"suits\",\"vests\":\"vests\",\"batiks\":\"batiks\",\"shirts\":\"shirts\",\"trousers\":\"trousers\",\"custom\":\"custom\",\"You Might Like\":\"You Might Like\",\"Related Products\":\"Related Products\",\"Processing Orders\":\"Processing Orders\",\"Please Follow the Steps\":\"Please Follow the Steps\",\"Name\":\"Name\",\"Height\":\"Height\",\"Weight\":\"Weight\",\"Age\":\"Age\",\"The more accurate you give your height and weight, the better the system will help you take your measurements\":\"The more accurate you give your height and weight, the better the system will help you take your measurements\",\"NEXT\":\"NEXT\",\"BACK\":\"BACK\",\"Edit\":\"Edit\",\"Shoulder\":\"Shoulder\",\"Straight\":\"Straight\",\"Normal\":\"Normal\",\"Stooped\":\"Stooped\",\"Abdomen\":\"Abdomen\",\"Thin\":\"Thin\",\"Large\":\"Large\",\"Chest\":\"Chest\",\"Strong\":\"Strong\",\"Corpulent\":\"Corpulent\",\"Stance\":\"Stance\",\"Curved\":\"Curved\",\"Shipping Addres\":\"Shipping Addres\",\"Expedition Delivery\":\"Expedition Delivery\",\"Estimated Time of Arrival\":\"Estimated Time of Arrival\",\"Ordered Product\":\"Ordered Product\",\"Amount\":\"Amount\",\"Price\":\"Price\",\"pcs\":\"pcs\",\"Payment Method\":\"Payment Method\",\"Transfer Manual\":\"Transfer Manual\",\"Shiping Price\":\"Shiping Price\",\"Product Price\":\"Product Price\",\"Discount Coupons\":\"Discount Coupons\",\"Add Coupon Code\":\"Add Coupon Code\",\"Proceed To Pay\":\"Proceed To Pay\",\"Main Destination\":\"Main Destination\",\"Total  Product Price\":\"Total  Product Price\",\"Account Number\":\"Account Number\",\"Cancel Order\":\"Cancel Order\",\"Already Paid\":\"Already Paid\",\"Thank you for your payment\":\"Thank you for your payment\",\"Your order has been received, Click check button to see receipt for this transaction\":\"Your order has been received. Click check button to see receipt for this transaction\",\"Check\":\"Check\"}");
+
+/***/ })
+
+};;

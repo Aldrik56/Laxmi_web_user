@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default [{\n  title: \"Account Detail\",\n  url: \"/accountdetail\"\n}, {\n  title: \"Notification\",\n  url: \"/notification\"\n}, {\n  title: \"My Orders\",\n  url: \"/myorder\"\n}, {\n  title: \"My Addresses\",\n  url: \"/myaddress\"\n}];","map":null,"metadata":{},"sourceType":"module"}

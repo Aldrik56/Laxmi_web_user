@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { combineReducers } from 'redux';\nimport authReducer from './auth/reducer';\nimport fetchListReducer from './fetchList/reducer';\nconst rootReducer = combineReducers({\n  auth: authReducer,\n  fetchList: fetchListReducer\n});\nexport default rootReducer;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+Bedfort&family=Philosopher&family=Princess+Sofia&family=Rakkas&family=Revalia&display=swap');
+
+@font-face {
+    font-family: 'Ananda Black';
+    src: url("../../public/fonts/Ananda\ Black.ttf") format('woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Curetro';
+    src: url("/public/fonts/Curetro.ttf") format('woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Naliko Betah';
+    src: url("/public/fonts/Naliko\ Betah.ttf") format('woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $color-primary;
+}
+
+
+
+main {
+    padding-top: 64px;
+
+    @media only screen and (max-width: $sm) {
+        padding-top: 58px;
+    }
+}
+
+section {
+    margin-top: 80px;
+
+    @media only screen and (max-width: $sm) {
+        margin-top: 30px;
+    }
+}
+
+
+hr {
+    border-radius: 1px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 330px;
+    opacity: 1;
+    background-color: #EEEEEE;
+
+    @media only screen and (max-width: $sm) {
+        width: 80px;
+        height: 4px !important;
+        background: #616161;
+        border-radius: 4.08163px;
+
+    }
+}
+
+.text-primary {
+    color: $color-primary !important;
+}
+
+.bg-light {
+    background-color: #FFFFFF !important;
+
+    @media only screen and (max-width: $sm) {
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+.btn-primary {
+    background-color: $color-primary !important;
+    border-radius: 8px;
+    font-weight: bold;
+
+    @media only screen and (max-width: $sm) {
+        font-size: 14px !important;
+        padding: 11px 13px !important;
+        width: auto !important;
+    }
+}
+
+.btn-transparent {
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    &:hover {
+        background-color: #FFFFFF;
+        color: $color-primary;
+    }
+}
+
+.text-danger {
+    color: $color-danger !important;
+}
+
+.btn-light {
+    font-weight: bold;
+    background-color: #FFFFFF;
+    border: 1px solid $color-primary;
+    border-radius: 8px;
+
+    &:hover {
+        border: 1px solid $color-primary;
+    }
+}
+
+.heading {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.0025em;
+    color: $color-primary;
+}
+
+.desc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-primary;
+}
+
+.value {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: $color-primary;
+}
+
+a {
+    text-decoration: none;
+    color: $color-primary;
+
+    &:hover {
+        color: $color-primary;
+    }
+
+}
+
+button:focus,
+textarea:focus,
+select:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=checkbox]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+    box-shadow: inset 0 -1px 0 #ddd !important;
+    outline: none !important;
+}
+
+.form-check {
+    .form-check-label {
+        margin-left: 10px;
+    }
+}
+
+.form-check-input {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #1E1E22;
+    box-sizing: border-box;
+    border-radius: 4px !important;
+
+    &:checked {
+        background-image: url("/img/icon/checked-checkbox.png") !important;
+
+        background-color: $color-white;
+        box-shadow: inset 0 -1px 0 #ddd !important;
+        outline: none !important;
+    }
+}

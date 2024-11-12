@@ -1,0 +1,15 @@
+(window["webpackJsonp_N_E"] = window["webpackJsonp_N_E"] || []).push([[2],{
+
+/***/ "./public/locales/en/accountDetail.json":
+/*!**********************************************!*\
+  !*** ./public/locales/en/accountDetail.json ***!
+  \**********************************************/
+/*! exports provided: Account, My Address, Email, Name, Telephone, Height, Weight, Age, Account Detail, edit, Please fill in the following form to change the email, New Email, Confirm Email, Password, Change, Change Email, Save, The confirmation email must match the new email, Confirm Change Email, Are you sure you want to change email, Email Changed Successfully, A link to confirm your replacement email has been sent, Please check your email inbox, Notification, No, New Address, Edit, All, Unpaid, On Process, Sent, Finished, Canceled, Track, Order Number, Shipping Address, Track Shipment, Delivery Time, Orders Sent, Ordered Product, Aditional, Amount, Price, Total Price, Shiping Price, Product Price, Discount Coupons, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"Account\":\"Account\",\"My Address\":\"My Address\",\"Email\":\"Email\",\"Name\":\"Name\",\"Telephone\":\"Telephone\",\"Height\":\"Height\",\"Weight\":\"Weight\",\"Age\":\"Age\",\"Account Detail\":\"Account Detail\",\"edit\":\"edit\",\"Please fill in the following form to change the email\":\"Please fill in the following form to change the email\",\"New Email\":\"New Email\",\"Confirm Email\":\"Confirm Email\",\"Password\":\"Password\",\"Change\":\"Change\",\"Change Email\":\"Change Email\",\"Save\":\"Save\",\"The confirmation email must match the new email\":\"The confirmation email must match the new email\",\"Confirm Change Email\":\"Confirm Change Email\",\"Are you sure you want to change email\":\"Are you sure you want to change email\",\"Email Changed Successfully\":\"Email Changed Successfully\",\"A link to confirm your replacement email has been sent, Please check your email inbox\":\"A link to confirm your replacement email has been sent, Please check your email inbox\",\"Notification\":\"Notification\",\"No\":\"No\",\"New Address\":\"New Address\",\"Edit\":\"Edit\",\"All\":\"All\",\"Unpaid\":\"Unpaid\",\"On Process\":\"On Process\",\"Sent\":\"Sent\",\"Finished\":\"Finished\",\"Canceled\":\"Canceled\",\"Track\":\"Track\",\"Order Number\":\"Order Number\",\"Shipping Address\":\"Shipping Addres\",\"Track Shipment\":\"Track Shipment\",\"Delivery Time\":\"Delivery Time\",\"Orders Sent\":\"Orders Sent\",\"Ordered Product\":\"Ordered Product\",\"Aditional\":\"Aditional\",\"Amount\":\"Amount\",\"Price\":\"Price\",\"Total Price\":\"Total Price\",\"Shiping Price\":\"Shiping Price\",\"Product Price\":\"Product Price\",\"Discount Coupons\":\"Discount Coupons\"}");
+
+/***/ })
+
+}]);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdGF0aWMvY2h1bmtzLzIuanMiLCJzb3VyY2VSb290IjoiIn0=

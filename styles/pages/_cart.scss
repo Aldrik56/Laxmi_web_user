@@ -1,0 +1,547 @@
+.cart{
+    background-color: $color-grey-01;
+    padding-left: 20px;
+    padding-right: 20px;
+    @media only screen and (max-width: $sm) {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }      
+    .breadcrumb{
+        margin-top: 20px;
+        padding-top: 30px;
+    }
+    padding-bottom: 30px;
+    section{
+        margin-top: 40px;
+    }
+    .accordion-item{
+        background-color : $color-white ;
+        border: 0px;
+        box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+        &:not(:first-child){
+            margin-top: 24px;
+        }
+        .accordion-button{
+            background-color : $color-white ;
+            border: 0px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 0.0015em;
+            // padding-left: 0px;
+
+            .form-check-label{
+                margin-top: 2px;
+                margin-left: 52px;
+            }
+        }
+        .form-check-input-accordion{
+            position: absolute;
+            margin-left: 32px;
+            margin-top: 16px;
+            z-index: 99;
+        }
+        .accordion-button:not(.collapsed){
+            color: $color-primary !important;
+            border: 0px;
+        }
+        .accordion-button:not(.collapsed)::after{
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+        .accordion-body{
+            margin-left: 0px;
+            padding: 0px;
+            .accordion-body-item{
+                border-top: 4px solid #EEEEEE;
+                padding-top: 32px;
+                padding-bottom: 32px;
+                .accordion-body-container{
+                    margin-left: 32px;
+                    .img-container{
+                        width: 125px;
+                        height: 125px;
+                        border: 1px solid #F5F5F5;
+                        box-sizing: border-box;
+                        border-radius: 4px;
+                        margin-left: 16px;
+                    }
+                    .desc{
+                        margin-left: 16px;
+                        @media only screen and (max-width: $sm) {
+                            margin-left: 0px;
+                        }  
+                        .title-product{
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 23px;
+                            letter-spacing: 0.0015em;       
+                            cursor: pointer;             
+                        }
+                        .material-product{
+                            p{
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 16px;
+                                line-height: 19px;
+                                margin-bottom: 8px;                   
+                                &:first-child{
+                                    margin-top: 16px;
+                                } 
+                            }
+                            .modify{
+                                color: $color-link-blue;
+                            }
+                        }
+                    }   
+                    .price{
+                        margin-bottom: 17px;
+                        @media only screen and (max-width: $lg) {
+                            margin-bottom: 0px;
+                        }   
+                        @media only screen and (max-width: $sm) {
+                            margin-top: 12px;
+                        }   
+                        p{
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 19px;   
+                                                     
+                        }
+                    }   
+                    .action{
+                        .cursor-pointer{
+                            cursor: pointer;
+                        }
+                        .action-button{
+                            margin-left: 8px;
+                            margin-right: 8px;
+                        }
+                        .text{
+                            @media only screen and (max-width: $sm) {
+                                display: none;
+                            }    
+                        }
+                    }              
+                }
+            }
+        }
+    }
+    .shopping-bag{
+        background-color: $color-white;
+        box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+        border-radius: 8px;
+        padding-bottom: 32px;
+        @media only screen and (max-width: $lg) {
+            margin-top: 30px;
+        }   
+        .head{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 0.0015em;            
+        }
+        .product{
+            margin-top: 16px;
+            .title{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: 0.0015em;  
+                margin-bottom: 4px;   
+                @media only screen and (max-width: $lg) {
+                    font-size: 16px;
+                }               
+            }
+            .sub-product{
+                .title{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 0.0025em;
+                    color: #424242; 
+                    margin-bottom: 4px;  
+                    @media only screen and (max-width: $lg) {
+                        font-size: 10px;
+                    }  
+                }
+            }
+        }
+        hr{
+            height: 4px;
+            background: #EEEEEE;
+            border-radius: 1px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+        .total-price{
+            .title{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: 0.0015em;
+                @media only screen and (max-width: $lg) {
+                    font-size: 16px;
+                } 
+            }
+            .btn-primary{
+                font-size: 16px;
+            }
+        }
+    }
+    .modal{
+        .head{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            margin-top: 12px !important;            
+        }
+        .img-container{
+            width: 125px;
+            height: 125px;
+            border: 1px solid #F5F5F5;
+            box-sizing: border-box;
+            border-radius: 4px;
+            margin-left: 16px;
+        }
+        .title{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 0.0015em;            
+        }
+        .desc-material{
+            margin-left: 16px;
+        }
+    }
+}
+.cart-proccess{
+    .breadcrumb{
+        margin-top: 20px;
+        padding-top: 30px;
+        .link-container{
+            @media only screen and (max-width: $sm) {
+                display: block;            
+                font-size: 12px;
+                margin-top: 5px !important;
+                
+            }
+        }
+
+        .link-splitter{
+            @media only screen and (max-width: $sm) {
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+            }        
+        }
+    }   
+    .head {
+        @media only screen and (max-width: $sm) {
+            margin-top: 0px !important;
+        }
+    } 
+    section{
+        margin-top: 32px;
+        .stepper{
+            p{
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                text-align: center;
+                letter-spacing: 0.0125em;
+                text-transform: uppercase;
+                margin-bottom: 0px;    
+                margin-top: 2px;  
+                color: #757575;          
+            }
+            .active{
+                color: $color-primary;
+            }
+        }
+        .hr-stepper{
+            height: 6px;
+        }
+        form{
+            p{
+                margin-top: 32px;
+                font-style: normal;
+                font-weight: 590;
+                font-size: 24px;
+                line-height: 28px;                
+            }
+        }
+        .measure2{
+            .data{
+                .title{
+                    margin-top: 16px;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0015em;
+                    margin-bottom: 8px; 
+                }
+                .value{
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 23px;
+                    text-align: center;
+                    letter-spacing: 0.0015em;
+                    margin-top: 0px;                    
+                }
+                .action{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0025em;
+                    color: $color-link-blue;     
+                    margin-top: 16px;       
+                    cursor: pointer;        
+                }
+            }
+            .option{
+                @media only screen and (max-width: $md) {
+                    margin-top: 50px;
+                }                
+                .title{
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 23px;
+                    letter-spacing: 0.0015em;
+                    &:first-child{
+                        margin-top: 0px;
+                    }
+                }
+                .item{
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 0.0015em;
+                    color: #757575;    
+                    margin-top: 8px;
+                    margin-bottom: 0px;   
+                    cursor: pointer;             
+                }
+            }
+            .img-body-front{
+                position: relative;
+                width: 220px;
+                height: 420px;
+            }
+            .img-body-side{
+                position: relative;
+                width: 102px;
+                height: 420px;                
+            }
+        }
+        .checkout{
+            .card{
+                p{
+                    margin-bottom: 0px;
+                }
+                .title{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 19px;
+                    letter-spacing: 0.0015em;                    
+                }
+                .name{
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 19px;
+                    letter-spacing: 0.005em;
+                    margin-top: 16px;
+                    margin-bottom: 4px;                    
+                }
+                .desc{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 0.0025em;                    
+                    margin-bottom: 4px;                    
+                }
+                .value{
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-align: center;
+                    letter-spacing: 0.0015em;
+                    color: #757575;  
+                    margin-bottom: 8px;   
+                    text-align: center;               
+                }
+                .action{
+                    margin-bottom: 8px;                  
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 19px;
+                    letter-spacing: 0.04em;
+                    color: $color-primary;
+                    cursor: pointer;
+                }
+                .proceed{
+                    .title{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 19px;
+                        letter-spacing: 0.0015em;                        
+                    }
+                    .desc{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 16px;                    
+                    }
+                    .total-price{
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 19px;
+                        letter-spacing: 0.005em;                        
+                    }
+                }
+
+            }
+        }
+        .payment-method{
+            .img-container{
+                position: relative;
+                width: 118px;
+                height: 37px;
+            }
+            .head{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.005em;                        
+            }  
+            .value{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                letter-spacing: 0.0015em;                
+            }                  
+            .title{
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.005em;                        
+            }
+            .desc{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0.0025em;                        
+            }
+        }
+        .rek-info{
+            .title{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.0015em;
+            }
+            .desc{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0.0025em;                
+            }
+            .rek-number{
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: 0.005em;                
+            }
+            .action{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.04em;       
+                cursor: pointer;         
+            }
+        }
+        .accordion{
+            background: #FFFFFF;
+            border-radius: 4px ;
+            margin-top: 24px;  
+            .accordion-button:not(.collapsed){
+                color: $color-primary !important;
+                background-color : #FFFFFF !important
+            }        
+            .accordion-button{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 28px;
+                @media only screen and (max-width: $lg) {
+                    font-size: 18px;
+                    line-height: 16px;
+                }
+                @media only screen and (max-width: $sm) {
+                    font-size: 12px;
+                }
+            }                          
+        }
+        .finish{
+            .head{
+                margin-top: 32px !important;
+            }
+            .desc{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 28px;                
+            }
+        }
+    }
+    .card{
+        @media only screen and (max-width: $sm) {
+            padding: 10px !important;
+        }  
+    }
+}
+.border-right{
+    border-right: 1px solid #C4C4C4;
+    @media only screen and (max-width: $md) {
+        border-right: 0px;
+    }
+}
+.border-left{
+    border-right: 1px solid #C4C4C4;
+    @media only screen and (max-width: $md) {
+        border-right: 0px;
+    }
+}

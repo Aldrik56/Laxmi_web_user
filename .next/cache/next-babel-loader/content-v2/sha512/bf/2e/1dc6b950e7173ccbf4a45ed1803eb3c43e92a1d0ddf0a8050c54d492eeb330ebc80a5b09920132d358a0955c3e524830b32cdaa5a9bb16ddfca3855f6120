@@ -1,0 +1,1 @@
+{"ast":null,"code":"var _require = require('js-number-formatter'),\n    JS_NumberFormat = _require.JS_NumberFormat;\n\nexport default function NumberFormat(value) {\n  return JS_NumberFormat(value, {\n    op_AllowDecimal: false\n  });\n}","map":null,"metadata":{},"sourceType":"module"}

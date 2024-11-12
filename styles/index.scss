@@ -1,0 +1,30 @@
+// base
+@import './base/variable' ;
+@import './base/main' ;
+
+// layout
+@import './components/layout/navbar' ;
+@import './components/layout/footer' ;
+@import './components/layout/sidebar' ;
+
+// elemets
+@import './components/elements' ;
+@import './components/product' ;
+@import './components/sharing' ;
+@import './components/chat' ;
+
+// pages
+@import './pages/notFound' ;
+@import './pages/login' ;
+@import './pages/custom' ;
+@import './pages/forgotpassword' ;
+@import './pages/register' ;
+@import './pages/home' ;
+@import './pages/webinformation' ;
+@import './pages/howitworks' ;
+@import './pages/faq' ;
+@import './pages/testimonies' ;
+@import './pages/contactUs' ;
+@import './pages/cart' ;
+@import './pages/accountDetail' ;
+

@@ -1,0 +1,158 @@
+.home{
+    .btn-primary{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        width: 246px;
+        letter-spacing: 0.04em;
+    }
+    .banner-sm{
+        // background-position: center; 
+        // background-repeat: no-repeat; 
+        // background-size: cover; 
+        cursor: pointer;
+        background-color: #343839;
+        position: relative;
+        height: 320px;
+        @media only screen and (max-width: $sm) {
+            height: 179px ;
+        } 
+        &:hover{
+            .filter{
+                opacity: 0.1;
+            }
+        }
+        .filter{
+            transition: 0.3s;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.45);            
+            box-shadow: 0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2);
+            opacity: 0.8;
+            z-index: 99;
+            // @media only screen and (max-width: $md) {
+            //     height: 250px;            
+            // }  
+            // @media only screen and (max-width: $sm) {
+            //     height: 200px;            
+            // } 
+            // @media only screen and (max-width: $m) {
+            //     width: 250px;
+            // }   
+        }
+        .content{
+            position: absolute;
+            z-index: 99;
+            // padding-right: 50px;
+            @media only screen and (max-width: $md) {
+                padding-right: 0px !important; 
+            } 
+            .title{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 48px;
+                line-height: 56px;     
+                @media only screen and (max-width: $sm) {
+                    font-size: 24px;
+                    line-height: 30px;    
+                }       
+            }
+            .desc{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 34px;
+                line-height: 40px;
+                @media only screen and (max-width: $sm) {
+                    font-size: 22px;
+                    line-height: 30px;    
+                }  
+            }
+        }
+    }
+    // .banner1{
+    //     background-image: url('/img/promotion/banner1.png');
+    // }
+    // .banner2{
+    //     background-image: url('/img/promotion/banner2.png');
+    // }
+    .howItWorks{
+        .sub-title{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+
+    .clients{
+        margin-bottom: 148px;
+        .clients-scroll{
+            overflow-x: scroll;
+            &::-webkit-scrollbar{
+                width:4px;
+                height: 0px;
+            }     
+            &:hover{
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: darkgrey;
+                }
+            } 
+            .clients-item{
+                margin-right: 32px;
+                .img-container{
+                    width: 190px;
+                    height: 45px;
+                    position: relative;
+                }
+            }    
+        }
+    }
+
+    .ourProduct{
+
+        .ourProduct-scroll{
+            overflow-x: scroll;
+            &::-webkit-scrollbar{
+                width:4px;
+                height: 0px;
+            }     
+            &:hover{
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: darkgrey;
+                }
+            } 
+            // .ourProduct-item{
+            //     margin-bottom: 30px;
+            // }
+        }
+    }
+}
+
+.someProduct{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    // line-height: 19px;
+   .product-home{
+    .title{
+        cursor: pointer;
+        margin-top: 10px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.0015em;
+    }
+    .desc{
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+    }
+   } 
+}

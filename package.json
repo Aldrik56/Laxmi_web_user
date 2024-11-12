@@ -1,0 +1,36 @@
+{
+  "name": "laxmi.front.web.user",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@jcdea/react-text-loop": "^2.3.1",
+    "axios": "^0.21.1",
+    "dotenv": "^9.0.2",
+    "html-react-parser": "^1.2.6",
+    "js-cookie": "^2.2.1",
+    "js-number-formatter": "^1.0.1",
+    "jwt-decode": "^4.0.0",
+    "next": "10.2.0",
+    "next-translate": "^1.0.7",
+    "prop-types": "^15.7.2",
+    "react": "17.0.2",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "17.0.2",
+    "react-paginate": "^7.1.3",
+    "react-redux": "^7.2.4",
+    "react-reveal": "^1.2.2",
+    "react-share-social": "^0.1.47",
+    "react-smart-scroller": "^1.1.20",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "sweetalert": "^2.1.2"
+  }
+}

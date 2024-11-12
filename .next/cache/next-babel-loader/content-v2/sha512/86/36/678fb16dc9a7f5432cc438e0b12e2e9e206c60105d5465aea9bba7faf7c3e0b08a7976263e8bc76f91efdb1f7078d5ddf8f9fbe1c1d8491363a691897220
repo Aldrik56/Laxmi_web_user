@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function validationPassword(password) {\n  var validationPassword = /^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$/;\n\n  if (validationPassword.test(password)) {\n    return true;\n  } else {\n    return false;\n  }\n}","map":null,"metadata":{},"sourceType":"module"}
